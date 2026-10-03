@@ -1,4 +1,5 @@
 # MacroMastery
+https://siffyyrox-x.github.io/MacroMastery/
 
 An interactive macroeconomics study guide I built during my Macroeconomics course to make learning more structured, visual, and engaging.
 
