@@ -1,0 +1,2177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab:wght@500;600;700&family=Source+Sans+3:wght@400;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<title>ECO 102 — Final Exam Mastery Guide</title>
+<style>
+:root{
+ --ground:#F3F4F7; --surface:#FFFFFF; --surface-2:#EDEFF4;
+ --ink:#15171C; --muted:#5B6373; --line:#D9DDE6; --line-soft:#E7EAF1;
+ --pen:#1F5DA8; --pen-soft:#E4EDF9;
+ --red:#C0392B; --red-soft:#FBE9E7; --green:#177A4C; --green-soft:#E3F3EA;
+ --amber:#8A5B00; --amber-soft:#FBF1DA; --violet:#6B3FA0; --violet-soft:#F0E9F8;
+ --mono:"JetBrains Mono",ui-monospace,Menlo,Consolas,monospace;
+ --slab:"Zilla Slab",Georgia,serif; --sans:"Source Sans 3",system-ui,sans-serif;
+ --blue:#1F5DA8; --grey:#5B6373; --rule:#D9DDE6; --card:#FFFFFF; --paper:#F3F4F7;
+ --rust:#C0392B; --teal:#177A4C; --ochre:#8A5B00; --steel:#1F5DA8; --soft:#5B6373;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+ --ground:#131519; --surface:#1B1E25; --surface-2:#22262F;
+ --ink:#E9EAEE; --muted:#98A0B0; --line:#2E333D; --line-soft:#262A33;
+ --pen:#78ADF5; --pen-soft:#1B2838;
+ --red:#FF7A6B; --red-soft:#2E1E1D; --green:#5CD69A; --green-soft:#16281F;
+ --amber:#F0C25C; --amber-soft:#2A2318; --violet:#C0A0EC; --violet-soft:#241E33;
+ --blue:#78ADF5; --grey:#98A0B0; --rule:#2E333D; --card:#1B1E25; --paper:#131519;
+ --rust:#FF7A6B; --teal:#5CD69A; --ochre:#F0C25C; --steel:#78ADF5; --soft:#98A0B0;}}
+:root[data-theme="dark"]{
+ --ground:#131519; --surface:#1B1E25; --surface-2:#22262F;
+ --ink:#E9EAEE; --muted:#98A0B0; --line:#2E333D; --line-soft:#262A33;
+ --pen:#78ADF5; --pen-soft:#1B2838;
+ --red:#FF7A6B; --red-soft:#2E1E1D; --green:#5CD69A; --green-soft:#16281F;
+ --amber:#F0C25C; --amber-soft:#2A2318; --violet:#C0A0EC; --violet-soft:#241E33;
+ --blue:#78ADF5; --grey:#98A0B0; --rule:#2E333D; --card:#1B1E25; --paper:#131519;
+ --rust:#FF7A6B; --teal:#5CD69A; --ochre:#F0C25C; --steel:#78ADF5; --soft:#98A0B0;}
+*{box-sizing:border-box;margin:0;padding:0}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--ground);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px 80px}
+h1,h2,h3{font-family:var(--slab);letter-spacing:-.015em;text-wrap:balance}
+h1{font-size:40px;line-height:1.12;font-weight:700;margin:6px 0}
+h1 em{font-style:normal;color:var(--pen)}
+h2{font-size:25px;font-weight:600;margin:0 0 8px;line-height:1.22}
+h3{font-size:19px;font-weight:600;margin:16px 0 6px}
+p{margin-bottom:12px}b,strong{font-weight:600}
+ul,ol{margin:0 0 12px 20px}li{margin-bottom:6px}
+code{font-family:var(--mono);font-size:.88em;background:var(--surface-2);padding:1px 5px;border-radius:4px}
+
+nav{position:sticky;top:0;z-index:70;background:var(--surface);border-bottom:1px solid var(--line)}
+.navin{max-width:760px;margin:0 auto;padding:9px 20px;display:flex;gap:6px;align-items:center;flex-wrap:wrap}
+.brand{font-family:var(--slab);font-weight:700;font-size:16px;margin-right:auto}
+.brand span{color:var(--pen)}
+nav a,#themeBtn{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em;
+ text-decoration:none;cursor:pointer;border:1px solid var(--line);background:var(--surface);color:var(--muted);
+ border-radius:99px;padding:4px 11px;white-space:nowrap;transition:background .15s,color .15s,border-color .15s}
+nav a:hover,#themeBtn:hover{border-color:var(--pen);color:var(--pen)}
+nav a.on{background:var(--pen);color:#fff;border-color:var(--pen)}
+.tabhide{display:none!important}
+
+header{padding:30px 0 6px}
+.dek,.sub{color:var(--muted);font-family:var(--sans);font-size:17px;margin-top:8px}
+section{padding-top:22px}
+.unit,.card,.progwrap,.chain,.q,.el5,.time,.warn,.formula,.f,.caveat,.verdict,.tot,.ansfig,figure{
+ border-radius:10px}
+.unit,.progwrap,.tot{background:var(--surface);border:1px solid var(--line);
+ box-shadow:0 1px 2px rgba(0,0,0,.06),0 8px 24px rgba(0,0,0,.06);margin-bottom:20px;overflow:hidden}
+.progwrap,.tot{padding:26px}
+.uhead{padding:22px 26px 0;display:flex;gap:14px;align-items:flex-start;border:0}
+.ubadge{flex:none;width:34px;height:34px;border-radius:8px;display:grid;place-items:center;
+ font-family:var(--mono);font-size:13px;font-weight:600;color:#fff;background:var(--pen)}
+.u2 .ubadge,.u4 .ubadge{background:var(--green)}
+.u3 .ubadge,.u6 .ubadge{background:var(--amber)}
+.u5 .ubadge{background:var(--violet)}
+.u7 .ubadge{background:var(--red)}
+.ch,.kick,.ptag{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.14em;
+ color:var(--muted);margin-bottom:6px;display:block}
+.ubody{padding:18px 26px 26px}
+.card{background:var(--surface);border:1px solid var(--line);padding:18px}
+
+.progbar{height:6px;background:var(--surface-2);border-radius:0;overflow:hidden;margin-top:10px}
+.progfill{height:100%;width:0;background:var(--pen);transition:width .35s ease}
+.progtxt{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11.5px;color:var(--muted)}
+
+.el5,.kid{border-left:3px solid var(--green);background:var(--green-soft);padding:12px 15px;margin:13px 0}
+.el5 h3,.el5 h4{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;
+ color:var(--green);margin:0 0 5px;font-weight:600}
+.warn,.time,.caveat{border-left:3px solid var(--amber);background:var(--amber-soft);padding:12px 15px;margin:13px 0}
+.warn h3,.warn h4,.caveat h3{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;
+ letter-spacing:.08em;color:var(--amber);margin:0 0 5px;font-weight:600}
+.formula,.f,.syntax{border:1px dashed var(--pen);background:var(--pen-soft);font-family:var(--mono);
+ font-size:14px;line-height:1.7;padding:12px 15px;margin:13px 0;border-left-width:1px}
+.formula .f,.f .f{border:0;background:none;padding:0;margin:4px 0;color:var(--pen);font-weight:600}
+pre.code{background:var(--surface-2);border-left:3px solid var(--pen);border-radius:6px;padding:12px 14px;
+ font-family:var(--mono);font-size:14px;overflow-x:auto;margin:12px 0;line-height:1.55}
+pre.code b{color:var(--pen);font-weight:600}pre.code i{color:var(--muted);font-style:normal}
+
+.tw{overflow-x:auto;margin:13px 0}
+table{border-collapse:collapse;width:100%;font-size:15px;margin:13px 0}
+th,td{border:1px solid var(--line);padding:7px 10px;text-align:left;vertical-align:top}
+th,thead th{background:var(--surface-2);font-family:var(--mono);font-size:12px;text-transform:uppercase;
+ letter-spacing:.04em;color:var(--muted);font-weight:600;border-bottom:1px solid var(--line)}
+td.n,th.n,td.b4,td.af,.evi .fig-n{text-align:center;font-family:var(--mono);
+ font-variant-numeric:tabular-nums;font-size:14px}
+td.b4{color:var(--pen)}td.af{color:var(--red)}
+.evi .fig-n{font-weight:600;color:var(--pen);text-align:left}
+.srcline,.figcap,figcaption{font-family:var(--mono);font-size:12px;color:var(--muted);line-height:1.5}
+
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px;margin:14px 0}
+.stat{background:var(--pen);color:#fff;border-radius:8px;padding:12px 14px}
+.stat.alt{background:var(--red)}.stat.alt2{background:var(--green)}.stat.alt3{background:var(--violet)}
+.stat .num{font-family:var(--slab);font-size:26px;font-weight:700;display:block;line-height:1.1}
+.stat .cap{font-family:var(--mono);font-size:10.5px;line-height:1.4;display:block;margin-top:5px;opacity:.92}
+
+.tl{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:12px 0}
+.tl:before{display:none}
+.tl div{padding:10px 12px;border:1px solid var(--line);border-left:3px solid var(--pen);
+ border-radius:6px;background:var(--surface)}
+.tl div:before{display:none}
+.tl div.hot{border-left-color:var(--red)}
+.tl .d{font-family:var(--mono);font-size:10.5px;text-transform:uppercase;letter-spacing:.08em;
+ color:var(--pen);display:block;font-weight:600}
+.tl div.hot .d{color:var(--red)}
+.tl .t{font-size:14px;line-height:1.45;display:block;margin-top:3px}
+
+.band{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--pen);
+ border-radius:8px;padding:16px 18px;margin:14px 0;display:block}
+.band.t2{border-left-color:var(--green)}.band.t3{border-left-color:var(--amber)}
+.band h3{font-family:var(--slab);font-size:19px;margin:0 0 2px}
+.band .ch{margin-bottom:10px}
+.rows{margin-top:8px}
+.rows>div{display:block;padding:10px 0;border-top:1px solid var(--line-soft)}
+.rows>div:first-child{border-top:0;padding-top:0}
+.rows .k{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;
+ color:var(--pen);display:block;margin-bottom:3px;font-weight:600}
+.band.t2 .rows .k{color:var(--green)}.band.t3 .rows .k{color:var(--amber)}
+
+figure,.ansfig,.chain{background:var(--surface);border:1px solid var(--line);padding:12px;margin:14px 0}
+figure svg,.ansfig svg,.chain svg{display:block;width:100%;height:auto;max-width:420px;margin:0 auto}
+.ansfig p,figcaption{text-align:center;margin-top:8px}
+
+.q{background:var(--surface);border:1px solid var(--line);padding:16px 18px;margin:14px 0}
+.qtag{display:inline-block;font-family:var(--mono);font-size:10.5px;text-transform:uppercase;
+ letter-spacing:.08em;padding:2px 9px;border-radius:99px;margin-bottom:9px;font-weight:600;
+ background:var(--pen-soft);color:var(--pen)}
+.qtag.calc{background:var(--green-soft);color:var(--green)}
+.qtag.theory{background:var(--amber-soft);color:var(--amber)}
+.qtag.final{background:var(--red-soft);color:var(--red)}
+.qtag.mid{background:var(--violet-soft);color:var(--violet)}
+.marks{font-family:var(--mono);font-size:12.5px;color:var(--muted);float:right}
+button,.reveal,.figbtn{font-family:var(--sans);font-size:16px;font-weight:600;cursor:pointer;
+ border:1px solid var(--pen);background:var(--pen);color:#fff;border-radius:8px;padding:12px 20px}
+.reveal,.figbtn{background:transparent;color:var(--pen);padding:7px 12px;font-size:13px}
+.reveal:hover,.figbtn:hover{background:var(--pen-soft)}
+.figbtn{display:block;margin:10px auto 0}
+.ans{display:none;margin-top:14px;border-left:3px solid var(--green);background:var(--green-soft);
+ border-radius:6px;padding:14px 16px}
+.ans.show,.ans.on{display:block}
+.ansblock{margin:14px 0}
+.ansblock h5{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.08em;
+ color:var(--green);margin-bottom:4px;font-weight:600}
+.step{background:var(--surface);border:1px solid var(--line-soft);border-radius:6px;
+ padding:10px 13px;margin:8px 0;font-size:15px}
+.step b{color:var(--pen)}
+.verdict{background:var(--surface-2);border-left:3px solid var(--pen);padding:14px 16px;margin:14px 0}
+.verdict h3{font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.08em;
+ color:var(--pen);margin:0 0 5px;font-weight:600}
+.pill{display:inline-block;font-family:var(--mono);font-size:11px;background:var(--surface-2);
+ border:1px solid var(--line);border-radius:99px;padding:2px 10px;margin-right:6px}
+.done{display:flex;align-items:center;gap:9px;margin-top:18px;padding-top:14px;
+ border-top:1px solid var(--line-soft);font-family:var(--mono);font-size:12px;
+ text-transform:uppercase;letter-spacing:.06em;color:var(--muted);cursor:pointer}
+.done input{width:16px;height:16px;accent-color:var(--pen);cursor:pointer}
+.refs{font-size:13.5px;line-height:1.5;column-count:2;column-gap:20px}
+.refs p{margin-bottom:7px;padding-left:12px;text-indent:-12px;break-inside:avoid}
+.refs a{color:var(--pen);word-break:break-word}
+.foot{display:flex;justify-content:flex-end;font-family:var(--mono);font-size:11px;
+ text-transform:uppercase;letter-spacing:.06em;color:var(--muted);
+ border-top:1px solid var(--line-soft);padding-top:10px;margin-top:20px;position:static}
+.two{display:block}
+.hr{height:1px;background:var(--line-soft);margin:18px 0;border:0}
+ol.steps{counter-reset:s;list-style:none;margin:12px 0}
+ol.steps li{display:block;position:relative;padding-left:34px;margin-bottom:10px;counter-increment:s}
+ol.steps li::before{content:counter(s);position:absolute;left:0;top:2px;width:22px;height:22px;
+ border-radius:99px;background:var(--pen);color:#fff;display:flex;align-items:center;
+ justify-content:center;font-family:var(--mono);font-size:12px}
+:focus-visible{outline:2px solid var(--pen);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+@media (max-width:560px){h1{font-size:30px}.ubody,.uhead{padding-left:18px;padding-right:18px}
+ .progwrap,.tot{padding:18px}body{font-size:16px}}
+</style>
+</head>
+<body>
+
+<nav><div class="navin">
+  <div class="brand">ECO&nbsp;102 <span>Mastery</span></div>
+  <a href="#plan">Plan</a><a href="#u1">GDP</a><a href="#u2">Jobs</a><a href="#graphs">Graphs</a><a href="#u3">AD–AS</a>
+  <a href="#u4">Funds</a><a href="#u5">Money</a><a href="#u6">Policy</a><a href="#drill">Questions</a><a href="#exam">Final</a>
+  <button id="themeBtn">◐ Theme</button>
+</div></nav>
+
+<div class="wrap">
+
+<header>
+  <h1>Everything you need to<br>ace <em>ECO 102</em></h1>
+  <p class="sub">Seven lessons built from your slides and Parkin, each one ending in the exact
+  kind of question your final asks. Then the whole Spring 2026 paper, solved.</p>
+</header>
+
+<div class="progwrap" id="plan">
+  <div class="progtxt"><span>Your progress</span><span id="pcount">0 of 8 lessons</span></div>
+  <div class="progbar"><div class="progfill" id="pfill"></div></div>
+  <p style="font-size:13.5px;color:var(--soft);margin:11px 0 0">
+  Tick a lesson off at the bottom of each unit. Your progress is saved in this browser.</p>
+</div>
+
+<div class="el5" style="margin-bottom:0">
+  <h4>How to use this guide</h4>
+  <p style="margin-bottom:6px">Work top to bottom. Every unit follows the same rhythm: <b>plain-English idea →
+  formula or diagram → worked example → exam-style practice</b>. Do not read the answer until you have
+  written something down. Reading a solution feels like learning and is not.</p>
+  <p style="margin-bottom:0">For every theory question, answer in three moves, in this order:
+  <b>1) draw and label the graph, 2) say which curve shifts and why, 3) state the consequences</b>.
+  Markers award points for all three separately.</p>
+</div>
+
+<!-- ══════════════════ UNIT 1 ══════════════════ -->
+<section id="u1"><div class="unit u1">
+  <div class="uhead"><div class="ubadge">1</div><div>
+    <div class="ch">Parkin Ch. 21 · Slides Unit 01</div>
+    <h2>Measuring GDP and Economic Growth</h2></div></div>
+  <div class="ubody">
+
+  <div class="time"><span class="pill">Fast: 1.5 h</span><span class="pill">Steady: 3 h</span>
+    <span><b>Pure calculation unit.</b> No graphs are examined here. Drill the arithmetic until it is automatic.</span></div>
+
+  <div class="el5"><h4>The idea in one breath</h4>
+  <p style="margin-bottom:0">GDP is the price tag on everything a country <i>finished making</i> inside its borders
+  this year. Three rules keep you out of trouble: count it only if it is <b>final</b> (not an ingredient),
+  only if it was made <b>here</b> (not imported), and only if it was made <b>this year</b> (not resold).</p></div>
+
+  <h3>The two ways to measure it</h3>
+  <p>Every taka someone spends is a taka someone else earns. So spending and income must give the same total.
+  That is why both approaches land on the same number, and why you can use one to check the other in an exam.</p>
+
+  <div class="formula">
+    <b>Expenditure approach</b><span class="f">GDP = C + I + G + (X − M)</span>
+    C consumption · I investment · G government purchases · X exports · M imports
+    <span class="f" style="margin-top:9px">Income approach<br>GDP = Wages + Rent + Interest + Profit + Indirect taxes − Subsidies + Depreciation</span>
+  </div>
+
+  <div class="warn"><h4>The four traps that cost marks</h4>
+  <ul style="margin-bottom:0">
+    <li><b>Intermediate goods.</b> Flour used to bake bread is not counted. Only the bread.</li>
+    <li><b>Used goods.</b> A second-hand car was already counted when new.</li>
+    <li><b>Transfer payments.</b> Pensions and unemployment benefits buy nothing, so they are not in G.</li>
+    <li><b>Financial trades.</b> Buying shares or bonds is not production.</li>
+  </ul></div>
+
+  <h3>Nominal vs Real GDP, and the deflator</h3>
+  <p>Nominal GDP rises when prices rise even if the country makes nothing extra. Real GDP strips
+  prices out by valuing every year's output at one fixed <b>base year</b> price. The gap between the two
+  is pure inflation, and the deflator measures that gap.</p>
+
+  <div class="formula">
+    <span class="f">Nominal GDP = current quantity × current price</span>
+    <span class="f">Real GDP = current quantity × base-year price</span>
+    <span class="f">GDP deflator = (Nominal GDP ÷ Real GDP) × 100</span>
+  </div>
+
+  <p><b>Note the shortcut you will need:</b> in the base year, nominal GDP and real GDP are the same number,
+  so the deflator is always exactly 100 in the base year. If you compute a base-year deflator that is not 100,
+  you have made an arithmetic error.</p>
+
+  <h3>Worked example</h3>
+  <div class="tw"><table>
+    <tr><th>Item</th><th class="n">Yr 1 qty</th><th class="n">Yr 1 price</th><th class="n">Yr 2 qty</th><th class="n">Yr 2 price</th></tr>
+    <tr><td>Rice</td><td class="n">100</td><td class="n">Tk 50</td><td class="n">120</td><td class="n">Tk 60</td></tr>
+    <tr><td>Fish</td><td class="n">50</td><td class="n">Tk 200</td><td class="n">60</td><td class="n">Tk 250</td></tr>
+  </table></div>
+  <div class="step"><b>Nominal Yr 2</b> = (120×60) + (60×250) = 7,200 + 15,000 = <b>Tk 22,200</b></div>
+  <div class="step"><b>Real Yr 2</b> (Yr 1 base prices) = (120×50) + (60×200) = 6,000 + 12,000 = <b>Tk 18,000</b></div>
+  <div class="step"><b>Deflator Yr 2</b> = (22,200 ÷ 18,000) × 100 = <b>123.33</b> → prices rose 23.33%</div>
+
+  <div class="q"><span class="qtag calc">Exam-style practice · 6 marks</span>
+    <p>An economy produces only two goods. 2023 is the base year.</p>
+    <div class="tw"><table>
+      <tr><th>Good</th><th class="n">Production</th><th class="n">Import</th><th class="n">Export</th><th class="n">Consumption</th><th class="n">P 2023</th><th class="n">P 2024</th></tr>
+      <tr><td>Wheat</td><td class="n">200</td><td class="n">0</td><td class="n">50</td><td class="n">150</td><td class="n">$8</td><td class="n">$10</td></tr>
+      <tr><td>Oil</td><td class="n">0</td><td class="n">80</td><td class="n">0</td><td class="n">80</td><td class="n">$20</td><td class="n">$26</td></tr>
+    </table></div>
+    <p style="margin-bottom:0">(a) Nominal GDP 2023. (b) Nominal GDP 2024. (c) GDP deflator 2024. Quantities are constant.</p>
+    <button class="reveal">Show worked answer</button>
+    <div class="ans">
+      <div class="step"><b>(a)</b> C = (150×8) + (80×20) = 1,200 + 1,600 = 2,800.
+        X = 50×8 = 400. M = 80×20 = 1,600.<br>
+        GDP = C + X − M = 2,800 + 400 − 1,600 = <b>$1,600</b><br>
+        <i>Check by production:</i> 200×8 + 0×20 = 1,600 ✓</div>
+      <div class="step"><b>(b)</b> C = (150×10) + (80×26) = 1,500 + 2,080 = 3,580.
+        X = 50×10 = 500. M = 80×26 = 2,080.<br>
+        GDP = 3,580 + 500 − 2,080 = <b>$2,000</b> &nbsp;<i>(check: 200×10 = 2,000 ✓)</i></div>
+      <div class="step"><b>(c)</b> Real GDP 2024 = quantities × 2023 prices = 200×8 = 1,600.<br>
+        Deflator = (2,000 ÷ 1,600) × 100 = <b>125.0</b></div>
+      <p style="margin:9px 0 0"><b>Why oil vanishes from GDP:</b> it is imported, so it enters C at +1,600
+      and M at −1,600 and cancels exactly. Imported goods are never part of domestic production. This is the
+      single most common mistake on this question type.</p>
+    </div>
+  </div>
+
+  <h3>Also examinable from Unit 01</h3>
+<div class="el5"><h4>The circular flow</h4>
+<p>Money goes round between four sectors: <b>households, firms, government and the rest of the world</b>.
+Households supply labour, land and capital through <b>factor markets</b> and earn income. They spend it in
+<b>goods markets</b> as consumption (C). Firms add investment (I), government adds G, and the rest of the world
+adds net exports (X − M). Because every taka spent is a taka earned, GDP can be measured three ways and all
+three must agree: <b>output, income, or expenditure</b>.</p></div>
+
+<div class="tw"><table><tr><th>Approach</th><th>Add up</th><th>Never include</th></tr>
+<tr><td><b>Expenditure</b></td><td>C + I + G + (X − M)</td>
+<td>Intermediate goods · used goods · financial transactions (shares, bonds) · transfer payments (pensions,
+benefits) · non-market activity (home gardening, unpaid housework) · illegal or unreported work</td></tr>
+<tr><td><b>Income</b></td><td>Wages + rent + interest + profit + mixed income + taxes on production − subsidies
++ depreciation</td><td>Transfer payments · capital gains · private gifts · income earned abroad · sale of used goods</td></tr></table></div>
+<div class="warn"><h4>Watch the two odd ones in the income approach</h4>
+<b>Taxes on production are added</b> because they are part of the final price buyers actually pay.
+<b>Subsidies are subtracted</b> because they are government money, not earnings from production.</div>
+
+<h4>The business cycle</h4>
+<div class="tw"><table><tr><th>Term</th><th>Meaning</th></tr>
+<tr><td><b>Expansion</b></td><td>Real GDP increases, moving toward or beyond potential GDP</td></tr>
+<tr><td><b>Recession</b></td><td>Real GDP falls for at least <b>two consecutive quarters</b></td></tr>
+<tr><td><b>Peak</b></td><td>Highest real GDP before a recession begins</td></tr>
+<tr><td><b>Trough</b></td><td>Lowest real GDP before a new expansion starts</td></tr>
+<tr><td><b>Potential GDP</b></td><td>Output when labour, capital, land and entrepreneurship are all fully employed</td></tr></table></div>
+
+<h4>Uses and limitations of Real GDP</h4>
+<p>Real GDP measures production, not wellbeing. Six things it misses:</p>
+<ul><li><b>Household production</b> — cooking, cleaning, childcare at home are unpaid, so uncounted.</li>
+<li><b>Underground activity</b> — cash-in-hand work and black markets go unrecorded.</li>
+<li><b>Political freedom and social justice</b> — high GDP says nothing about rights or fairness.</li>
+<li><b>Health and life expectancy</b> — a rich country can still have poor healthcare.</li>
+<li><b>Leisure time</b> — GDP rises when people work longer, but rest has value too.</li>
+<li><b>Environmental quality</b> — pollution boosts GDP short term and costs welfare long term.</li></ul>
+<div class="q"><span class="qtag theory">Practice · short answer</span><p>A household hires a cleaner for Tk 5,000 a month. The following year the cleaner marries into the household and does the same work unpaid. What happens to GDP, and what does this reveal about GDP as a welfare measure?</p><button class="reveal">Show answer</button><div class="ans"><p><b>GDP falls by Tk 60,000 a year</b>, even though exactly the same work is being done and the household is no
+worse off. Paid cleaning is a market transaction and counts; <b>household production is not counted</b> because
+it is never bought or sold.</p>
+<p>This exposes the <b>household production limitation</b>: GDP measures marketed output, not welfare. Countries
+where more work happens inside the home will have GDP understated relative to countries where the same work is
+bought in, which makes raw GDP comparisons across countries misleading.</p></div></div>
+<div class="q"><span class="qtag theory">Practice · short answer</span><p>Classify each for the expenditure approach: (i) flour bought by a bakery, (ii) a second-hand motorcycle, (iii) a government pension payment, (iv) a new house bought by a household, (v) shares in a company.</p><button class="reveal">Show answer</button><div class="ans"><p style="margin-bottom:0"><b>(i) Excluded</b> — intermediate good, its value is already inside the price of the bread.<br>
+<b>(ii) Excluded</b> — used good, counted when first produced.<br>
+<b>(iii) Excluded</b> — transfer payment, no good or service is produced in exchange.<br>
+<b>(iv) Included as Investment (I)</b> — this is the exception to remember: new housing is <b>I, not C</b>.<br>
+<b>(v) Excluded</b> — a purely financial transaction, nothing is produced.</p></div></div>
+  <label class="done"><input type="checkbox" data-k="u1"> Mark Unit 1 complete</label>
+  </div>
+</div></section>
+
+<!-- ══════════════════ UNIT 2 ══════════════════ -->
+<section id="u2"><div class="unit u2">
+  <div class="uhead"><div class="ubadge">2</div><div>
+    <div class="ch">Parkin Ch. 22 · Slides Unit 02</div>
+    <h2>Monitoring Jobs and Inflation</h2></div></div>
+  <div class="ubody">
+
+  <div class="time"><span class="pill">Fast: 1.5 h</span><span class="pill">Steady: 3 h</span>
+    <span><b>Calculation unit again.</b> Definitions matter as much as arithmetic here, because
+    sorting people into the right box <i>is</i> the question.</span></div>
+
+  <div class="el5"><h4>The idea in one breath</h4>
+  <p style="margin-bottom:0">Split the country into boxes. Everyone 16+ who is not in jail or hospital is the
+  <b>working-age population</b>. Of those, anyone working or actively hunting is in the <b>labour force</b>.
+  Every rate you will ever be asked for is just one box divided by another. Get the boxes right and the
+  maths is trivial.</p></div>
+
+  <h3>The boxes</h3>
+  <div class="formula">
+    <span class="f">Labour force = Employed + Unemployed</span>
+    <span class="f">Unemployment rate = (Unemployed ÷ Labour force) × 100</span>
+    <span class="f">Labour force participation rate = (Labour force ÷ Working-age population) × 100</span>
+    <span class="f">Employment-to-population ratio = (Employed ÷ Working-age population) × 100</span>
+  </div>
+  <div class="warn"><h4>Read the denominator twice</h4>
+  <p style="margin-bottom:0">Unemployment rate divides by the <b>labour force</b>. Participation rate divides by the
+  <b>working-age population</b>. Swapping these two denominators is the most frequent lost mark in this
+  whole course. The working-age population is always the bigger number.</p></div>
+
+  <h3>The four types of unemployment</h3>
+  <div class="tw"><table>
+    <tr><th>Type</th><th>What causes it</th><th>Exam giveaway phrase</th></tr>
+    <tr><td><b>Frictional</b></td><td>Normal job search; people moving between jobs</td>
+      <td>"recent graduates searching", "voluntarily quit", "between jobs"</td></tr>
+    <tr><td><b>Structural</b></td><td>Skills no longer match the jobs that exist</td>
+      <td>"automation", "technological change", "factory closed permanently"</td></tr>
+    <tr><td><b>Cyclical</b></td><td>The business cycle; a recession</td>
+      <td>"recession", "downturn", "slump in demand"</td></tr>
+    <tr><td><b>Natural</b></td><td>Frictional + Structural (cyclical is <i>excluded</i>)</td>
+      <td>this is what remains at full employment</td></tr>
+  </table></div>
+
+  <div class="formula">
+    <span class="f">Natural unemployment = Frictional + Structural</span>
+    <span class="f">Full employment ⟺ actual unemployment rate = natural rate</span>
+    <span class="f">Output gap = Real GDP − Potential GDP</span>
+  </div>
+
+  <p><b>The link you must be able to state:</b> if actual unemployment sits <i>above</i> the natural rate, there is
+  cyclical unemployment, real GDP is <i>below</i> potential GDP, and the output gap is <b>negative</b>
+  (a recessionary gap). If actual sits <i>below</i> natural, the gap is <b>positive</b> (an inflationary gap).
+  At full employment the gap is exactly zero.</p>
+
+  <h3>CPI and the inflation rate</h3>
+  <p>The CPI prices a <b>fixed basket</b>. You keep base-year quantities frozen and only let prices move.
+  If an exam table gives you current-year quantities as well, they are a deliberate distractor.</p>
+  <div class="formula">
+    <span class="f">CPI = (Cost of basket at current prices ÷ Cost of same basket at base prices) × 100</span>
+    <span class="f">Inflation rate = ((CPI this year − CPI last year) ÷ CPI last year) × 100</span>
+  </div>
+
+  <h3>CPI vs GDP deflator: the comparison question</h3>
+  <p>This is asked almost every year, so learn one clean reason rather than four vague ones.</p>
+  <div class="tw"><table>
+    <tr><th></th><th>CPI</th><th>GDP deflator</th></tr>
+    <tr><td><b>Covers</b></td><td>Consumer goods only</td><td>All domestic production: C, I, G and exports</td></tr>
+    <tr><td><b>Imports</b></td><td><b>Included</b> (consumers buy them)</td><td><b>Excluded</b> (not made here)</td></tr>
+    <tr><td><b>Exports</b></td><td>Excluded</td><td><b>Included</b></td></tr>
+    <tr><td><b>Basket</b></td><td>Fixed base-year quantities</td><td>Current-year quantities</td></tr>
+  </table></div>
+  <p><b>Best single sentence to write:</b> "The CPI includes imported goods but excludes exports and capital goods,
+  while the GDP deflator does the reverse, so when import prices rise faster than export prices the CPI shows
+  higher inflation than the deflator."</p>
+
+  <p><b>The four CPI biases</b> (all push the same way, so CPI <i>overstates</i> true inflation):
+  new goods bias, quality change bias, commodity substitution bias, outlet substitution bias.</p>
+
+  <div class="q"><span class="qtag calc">Exam-style practice · 8 marks</span>
+    <p>Country Zeta, all figures in millions:</p>
+    <div class="tw"><table>
+      <tr><th>Category</th><th class="n">Number</th></tr>
+      <tr><td>Working-age population</td><td class="n">200</td></tr>
+      <tr><td>Employed</td><td class="n">120</td></tr>
+      <tr><td>Unemployed after factories automated</td><td class="n">8</td></tr>
+      <tr><td>Unemployed while changing jobs voluntarily</td><td class="n">6</td></tr>
+      <tr><td>Unemployed because of the current recession</td><td class="n">6</td></tr>
+    </table></div>
+    <p style="margin-bottom:0">(a) Unemployment rate. (b) Participation rate. (c) Natural rate, and what it
+    implies for the output gap. (d) If 4 million of the recession-hit workers are rehired, what is the new
+    unemployment rate?</p>
+    <button class="reveal">Show worked answer</button>
+    <div class="ans">
+      <div class="step"><b>Set the boxes first.</b> Unemployed = 8 + 6 + 6 = 20.
+        Labour force = 120 + 20 = <b>140</b>. Working-age population = 200.</div>
+      <div class="step"><b>(a)</b> Unemployment rate = 20 ÷ 140 × 100 = <b>14.29%</b></div>
+      <div class="step"><b>(b)</b> Participation rate = 140 ÷ 200 × 100 = <b>70.00%</b></div>
+      <div class="step"><b>(c)</b> Natural = frictional (6, voluntary changers) + structural (8, automation) = 14.<br>
+        Natural rate = 14 ÷ 140 × 100 = <b>10.00%</b><br>
+        Actual 14.29% &gt; natural 10.00%, so 4.29 percentage points are cyclical. Real GDP is <b>below</b>
+        potential GDP and the output gap is <b>negative</b>, i.e. a recessionary gap.</div>
+      <div class="step"><b>(d)</b> Unemployed = 20 − 4 = 16. Employed = 124. Labour force is unchanged at 140
+        (they moved between boxes inside the labour force).<br>
+        New rate = 16 ÷ 140 × 100 = <b>11.43%</b></div>
+      <p style="margin:9px 0 0"><b>Watch the labour force in part (d).</b> Hiring someone already counted as
+      unemployed does not change the labour force, so the denominator stays at 140. It only changes if
+      someone <i>enters or leaves</i> the labour force entirely.</p>
+    </div>
+  </div>
+
+  <h3>Also examinable from Unit 02</h3>
+<div class="el5"><h4>Why unemployment is a problem</h4>
+<p><b>Lost incomes and production.</b> Benefits never fully replace lost wages, and less production means less
+consumption and investment, lowering living standards now and later.<br>
+<b>Lost human capital.</b> Long spells out of work permanently damage a career — a manager forced into a
+low-skill job may never return to the same level. The burden is not shared equally, which makes unemployment a
+political problem as well as an economic one.</p></div>
+
+<h4>Who counts as unemployed</h4>
+<p>You must be <b>available for work</b> and in one of three categories:</p>
+<ol class="steps"><li>Without work but made <b>specific efforts to find a job in the previous four weeks</b>.</li>
+<li>Waiting to be <b>called back</b> to a job you were laid off from.</li>
+<li>Waiting to <b>start a new job within 30 days</b>.</li></ol>
+<div class="warn"><h4>Two groups the official rate leaves out</h4>
+<b>Marginally attached workers</b> want work and have looked recently, but are not searching right now.
+If they stopped because they kept failing, they are <b>discouraged workers</b>.<br>
+<b>Economic part-time workers</b> want full-time jobs but cannot find one, so they are only partly employed.<br>
+Both are excluded from the official unemployment rate, which therefore <b>understates</b> labour underuse.</div>
+<p><b>Most costly unemployment</b> is long-term job loss. Short spells and voluntary job changes cost far less,
+but the headline rate hides the difference, so the same number can mean very different things.</p>
+
+<h4>What raises the natural rate</h4>
+<div class="tw"><table><tr><th>Influence</th><th>Effect</th></tr>
+<tr><td><b>Age distribution</b></td><td>A young population means more first-time seekers and more job switching,
+so frictional unemployment is higher.</td></tr>
+<tr><td><b>Pace of structural change</b></td><td>Rapid technological change or intense global competition raises
+structural unemployment; stable technology keeps it low.</td></tr>
+<tr><td><b>Minimum wage</b></td><td>Set <b>above</b> the market-clearing wage it creates a surplus of labour,
+especially among low-skilled and entry-level workers.</td></tr>
+<tr><td><b>Efficiency wage</b></td><td>Firms pay <b>above</b> market rate to raise productivity and cut turnover;
+fewer workers are hired than at the lower wage.</td></tr>
+<tr><td><b>Unemployment benefits</b></td><td>More generous benefits reduce the urgency to take a job, lengthening
+search. Europe's higher natural rates versus the US are the standard example.</td></tr></table></div>
+<div class="el5"><h4>The common thread</h4>
+Minimum wage and efficiency wage work the same way: a <b>real wage above equilibrium</b> means firms hire fewer
+workers, so the natural rate rises.</div>
+
+<h4>Why inflation and deflation are problems</h4>
+<ul><li><b>Redistributes income.</b> With long-term wage contracts, unexpected inflation raises prices before
+wages, so workers lose purchasing power and employers gain. Deflation reverses it.</li>
+<li><b>Redistributes wealth.</b> Loans are fixed in money terms. Unexpected inflation means the money repaid buys
+less, so <b>borrowers gain and lenders lose</b>. Unexpected deflation does the opposite.</li>
+<li><b>Lowers real GDP and employment.</b> An unexpected inflation boom is short-lived; spending drops, real GDP
+falls below potential and unemployment rises. Unexpected deflation is worse still.</li>
+<li><b>Diverts resources from production.</b> People stop doing their jobs and start forecasting prices. Zimbabwe's
+hyperinflation is the extreme case.</li></ul>
+<div class="warn"><h4>High inflation is not the same as a high price level</h4>
+<b>High inflation</b> means prices are rising <i>fast</i> right now. <b>A high price level</b> means prices are
+already high after years of past inflation. A country can have a very high price level and near-zero inflation.</div>
+<div class="q"><span class="qtag theory">Practice · short answer</span><p>A country introduces far more generous unemployment benefits and raises the minimum wage well above the market-clearing level. Explain the effect on the natural rate of unemployment and on full employment.</p><button class="reveal">Show answer</button><div class="ans"><p><b>Both measures raise the natural rate.</b></p>
+<p>The <b>minimum wage above equilibrium</b> means the real wage is above the market-clearing level, so the
+quantity of labour demanded falls short of the quantity supplied. That surplus is unemployment, concentrated
+among low-skilled and entry-level workers, and it is <b>structural</b>.</p>
+<p>More generous <b>unemployment benefits</b> reduce the incentive to find work quickly, so people search longer
+before accepting a job. That lengthens spells and raises <b>frictional</b> unemployment.</p>
+<p style="margin-bottom:0"><b>Consequence:</b> since natural unemployment = frictional + structural, the natural
+rate rises on both counts. Because <b>full employment is defined as the actual rate equalling the natural
+rate</b>, full employment now occurs at a <i>higher</i> measured unemployment rate, and potential GDP is
+correspondingly lower.</p></div></div>
+<div class="q"><span class="qtag theory">Practice · short answer</span><p>Inflation turns out much higher than anyone expected. Identify who gains and who loses among (i) a worker on a three-year fixed wage contract, (ii) a bank that issued a 10-year fixed-rate mortgage, (iii) that mortgage borrower.</p><button class="reveal">Show answer</button><div class="ans"><p style="margin-bottom:0"><b>(i) The worker loses.</b> Prices rise but the money wage is locked, so the
+<b>real wage falls</b> and purchasing power is lost. The employer gains, because revenue rises while the wage bill
+does not — this is inflation <b>redistributing income</b>.<br><br>
+<b>(ii) The bank loses.</b> Repayments are fixed in money terms, so the money it gets back buys less than
+expected. The fixed interest rate does not cover the loss in real value.<br><br>
+<b>(iii) The borrower gains.</b> They repay in money worth less than the money they borrowed — inflation
+<b>redistributing wealth</b> from lender to borrower.<br><br>
+The general rule: <b>unexpected inflation moves value from lenders to borrowers</b>, and unexpected deflation
+moves it back.</p></div></div>
+  <label class="done"><input type="checkbox" data-k="u2"> Mark Unit 2 complete</label>
+  </div>
+</div></section>
+
+<!-- ══════════════════ GRAPH BOOTCAMP ══════════════════ -->
+<section id="graphs"><div class="unit u5">
+  <div class="uhead"><div class="ubadge">◈</div><div>
+    <div class="ch">Foundation · read this before Unit 3</div>
+    <h2>Graph Bootcamp: from a blank page to a full answer</h2></div></div>
+  <div class="ubody">
+
+  <div class="time"><span class="pill">Fast: 1 h</span><span class="pill">Steady: 2 h</span>
+    <span><b>Do not skip this.</b> Every remaining unit uses the same three skills. Learn them once here
+    and Units 3 to 6 become mostly bookkeeping.</span></div>
+
+  <div class="el5"><h4>The whole secret, up front</h4>
+  <p style="margin-bottom:0">All three models in this course are <b>the same picture with different labels</b>.
+  Two lines cross. Something happens. <b>One line moves.</b> They cross somewhere new. You describe what changed.
+  That is it. If you can do that once, you can do it for AD–AS, loanable funds and the money market without
+  learning anything genuinely new.</p></div>
+
+  <h3>Step 1 · What the two axes mean</h3>
+  <p>Every graph has a <b>vertical axis</b> (up the side) and a <b>horizontal axis</b> (along the bottom).
+  In economics the rule never changes:</p>
+  <div class="formula">
+    <span class="f">Vertical axis = the PRICE of the thing</span>
+    <span class="f">Horizontal axis = the QUANTITY of the thing</span>
+  </div>
+  <p>Once you know what "the thing" is, you know both axis labels. Memorise this one table and you can label
+  any diagram in this course correctly:</p>
+  <div class="tw"><table>
+    <tr><th>Model</th><th>The "thing" being traded</th><th>Vertical axis = its price</th><th>Horizontal axis = its quantity</th></tr>
+    <tr><td><b>AD–AS</b></td><td>All goods and services</td><td>Price level</td><td>Real GDP</td></tr>
+    <tr><td><b>Loanable funds</b></td><td>Borrowed money</td><td>Real interest rate</td><td>Loanable funds</td></tr>
+    <tr><td><b>Money market</b></td><td>Money itself</td><td>Nominal interest rate</td><td>Real money (M/P)</td></tr>
+  </table></div>
+  <p><b>Why the interest rate is a "price":</b> it is what you pay to borrow money, or what you give up by holding
+  money instead of lending it. So it belongs on the vertical axis exactly like any other price.</p>
+
+  <h3>Step 2 · Reading a single point</h3>
+  <p>A point on a graph is one pair of facts. Drop a dashed line <b>down</b> to find its quantity, and a dashed
+  line <b>across</b> to find its price. That is all a point ever means.</p>
+
+  <figure id="figA">
+    <svg viewBox="0 0 420 270" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,sans-serif">
+      <g stroke="var(--line)" stroke-width="1"><line x1="70" y1="80" x2="390" y2="80"/>
+        <line x1="70" y1="140" x2="390" y2="140"/><line x1="70" y1="195" x2="390" y2="195"/></g>
+      <path d="M95 55 L360 215" fill="none" stroke="var(--blue)" stroke-width="2.6"/>
+      <text x="332" y="210" font-size="13" font-weight="700" fill="var(--blue)">Demand</text>
+      <g stroke="var(--grey)" stroke-width="1.4" stroke-dasharray="5 3">
+        <line x1="70" y1="126" x2="213" y2="126"/><line x1="213" y1="126" x2="213" y2="230"/></g>
+      <circle cx="213" cy="126" r="6" fill="var(--red)"/>
+      <text x="222" y="118" font-size="13" font-weight="700" fill="var(--red)">this point</text>
+      <text x="86" y="112" font-size="11.5" fill="var(--soft)">across to</text>
+      <text x="86" y="124" font-size="11.5" fill="var(--soft)">read price</text>
+      <text x="222" y="216" font-size="11.5" fill="var(--soft)">down to read quantity</text>
+      <line x1="70" y1="35" x2="70" y2="230" stroke="var(--ink)" stroke-width="2"/>
+      <line x1="70" y1="230" x2="390" y2="230" stroke="var(--ink)" stroke-width="2"/>
+      <text x="44" y="130" font-size="13" font-weight="700" fill="var(--ink)">P</text>
+      <text x="207" y="250" font-size="13" font-weight="700" fill="var(--ink)">Q</text>
+      <text x="26" y="130" font-size="11.5" fill="var(--soft)" transform="rotate(-90 26 130)" text-anchor="middle">PRICE (vertical)</text>
+      <text x="230" y="266" font-size="11.5" fill="var(--soft)" text-anchor="middle">QUANTITY (horizontal)</text>
+    </svg>
+    <figcaption><b>Fig. A</b> · Any point tells you two things at once. Always draw these dashed lines in an exam:
+    markers give credit for labelled P and Q values.</figcaption>
+  </figure>
+
+  <h3>Step 3 · Why lines slope the way they do</h3>
+  <p>You only ever need two shapes, plus one special vertical line. Learn the <i>reason</i>, not the picture,
+  because the reason is what earns the marks.</p>
+  <div class="tw"><table>
+    <tr><th>Shape</th><th>Which curves</th><th>The one-line reason</th></tr>
+    <tr><td><b>Downward ╲</b><br><i>buyers</i></td><td>AD, DLF, MD</td>
+      <td>When the price goes <b>up</b>, buyers want <b>less</b>. Dearer borrowing means fewer projects worth doing;
+      a higher interest rate means holding money costs more.</td></tr>
+    <tr><td><b>Upward ╱</b><br><i>sellers</i></td><td>SAS, SLF</td>
+      <td>When the price goes <b>up</b>, sellers supply <b>more</b>. A higher price level with fixed wages means bigger
+      profit per unit; a higher interest rate rewards saving.</td></tr>
+    <tr><td><b>Vertical │</b><br><i>fixed</i></td><td>LAS, MS</td>
+      <td>The quantity <b>does not respond to price at all</b>. Potential GDP depends on resources and technology;
+      the money supply is simply whatever the central bank decides.</td></tr>
+  </table></div>
+  <div class="el5"><h4>Memory hook</h4>
+  <p style="margin-bottom:0"><b>Buyers slope down, sellers slope up, and anything the price cannot influence stands
+  straight up.</b> There are only two vertical curves in the whole course: <b>LAS</b> and <b>MS</b>.</p></div>
+
+  <h3>Step 4 · Equilibrium is just the crossing point</h3>
+  <p>Where the two lines cross, the amount buyers want equals the amount sellers offer, so nothing pushes the
+  price any further. Mark it with a dot, call it <b>E₀</b>, and drop your two dashed lines to read off P₀ and Q₀.
+  Every question in this course is: <i>the crossing point moved — where to, and what does that mean?</i></p>
+
+  <h3>Step 5 · The one distinction that decides your grade</h3>
+  <div class="warn"><h4>Movement ALONG a curve vs a SHIFT OF the curve</h4>
+  <p style="margin-bottom:0">This single confusion costs more marks in ECO 102 than anything else.
+  <b>If the price on the vertical axis changes, you slide along the existing curve. The curve does not move.</b>
+  <b>Anything else that matters moves the whole curve sideways.</b></p></div>
+
+  <figure id="figB">
+    <svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,sans-serif">
+      <defs><marker id="mv" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto">
+        <path d="M0,0 L8,3.2 L0,6.4 z" fill="var(--teal)"/></marker>
+        <marker id="sh" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto">
+        <path d="M0,0 L8,3.2 L0,6.4 z" fill="var(--red)"/></marker></defs>
+
+      <text x="190" y="22" font-size="13.5" font-weight="800" fill="var(--teal)" text-anchor="middle">MOVEMENT ALONG</text>
+      <text x="190" y="38" font-size="11.5" fill="var(--soft)" text-anchor="middle">caused by the price on the vertical axis</text>
+      <path d="M75 55 L310 200" fill="none" stroke="var(--blue)" stroke-width="2.6"/>
+      <text x="286" y="196" font-size="12.5" font-weight="700" fill="var(--blue)">D</text>
+      <circle cx="146" cy="99" r="5.5" fill="var(--blue)"/><text x="112" y="95" font-size="12" font-weight="700" fill="var(--blue)">A</text>
+      <circle cx="240" cy="157" r="5.5" fill="var(--teal)"/><text x="248" y="152" font-size="12" font-weight="700" fill="var(--teal)">B</text>
+      <path d="M163 116 L222 152" stroke="var(--teal)" stroke-width="2.4" marker-end="url(#mv)"/>
+      <text x="190" y="228" font-size="11.5" font-weight="700" fill="var(--teal)" text-anchor="middle">same curve, new point on it</text>
+      <line x1="55" y1="45" x2="55" y2="210" stroke="var(--ink)" stroke-width="2"/>
+      <line x1="55" y1="210" x2="330" y2="210" stroke="var(--ink)" stroke-width="2"/>
+      <text x="40" y="130" font-size="12" font-weight="700" fill="var(--ink)">P</text>
+      <text x="336" y="214" font-size="12" font-weight="700" fill="var(--ink)">Q</text>
+
+      <line x1="365" y1="20" x2="365" y2="240" stroke="var(--line)" stroke-width="2"/>
+
+      <text x="545" y="22" font-size="13.5" font-weight="800" fill="var(--red)" text-anchor="middle">SHIFT OF THE CURVE</text>
+      <text x="545" y="38" font-size="11.5" fill="var(--soft)" text-anchor="middle">caused by anything else</text>
+      <path d="M430 55 L665 200" fill="none" stroke="var(--blue)" stroke-width="2.6"/>
+      <text x="610" y="202" font-size="12.5" font-weight="700" fill="var(--blue)">D₀</text>
+      <path d="M475 55 L700 194" fill="none" stroke="var(--red)" stroke-width="2.8"/>
+      <text x="686" y="174" font-size="12.5" font-weight="700" fill="var(--red)">D₁</text>
+      <path d="M508 105 L556 105" stroke="var(--red)" stroke-width="2.4" marker-end="url(#sh)"/>
+      <text x="545" y="228" font-size="11.5" font-weight="700" fill="var(--red)" text-anchor="middle">whole line slides sideways</text>
+      <line x1="410" y1="45" x2="410" y2="210" stroke="var(--ink)" stroke-width="2"/>
+      <line x1="410" y1="210" x2="700" y2="210" stroke="var(--ink)" stroke-width="2"/>
+      <text x="395" y="130" font-size="12" font-weight="700" fill="var(--ink)">P</text>
+      <text x="706" y="214" font-size="12" font-weight="700" fill="var(--ink)">Q</text>
+    </svg>
+    <figcaption><b>Fig. B</b> · Left: the price changed, so you slide from A to B on the <i>same</i> curve.
+    Right: something else changed, so the <i>entire</i> curve moves to a new position.</figcaption>
+  </figure>
+
+  <p><b>Say it correctly in the exam.</b> The wording is marked:</p>
+  <div class="tw"><table>
+    <tr><th>Situation</th><th>Correct phrase</th><th>Wrong phrase</th></tr>
+    <tr><td>Interest rate rose, so firms borrow less</td>
+      <td>"the <b>quantity of loanable funds demanded</b> fell"</td>
+      <td><s>"demand fell"</s></td></tr>
+    <tr><td>Firms expect higher profits, so they borrow more</td>
+      <td>"<b>demand increased</b>, DLF shifted right"</td>
+      <td><s>"quantity demanded rose"</s></td></tr>
+  </table></div>
+
+  <h3>Step 6 · Which way does it move?</h3>
+  <p>Shifts are always <b>sideways</b>, left or right. Never up or down, and never rotate a curve.
+  Use this test, which works for every curve in the course:</p>
+  <div class="formula">
+    <span class="f">MORE of it at every price → shift RIGHT →</span>
+    <span class="f">LESS of it at every price → shift LEFT ←</span>
+  </div>
+  <p>Ask yourself one question: <i>at the same price as before, is there now more or less?</i> If less, the line
+  moves left. A left shift of an <b>upward</b> curve looks like it went "up", and that is fine, but always
+  <b>think of it as horizontal</b> or you will misread the new quantity.</p>
+
+  <h3>Step 7 · Reading the new equilibrium in three moves</h3>
+  <p>Once one curve has moved, find the answer mechanically. Do not guess.</p>
+  <ol>
+    <li><b>Find the new crossing point</b> and mark it E₁.</li>
+    <li><b>Compare heights.</b> Is E₁ higher or lower than E₀? Higher means the price rose.</li>
+    <li><b>Compare sideways positions.</b> Is E₁ left or right of E₀? Right means the quantity rose.</li>
+  </ol>
+  <div class="el5"><h4>The reliable shortcut</h4>
+  <p style="margin-bottom:0">When <b>only one curve moves</b>, the new equilibrium slides <b>along the curve that
+  stayed still</b>. So if AD stays put and SAS shifts left, E₁ must sit further up the unchanged AD curve, which
+  immediately tells you price up and quantity down. You can get the answer before you have drawn anything neatly.</p></div>
+
+  <h3>Step 8 · The universal four-step recipe</h3>
+  <p>Use this exact sequence for every diagram question in the exam:</p>
+  <div class="tw"><table>
+    <tr><th class="n">#</th><th>Do this</th><th>Worked on the oil shock</th></tr>
+    <tr><td class="n"><b>1</b></td><td>Draw and <b>label both axes</b>, then draw the curves in their starting
+      position. Mark E₀ and drop dashed lines to P₀ and Q₀.</td>
+      <td>Price level and Real GDP. Draw AD, SAS₀ and vertical LAS crossing at E₀.</td></tr>
+    <tr><td class="n"><b>2</b></td><td>Decide <b>which single curve</b> the shock hits, and state why in one sentence.</td>
+      <td>Oil is an input cost, so it hits <b>SAS</b>. AD and LAS are untouched.</td></tr>
+    <tr><td class="n"><b>3</b></td><td>Decide the <b>direction</b> using the more/less test, and draw the new curve
+      with a shift arrow. Subscript it ₁.</td>
+      <td>Costs up means less supplied at every price, so <b>SAS shifts left</b> to SAS₁.</td></tr>
+    <tr><td class="n"><b>4</b></td><td>Mark <b>E₁</b>, read off the new P and Q, then write the
+      <b>consequences</b> in words.</td>
+      <td>P rises, real GDP falls, unemployment rises above natural rate: stagflation and a recessionary gap.</td></tr>
+  </table></div>
+  <p><b>Marks are awarded separately for each step</b>, so even a partly wrong answer with a properly labelled
+  diagram and a clear reason will score well. Never answer a diagram question in prose alone.</p>
+
+  <h3>Step 9 · The complete shift cheat sheet</h3>
+  <p>Every shock this course can throw at you, and exactly what it does. Learn this table and Section B is
+  largely solved.</p>
+  <div class="tw"><table>
+    <tr><th>What happens</th><th>Curve</th><th>Direction</th><th>Result</th></tr>
+    <tr><td>Oil / raw material / wage costs rise</td><td>SAS</td><td>← Left</td><td>P ↑, Y ↓ (stagflation)</td></tr>
+    <tr><td>Oil costs fall, or wages fall</td><td>SAS</td><td>→ Right</td><td>P ↓, Y ↑</td></tr>
+    <tr><td>Government raises spending or cuts taxes</td><td>AD</td><td>→ Right</td><td>P ↑, Y ↑</td></tr>
+    <tr><td>Government cuts spending or raises taxes</td><td>AD</td><td>← Left</td><td>P ↓, Y ↓</td></tr>
+    <tr><td>More labour, capital or better technology</td><td>LAS (and SAS)</td><td>→ Right</td><td>Potential GDP ↑</td></tr>
+    <tr><td>Households' disposable income rises (tax cut)</td><td>SLF</td><td>→ Right</td><td>r ↓, funds ↑, investment ↑</td></tr>
+    <tr><td>Government budget <b>deficit</b></td><td>DLF</td><td>→ Right</td><td>r ↑, <b>crowding out</b></td></tr>
+    <tr><td>Government budget <b>surplus</b></td><td>SLF</td><td>→ Right</td><td>r ↓, investment ↑</td></tr>
+    <tr><td>Tax on interest income</td><td>SLF</td><td>← Left</td><td>r ↑, investment ↓</td></tr>
+    <tr><td>Firms expect higher profits</td><td>DLF</td><td>→ Right</td><td>r ↑, funds ↑</td></tr>
+    <tr><td>Central bank <b>sells</b> bonds (contractionary)</td><td>MS</td><td>← Left</td><td>i ↑, investment ↓, AD ←</td></tr>
+    <tr><td>Central bank <b>buys</b> bonds (expansionary)</td><td>MS</td><td>→ Right</td><td>i ↓, investment ↑, AD →</td></tr>
+    <tr><td>Real GDP rises</td><td>MD</td><td>→ Right</td><td>i ↑</td></tr>
+    <tr><td>Financial innovation (cards, mobile banking)</td><td>MD</td><td>← Left</td><td>i ↓</td></tr>
+    <tr><td>Price level rises (money market only)</td><td>MS</td><td>← Left</td><td>M/P falls, so i ↑</td></tr>
+  </table></div>
+
+  <div class="q"><span class="qtag theory">Drill · name the curve and the direction</span>
+    <p>For each shock, write down (i) which curve moves, (ii) which way, (iii) what happens to the price and
+    quantity on that diagram. Spend two minutes, then check.</p>
+    <ol style="margin-bottom:0">
+      <li>A drought destroys a third of the cotton crop, raising textile input prices.</li>
+      <li>The central bank buys government bonds on a large scale.</li>
+      <li>Parliament passes a big increase in pensions and public sector wages.</li>
+      <li>A new tax is imposed on interest earned from savings accounts.</li>
+      <li>Consumer confidence collapses and households expect much lower future income.</li>
+      <li>Mobile banking spreads so people carry far less cash.</li>
+    </ol>
+    <button class="reveal">Show answers</button>
+    <div class="ans">
+      <div class="tw"><table>
+        <tr><th class="n">#</th><th>Curve</th><th>Direction</th><th>Why, and the result</th></tr>
+        <tr><td class="n">1</td><td><b>SAS</b></td><td>← Left</td>
+          <td>Input costs rise, so less is supplied at every price level. Price level ↑, real GDP ↓, unemployment ↑.
+          Stagflation and a recessionary gap.</td></tr>
+        <tr><td class="n">2</td><td><b>MS</b></td><td>→ Right</td>
+          <td>Buying bonds injects reserves, banks lend more, deposits rise, money supply grows.
+          Nominal interest rate ↓. Investment then ↑ and AD shifts right.</td></tr>
+        <tr><td class="n">3</td><td><b>AD</b></td><td>→ Right</td>
+          <td>Higher transfers and government spending raise disposable income and spending.
+          Price level ↑, real GDP ↑, unemployment ↓. Risk of an inflationary gap.</td></tr>
+        <tr><td class="n">4</td><td><b>SLF</b></td><td>← Left</td>
+          <td>Taxing interest cuts the after-tax return to saving, so households save less.
+          Real interest rate ↑, quantity of funds ↓, investment ↓ and long-run growth slows.</td></tr>
+        <tr><td class="n">5</td><td><b>AD</b></td><td>← Left</td>
+          <td>Expected future income is an AD shifter. Households cut spending today.
+          Price level ↓, real GDP ↓, unemployment ↑. A recessionary gap opens.</td></tr>
+        <tr><td class="n">6</td><td><b>MD</b></td><td>← Left</td>
+          <td>Financial innovation means the same transactions need less money held.
+          With MS fixed, the nominal interest rate ↓.</td></tr>
+      </table></div>
+      <p style="margin:10px 0 0"><b>If you got 5 or 6 right,</b> move on to Unit 3. <b>If you got 3 or fewer,</b>
+      reread Steps 5 and 6 and redo the drill before continuing. Everything after this depends on it.</p>
+    </div>
+  </div>
+
+  <label class="done"><input type="checkbox" data-k="ug"> Mark Graph Bootcamp complete</label>
+  </div>
+</div></section>
+
+<!-- ══════════════════ UNIT 3 ══════════════════ -->
+<section id="u3"><div class="unit u3">
+  <div class="uhead"><div class="ubadge">3</div><div>
+    <div class="ch">Parkin Ch. 27 · Slides Unit 04</div>
+    <h2>Aggregate Demand and Aggregate Supply</h2></div></div>
+  <div class="ubody">
+
+  <div class="time"><span class="pill">Fast: 2.5 h</span><span class="pill">Steady: 5 h</span>
+    <span><b>The most important unit in the course.</b> Graphs start here and Section B leans on this
+    heavily. Do not move on until you can draw all three curves from memory.</span></div>
+
+  <div class="el5"><h4>The idea in one breath</h4>
+  <p style="margin-bottom:0">This is supply and demand for the <i>whole economy at once</i>. The quantity on the
+  horizontal axis is real GDP. The price on the vertical axis is the price level. Everything you already know
+  about shifting curves still works; only the labels change.</p></div>
+
+  <h3>The three curves</h3>
+  <div class="tw"><table>
+    <tr><th>Curve</th><th>Shape</th><th>Why</th></tr>
+    <tr><td><b>LAS</b><br>Long-run aggregate supply</td><td>Vertical at potential GDP</td>
+      <td>Money wages fully adjust, so the real wage returns to full employment no matter what the price level is.
+      Potential GDP depends on resources and technology, not on prices.</td></tr>
+    <tr><td><b>SAS</b><br>Short-run aggregate supply</td><td>Upward sloping</td>
+      <td>The money wage rate is <b>fixed</b> in the short run. A higher price level with fixed wages means a
+      lower real wage, so firms hire more and produce more.</td></tr>
+    <tr><td><b>AD</b><br>Aggregate demand</td><td>Downward sloping</td>
+      <td>Wealth effect, intertemporal substitution and international substitution (below).</td></tr>
+  </table></div>
+
+  <h4>Why AD slopes down — the three effects</h4>
+  <ul>
+    <li><b>Wealth effect.</b> A higher price level shrinks the real value of savings, so people consume less.</li>
+    <li><b>Intertemporal substitution.</b> A higher price level raises interest rates, so people delay buying
+      cars, houses and machinery.</li>
+    <li><b>International substitution.</b> A higher domestic price level makes local goods dear relative to
+      foreign ones, so exports fall and imports rise.</li>
+  </ul>
+
+  <figure id="fig1">
+    <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,sans-serif">
+      <rect x="60" y="25" width="340" height="225" fill="none"/>
+      <g stroke="var(--line)" stroke-width="1"><line x1="60" y1="90" x2="400" y2="90"/>
+        <line x1="60" y1="160" x2="400" y2="160"/><line x1="60" y1="215" x2="400" y2="215"/></g>
+      <line x1="241" y1="30" x2="241" y2="250" stroke="var(--grey)" stroke-width="2" stroke-dasharray="6 4"/>
+      <text x="246" y="42" font-size="13" font-weight="700" fill="var(--grey)">LAS</text>
+      <path d="M80 235 Q180 215 330 70" fill="none" stroke="var(--blue)" stroke-width="2.6"/>
+      <text x="334" y="66" font-size="13" font-weight="700" fill="var(--blue)">SAS</text>
+      <path d="M90 50 L380 240" fill="none" stroke="var(--blue)" stroke-width="2.6"/>
+      <text x="352" y="234" font-size="13" font-weight="700" fill="var(--blue)">AD</text>
+      <g stroke="var(--grey)" stroke-width="1.2" stroke-dasharray="4 3">
+        <line x1="60" y1="149" x2="241" y2="149"/><line x1="241" y1="149" x2="241" y2="250"/></g>
+      <circle cx="241" cy="149" r="5" fill="var(--blue)"/>
+      <text x="250" y="166" font-size="13" font-weight="700" fill="var(--blue)">E</text>
+      <line x1="60" y1="25" x2="60" y2="250" stroke="var(--ink)" stroke-width="2"/>
+      <line x1="60" y1="250" x2="400" y2="250" stroke="var(--ink)" stroke-width="2"/>
+      <text x="34" y="153" font-size="13" font-weight="700" fill="var(--ink)">P</text>
+      <text x="228" y="268" font-size="13" font-weight="700" fill="var(--ink)">Y*</text>
+      <text x="22" y="140" font-size="12" fill="var(--soft)" transform="rotate(-90 22 140)" text-anchor="middle">Price level</text>
+      <text x="230" y="288" font-size="12" fill="var(--soft)" text-anchor="middle">Real GDP</text>
+    </svg>
+    <figcaption><b>Fig. 1</b> · Long-run equilibrium. AD, SAS and LAS all cross at one point,
+    so real GDP equals potential GDP and the output gap is zero.</figcaption>
+  </figure>
+
+  <h3>What shifts what</h3>
+  <div class="tw"><table>
+    <tr><th>Shifts AD</th><th>Shifts SAS</th><th>Shifts LAS</th></tr>
+    <tr>
+      <td>Expected future income, inflation, profits · Fiscal policy (G, taxes, transfers) ·
+          Monetary policy (money supply, interest rate) · World economy (exchange rate, foreign income)</td>
+      <td><b>Money wage rate</b> · <b>Prices of other inputs, e.g. oil</b> · Change in potential GDP</td>
+      <td>Quantity of labour · Quantity of capital · Technology</td>
+    </tr>
+  </table></div>
+  <div class="warn"><h4>Oil is a SAS shifter, never an AD shifter</h4>
+  <p style="margin-bottom:0">An oil price rise raises firms' costs, so it moves <b>SAS to the left</b>. It does not
+  touch LAS, because potential GDP depends on resources and technology, not on input prices. Writing
+  "oil prices reduce aggregate demand" is a serious conceptual error.</p></div>
+
+  <h3>The oil shock, step by step</h3>
+  <figure id="fig2">
+    <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,sans-serif">
+      <g stroke="var(--line)" stroke-width="1"><line x1="60" y1="90" x2="400" y2="90"/>
+        <line x1="60" y1="160" x2="400" y2="160"/><line x1="60" y1="215" x2="400" y2="215"/></g>
+      <line x1="241" y1="30" x2="241" y2="250" stroke="var(--grey)" stroke-width="2" stroke-dasharray="6 4"/>
+      <text x="246" y="42" font-size="13" font-weight="700" fill="var(--grey)">LAS</text>
+      <g class="beforeonly">
+        <path d="M80 235 Q180 215 330 70" fill="none" stroke="var(--blue)" stroke-width="2.6"/>
+        <text x="334" y="66" font-size="13" font-weight="700" fill="var(--blue)">SAS₀</text>
+        <g stroke="var(--grey)" stroke-width="1.2" stroke-dasharray="4 3">
+          <line x1="60" y1="149" x2="241" y2="149"/><line x1="241" y1="149" x2="241" y2="250"/></g>
+        <circle cx="241" cy="149" r="5" fill="var(--blue)"/>
+        <text x="248" y="166" font-size="13" font-weight="700" fill="var(--blue)">E₀</text>
+        <text x="36" y="153" font-size="12.5" font-weight="700" fill="var(--blue)">P₀</text>
+        <text x="234" y="268" font-size="12.5" font-weight="700" fill="var(--blue)">Y₀</text>
+      </g>
+      <path d="M90 50 L380 240" fill="none" stroke="var(--blue)" stroke-width="2.6"/>
+      <text x="352" y="234" font-size="13" font-weight="700" fill="var(--blue)">AD</text>
+      <g class="after">
+        <path d="M80 200 Q180 180 330 35" fill="none" stroke="var(--red)" stroke-width="2.8"/>
+        <text x="290" y="42" font-size="13" font-weight="700" fill="var(--red)">SAS₁</text>
+        <g stroke="var(--grey)" stroke-width="1.2" stroke-dasharray="4 3">
+          <line x1="60" y1="132" x2="216" y2="132"/><line x1="216" y1="132" x2="216" y2="250"/></g>
+        <circle cx="216" cy="132" r="5.5" fill="var(--red)"/>
+        <text x="176" y="128" font-size="13" font-weight="700" fill="var(--red)">E₁</text>
+        <text x="36" y="136" font-size="12.5" font-weight="700" fill="var(--red)">P₁</text>
+        <text x="196" y="268" font-size="12.5" font-weight="700" fill="var(--red)">Y₁</text>
+        <path d="M175 205 L128 205" stroke="var(--red)" stroke-width="2.2" marker-end="url(#arh)"/>
+        <line x1="216" y1="258" x2="241" y2="258" stroke="var(--red)" stroke-width="2.5"/>
+        <text x="228" y="284" font-size="11.5" font-weight="700" fill="var(--red)" text-anchor="middle">recessionary gap</text>
+      </g>
+      <line x1="60" y1="25" x2="60" y2="250" stroke="var(--ink)" stroke-width="2"/>
+      <line x1="60" y1="250" x2="400" y2="250" stroke="var(--ink)" stroke-width="2"/>
+      <text x="22" y="140" font-size="12" fill="var(--soft)" transform="rotate(-90 22 140)" text-anchor="middle">Price level</text>
+      <defs><marker id="arh" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+        <path d="M0,0 L7,3 L0,6 z" fill="var(--red)"/></marker></defs>
+    </svg>
+    <button class="figbtn">▶ Apply the oil shock</button>
+    <figcaption><b>Fig. 2</b> · A rise in the oil price shifts SAS left. The price level rises from P₀ to P₁
+    while real GDP falls from Y₀ to Y₁, opening a recessionary gap to the left of LAS.</figcaption>
+  </figure>
+
+  <div class="el5"><h4>Stagflation, and why it is unusual</h4>
+  <p style="margin-bottom:0">Normally when output falls, prices fall too, because a slump is caused by weak demand.
+  An oil shock is different: it hits <i>costs</i>, so output falls <b>and</b> prices rise at the same time.
+  That combination has its own name, <b>stagflation</b>, and its presence is the fingerprint of a supply shock
+  rather than a demand shock.</p></div>
+
+  <h3>The three possible equilibria</h3>
+  <div class="tw"><table>
+    <tr><th>Situation</th><th>Condition</th><th>Gap name</th><th>Unemployment</th></tr>
+    <tr><td>Above full employment</td><td>Real GDP &gt; Potential GDP</td><td><b>Inflationary gap</b></td><td>Below natural rate</td></tr>
+    <tr><td>Full employment</td><td>Real GDP = Potential GDP</td><td>No gap</td><td>Equals natural rate</td></tr>
+    <tr><td>Below full employment</td><td>Real GDP &lt; Potential GDP</td><td><b>Recessionary gap</b></td><td>Above natural rate</td></tr>
+  </table></div>
+
+  <h3>How the economy fixes itself (the money wage rate)</h3>
+  <p>This is the part students skip, and it is worth marks on its own.</p>
+  <ul>
+    <li><b>Recessionary gap.</b> Unemployment is above the natural rate, so there is a surplus of workers.
+      That pushes the money wage rate <b>down</b>. Lower wages cut firms' costs, so <b>SAS shifts back right</b>
+      until real GDP returns to potential. The price level ends lower.</li>
+    <li><b>Inflationary gap.</b> Unemployment is below the natural rate, so workers are scarce and the money
+      wage rate is bid <b>up</b>. Higher costs shift <b>SAS left</b> until real GDP falls back to potential.
+      The price level ends higher.</li>
+  </ul>
+  <p>Either way the economy returns to LAS. The adjustment is slow, which is why governments intervene.</p>
+
+  <div class="q"><span class="qtag theory">Exam-style practice · 10 marks</span>
+    <p>A severe drought sharply raises food and raw-material prices across an economy that began at
+    full employment.</p>
+    <p style="margin-bottom:0">(a) Use the AD–AS model to explain the effect on real GDP, the price level and
+    unemployment in the short run. Draw a labelled diagram. <b>(6)</b><br>
+    (b) Identify the output gap and explain two ways the economy could return to potential GDP. <b>(4)</b></p>
+    <button class="reveal">Show model answer</button>
+    <div class="ans">
+      <div class="ansblock"><h5>Step 1 — the diagram</h5>
+        <p style="margin-bottom:0">Draw exactly Fig. 2 above, relabelled: AD unchanged, SAS₀ shifting left to SAS₁,
+        LAS vertical and unmoved, E₀ on LAS, E₁ up and to the left of it. Label P₀, P₁, Y₀, Y₁ and mark
+        the recessionary gap on the horizontal axis.</p><div class="ansfig"><svg viewBox="0 0 400 285" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,sans-serif"><defs><marker id="A1" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="var(--red)"/></marker></defs><g stroke="var(--line)" stroke-width="1"><line x1="55" y1="80" x2="385" y2="80"/><line x1="55" y1="140" x2="385" y2="140"/><line x1="55" y1="195" x2="385" y2="195"/></g><line x1="227" y1="30" x2="227" y2="235" stroke="var(--grey)" stroke-width="1.8" stroke-dasharray="6 4"/><text x="232" y="42" font-size="12" font-weight="700" fill="var(--grey)">LAS</text><path d="M75 220 Q170 200 315 60" fill="none" stroke="var(--blue)" stroke-width="2.4"/><text x="318" y="56" font-size="12" font-weight="700" fill="var(--blue)">SAS₀</text><path d="M75 188 Q170 168 315 28" fill="none" stroke="var(--red)" stroke-width="2.6"/><text x="272" y="34" font-size="12" font-weight="700" fill="var(--red)">SAS₁</text><path d="M85 45 L360 225" fill="none" stroke="var(--blue)" stroke-width="2.4"/><text x="334" y="219" font-size="12" font-weight="700" fill="var(--blue)">AD</text><path d="M168 196 L124 196" stroke="var(--red)" stroke-width="2.1" marker-end="url(#A1)"/><g stroke="var(--grey)" stroke-width="1.1" stroke-dasharray="4 3"><line x1="55" y1="138" x2="227" y2="138"/><line x1="227" y1="138" x2="227" y2="235"/><line x1="55" y1="123" x2="204" y2="123"/><line x1="204" y1="123" x2="204" y2="235"/></g><circle cx="227" cy="138" r="4.6" fill="var(--blue)"/><text x="233" y="154" font-size="12" font-weight="700" fill="var(--blue)">E₀</text><circle cx="204" cy="123" r="5" fill="var(--red)"/><text x="164" y="118" font-size="12" font-weight="700" fill="var(--red)">E₁</text><text x="34" y="142" font-size="11.5" font-weight="700" fill="var(--blue)">P₀</text><text x="34" y="127" font-size="11.5" font-weight="700" fill="var(--red)">P₁</text><text x="221" y="252" font-size="11.5" font-weight="700" fill="var(--blue)">Y₀</text><text x="188" y="252" font-size="11.5" font-weight="700" fill="var(--red)">Y₁</text><line x1="204" y1="241" x2="227" y2="241" stroke="var(--red)" stroke-width="2.4"/><text x="215" y="266" font-size="10.5" font-weight="700" fill="var(--red)" text-anchor="middle">recessionary gap</text><line x1="55" y1="25" x2="55" y2="235" stroke="var(--ink)" stroke-width="2"/><line x1="55" y1="235" x2="385" y2="235" stroke="var(--ink)" stroke-width="2"/><text x="20" y="128" font-size="11.5" font-weight="700" fill="var(--ink)" transform="rotate(-90 20 128)" text-anchor="middle">Price level</text><text x="220" y="277" font-size="11.5" font-weight="700" fill="var(--ink)" text-anchor="middle">Real GDP</text></svg><p>SAS shifts left. E₀→E₁ climbs the unchanged AD curve, so the price level rises P₀→P₁ while real GDP falls Y₀→Y₁, opening a recessionary gap to the left of LAS.</p></div></div>
+      <div class="ansblock"><h5>Step 2 — which curve shifts and why</h5>
+        <p style="margin-bottom:0">The drought raises the price of raw materials, which is an input cost for firms.
+        At every price level firms are now willing to supply less output, so <b>short-run aggregate supply shifts
+        left, SAS₀ → SAS₁</b>. Aggregate demand is unchanged, because nothing has happened to wealth, expectations,
+        fiscal or monetary policy, or the world economy. <b>LAS is unchanged</b>, because potential GDP depends on
+        the quantity of labour and capital and on technology, none of which the drought has permanently altered.</p></div>
+      <div class="ansblock"><h5>Step 3 — the new equilibrium</h5>
+        <p style="margin-bottom:0">Equilibrium moves from E₀ to E₁ along the unchanged AD curve.
+        The <b>price level rises</b> from P₀ to P₁ and <b>real GDP falls</b> from Y₀ to Y₁. Since firms produce less
+        they employ fewer workers, so <b>unemployment rises above the natural rate</b>. Rising prices together with
+        falling output is <b>stagflation</b>.</p></div>
+      <div class="ansblock"><h5>Step 4 — consequences and part (b)</h5>
+        <p>The output gap is <b>negative</b>: real GDP is below potential GDP, so this is a <b>recessionary gap</b>.
+        It is a problem because output and income are permanently lost, unemployment above the natural rate
+        destroys human capital as skills decay, and household living standards fall.</p>
+        <p style="margin-bottom:0">Two routes back to potential:<br>
+        <b>1. Automatic wage adjustment.</b> Unemployment above the natural rate creates a surplus of labour, which
+        pushes the money wage rate down. Firms' costs fall, SAS shifts back right to SAS₀, real GDP returns to
+        potential and the price level falls back. This works but is slow.<br>
+        <b>2. Expansionary policy.</b> The government raises spending or cuts taxes, or the central bank increases
+        the money supply and lowers the interest rate. Either shifts <b>AD right</b>, restoring real GDP to potential
+        faster. The trade-off is that this raises the price level further rather than reversing the inflation.</p></div>
+    </div>
+  </div>
+
+  <h3>Also examinable from Unit 04</h3>
+<h4>Economic growth and inflation in the AS–AD model</h4>
+<p>Put the two long-run forces on one diagram and the whole model clicks.</p>
+<ul><li><b>Economic growth</b> comes from a growing labour force and rising labour productivity. These raise
+potential GDP, so <b>LAS shifts right</b>.</li>
+<li><b>Inflation</b> comes from <b>aggregate demand growing faster than potential GDP</b>. AD shifts right by
+more than LAS, so the price level rises.</li>
+<li><b>Growth without inflation</b> happens when AD grows at exactly the <i>same</i> rate as LAS. Real GDP rises
+and the price level is stable.</li></ul>
+<div class="el5"><h4>The sentence to remember</h4>
+Inflation is not caused by growth. It is caused by <b>demand growing faster than capacity</b>.</div>
+<div class="warn"><h4>Don't confuse the two curves</h4>
+Real-world growth and inflation are not smooth. Real GDP <b>fluctuates around</b> potential GDP, and those
+fluctuations are the business cycle. In business-cycle questions we study the fluctuations; in growth questions
+we study the trend in LAS.</div>
+<div class="q"><span class="qtag theory">Practice · short answer</span><p>An economy\u2019s potential GDP grows by 3% a year while aggregate demand grows by 7% a year. Using AS\u2013AD, explain the outcome. What if AD instead grew by exactly 3%?</p><button class="reveal">Show answer</button><div class="ans"><p><b>AD growing at 7% against LAS at 3%.</b> LAS shifts right by 3%, so capacity genuinely rises and real GDP
+grows. But AD shifts right by more than LAS, so the extra demand cannot be met by extra capacity alone and is
+absorbed by <b>rising prices</b>. Result: real GDP grows, and the <b>price level rises persistently</b> — this is
+demand-pull inflation. If AD keeps outpacing LAS, real GDP is pushed above potential and an
+<b>inflationary gap</b> opens, with unemployment below the natural rate.</p>
+<p style="margin-bottom:0"><b>If AD grew at exactly 3%.</b> AD and LAS shift right by the same amount, so the
+intersection moves horizontally. <b>Real GDP grows at 3% with a stable price level</b> — growth without
+inflation. This is the ideal outcome and shows the point: inflation comes from the <i>gap</i> between demand
+growth and capacity growth, not from growth itself.</p></div></div>
+  <label class="done"><input type="checkbox" data-k="u3"> Mark Unit 3 complete</label>
+  </div>
+</div></section>
+
+<!-- ══════════════════ UNIT 4 ══════════════════ -->
+<section id="u4"><div class="unit u4">
+  <div class="uhead"><div class="ubadge">4</div><div>
+    <div class="ch">Parkin Ch. 24 · Slides Unit 05</div>
+    <h2>Finance, Saving and the Loanable Funds Market</h2></div></div>
+  <div class="ubody">
+
+  <div class="time"><span class="pill">Fast: 2 h</span><span class="pill">Steady: 4 h</span>
+    <span><b>High-yield unit.</b> Budget deficits, crowding out and Ricardo-Barro are near-certain
+    Section B material.</span></div>
+
+  <div class="el5"><h4>The idea in one breath</h4>
+  <p style="margin-bottom:0">Bundle every bank, bond and share market in the country into one giant market for
+  borrowing. Savers supply the funds, investors and the government demand them, and the price that clears
+  the market is the <b>real interest rate</b>.</p></div>
+
+  <h3>Where the funds come from</h3>
+  <p>Household income splits three ways, and total spending splits four ways. Setting them equal gives the
+  identity the whole chapter rests on:</p>
+  <div class="formula">
+    <span class="f">Y = C + S + T &nbsp;&nbsp;(what income is used for)</span>
+    <span class="f">Y = C + I + G + X − M &nbsp;&nbsp;(what is spent)</span>
+    <span class="f">⟹ I = S + (T − G) + (M − X)</span>
+    private saving + government saving + foreign borrowing
+    <span class="f" style="margin-top:8px">National saving = S + (T − G)</span>
+  </div>
+
+  <h3>The two curves</h3>
+  <div class="tw"><table>
+    <tr><th>Curve</th><th>Slope and reason</th><th>Shifts when…</th></tr>
+    <tr><td><b>DLF</b> demand</td>
+      <td>Downward. A higher real interest rate makes fewer investment projects profitable, so firms borrow less.</td>
+      <td><b>Expected profit</b> changes · a <b>government budget deficit</b> appears or grows</td></tr>
+    <tr><td><b>SLF</b> supply</td>
+      <td>Upward. A higher real interest rate rewards saving, so households supply more funds.</td>
+      <td><b>Disposable income</b> · expected future income · wealth · default risk</td></tr>
+  </table></div>
+  <div class="warn"><h4>Movement along vs shift of the curve</h4>
+  <p style="margin-bottom:0">A change in the <b>real interest rate</b> moves you <i>along</i> a curve. Anything else
+  <i>shifts</i> the curve. Examiners test this deliberately, so never write "the interest rate rose so demand fell";
+  write "the quantity of loanable funds demanded fell".</p></div>
+
+  <figure id="fig3">
+    <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,sans-serif">
+      <g stroke="var(--line)" stroke-width="1"><line x1="60" y1="90" x2="400" y2="90"/>
+        <line x1="60" y1="160" x2="400" y2="160"/><line x1="60" y1="215" x2="400" y2="215"/></g>
+      <g class="beforeonly">
+        <path d="M85 50 L380 240" fill="none" stroke="var(--blue)" stroke-width="2.6"/>
+        <text x="352" y="234" font-size="13" font-weight="700" fill="var(--blue)">DLF₀</text>
+        <path d="M85 240 L380 50" fill="none" stroke="var(--blue)" stroke-width="2.6"/>
+        <text x="350" y="46" font-size="13" font-weight="700" fill="var(--blue)">SLF</text>
+        <g stroke="var(--grey)" stroke-width="1.2" stroke-dasharray="4 3">
+          <line x1="60" y1="145" x2="232" y2="145"/><line x1="232" y1="145" x2="232" y2="250"/></g>
+        <circle cx="232" cy="145" r="5" fill="var(--blue)"/>
+        <text x="239" y="162" font-size="13" font-weight="700" fill="var(--blue)">E₀</text>
+        <text x="36" y="149" font-size="12.5" font-weight="700" fill="var(--blue)">r₀</text>
+        <text x="225" y="268" font-size="12.5" font-weight="700" fill="var(--blue)">Q₀</text>
+      </g>
+      <g class="after">
+        <path d="M130 50 L400 224" fill="none" stroke="var(--red)" stroke-width="2.8"/>
+        <text x="366" y="212" font-size="13" font-weight="700" fill="var(--red)">DLF₁</text>
+        <g stroke="var(--grey)" stroke-width="1.2" stroke-dasharray="4 3">
+          <line x1="60" y1="130" x2="255" y2="130"/><line x1="255" y1="130" x2="255" y2="250"/></g>
+        <circle cx="255" cy="130" r="5.5" fill="var(--red)"/>
+        <text x="262" y="124" font-size="13" font-weight="700" fill="var(--red)">E₁</text>
+        <text x="36" y="134" font-size="12.5" font-weight="700" fill="var(--red)">r₁</text>
+        <text x="258" y="268" font-size="12.5" font-weight="700" fill="var(--red)">Q₁</text>
+        <path d="M140 92 L182 92" stroke="var(--red)" stroke-width="2.2" marker-end="url(#arh2)"/>
+        <text x="161" y="84" font-size="11" font-weight="700" fill="var(--red)" text-anchor="middle">deficit</text>
+      </g>
+      <line x1="60" y1="25" x2="60" y2="250" stroke="var(--ink)" stroke-width="2"/>
+      <line x1="60" y1="250" x2="400" y2="250" stroke="var(--ink)" stroke-width="2"/>
+      <text x="22" y="140" font-size="12" fill="var(--soft)" transform="rotate(-90 22 140)" text-anchor="middle">Real interest rate</text>
+      <text x="230" y="288" font-size="12" fill="var(--soft)" text-anchor="middle">Loanable funds</text>
+      <defs><marker id="arh2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+        <path d="M0,0 L7,3 L0,6 z" fill="var(--red)"/></marker></defs>
+    </svg>
+    <button class="figbtn">▶ Add a government budget deficit</button>
+    <figcaption><b>Fig. 3</b> · A budget deficit adds government borrowing on top of private demand, shifting
+    DLF right. The real interest rate rises from r₀ to r₁ and private investment is crowded out.</figcaption>
+  </figure>
+
+  <h3>Government in the market</h3>
+  <div class="tw"><table>
+    <tr><th></th><th>Budget <b>surplus</b> (T &gt; G)</th><th>Budget <b>deficit</b> (G &gt; T)</th></tr>
+    <tr><td>Effect on curve</td><td>Adds to <b>supply</b>: SLF shifts right</td><td>Adds to <b>demand</b>: DLF shifts right</td></tr>
+    <tr><td>Real interest rate</td><td>Falls</td><td>Rises</td></tr>
+    <tr><td>Private saving</td><td>Falls</td><td>Rises</td></tr>
+    <tr><td>Investment</td><td>Rises</td><td><b>Falls — crowding out</b></td></tr>
+  </table></div>
+
+  <div class="el5"><h4>Crowding out, explained simply</h4>
+  <p>The government and private firms are queuing at the same window for the same pool of savings.
+  When the government borrows more, it bids the interest rate up, and some firms that would have invested
+  at the old rate now walk away. Government borrowing has "crowded out" private investment.</p>
+  <p style="margin-bottom:0"><b>An important detail worth a mark:</b> investment falls by <i>less</i> than the size
+  of the deficit, because the higher interest rate also persuades households to save more, which partly
+  refills the pool.</p></div>
+
+  <h3>The Ricardo-Barro effect</h3>
+  <p>This is the counter-argument, and questions often ask for it explicitly.</p>
+  <p><b>The logic:</b> taxpayers are rational. They know a deficit today means higher taxes tomorrow. So they
+  save more <i>now</i> to pay those future taxes. That extra private saving shifts <b>SLF right by exactly the
+  same amount</b> that the deficit shifted DLF right.</p>
+  <p><b>The result:</b> the real interest rate is <b>unchanged</b>, investment is <b>unchanged</b>, and there is
+  <b>no crowding out</b>. Only the quantity of funds traded rises. Parkin treats this as an extreme case, with
+  reality probably somewhere in between.</p>
+
+  <figure id="fig4">
+    <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,sans-serif">
+      <g stroke="var(--line)" stroke-width="1"><line x1="60" y1="90" x2="400" y2="90"/>
+        <line x1="60" y1="160" x2="400" y2="160"/><line x1="60" y1="215" x2="400" y2="215"/></g>
+      <path d="M85 50 L380 240" fill="none" stroke="var(--blue)" stroke-width="2.4"/>
+      <text x="330" y="238" font-size="12.5" font-weight="700" fill="var(--blue)">DLF₀</text>
+      <path d="M85 240 L380 50" fill="none" stroke="var(--blue)" stroke-width="2.4"/>
+      <text x="336" y="46" font-size="12.5" font-weight="700" fill="var(--blue)">SLF₀</text>
+      <g class="after">
+        <path d="M130 50 L400 224" fill="none" stroke="var(--red)" stroke-width="2.7"/>
+        <text x="368" y="214" font-size="12.5" font-weight="700" fill="var(--red)">DLF₁</text>
+        <path d="M130 240 L400 66" fill="none" stroke="var(--red)" stroke-width="2.7"/>
+        <text x="372" y="62" font-size="12.5" font-weight="700" fill="var(--red)">SLF₁</text>
+        <circle cx="277" cy="145" r="5.5" fill="var(--red)"/>
+        <text x="284" y="140" font-size="13" font-weight="700" fill="var(--red)">E₁</text>
+        <line x1="277" y1="145" x2="277" y2="250" stroke="var(--grey)" stroke-width="1.2" stroke-dasharray="4 3"/>
+        <text x="272" y="268" font-size="12.5" font-weight="700" fill="var(--red)">Q₁</text>
+      </g>
+      <line x1="60" y1="145" x2="277" y2="145" stroke="var(--grey)" stroke-width="1.2" stroke-dasharray="4 3"/>
+      <circle cx="232" cy="145" r="5" fill="var(--blue)"/>
+      <text x="222" y="163" font-size="13" font-weight="700" fill="var(--blue)">E₀</text>
+      <text x="26" y="149" font-size="12.5" font-weight="700" fill="var(--ink)">r unchanged</text>
+      <text x="226" y="268" font-size="12.5" font-weight="700" fill="var(--blue)">Q₀</text>
+      <line x1="60" y1="25" x2="60" y2="250" stroke="var(--ink)" stroke-width="2"/>
+      <line x1="60" y1="250" x2="400" y2="250" stroke="var(--ink)" stroke-width="2"/>
+      <text x="230" y="288" font-size="12" fill="var(--soft)" text-anchor="middle">Loanable funds</text>
+    </svg>
+    <button class="figbtn">▶ Show the Ricardo-Barro response</button>
+    <figcaption><b>Fig. 4</b> · Ricardo-Barro. Both curves shift right by the same amount, so the real interest
+    rate stays at its original level and investment is unaffected. Only the quantity traded rises.</figcaption>
+  </figure>
+
+  <div class="q"><span class="qtag theory">Exam-style practice · 10 marks</span>
+    <p>A government announces a large increase in the tax-free income threshold, cutting income tax for
+    most households while leaving government spending unchanged.</p>
+    <p style="margin-bottom:0">(a) How does the tax cut change the loanable funds market through its effect on
+    household saving? Use a labelled diagram. <b>(4)</b><br>
+    (b) Will the budget move to deficit or surplus, how does that affect the same market, and would the
+    outcome differ if the Ricardo-Barro effect held? <b>(6)</b></p>
+    <button class="reveal">Show model answer</button>
+    <div class="ans">
+      <div class="ansblock"><h5>(a) The saving channel</h5>
+        <p><b>Diagram:</b> DLF unchanged and downward sloping; SLF₀ shifting <b>right</b> to SLF₁; new equilibrium
+        below and to the right of the old one; label r₀ &gt; r₁ and Q₀ &lt; Q₁.</p><div class="ansfig"><svg viewBox="0 0 400 285" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,sans-serif"><defs><marker id="A2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="var(--red)"/></marker></defs><g stroke="var(--line)" stroke-width="1"><line x1="55" y1="80" x2="385" y2="80"/><line x1="55" y1="140" x2="385" y2="140"/><line x1="55" y1="195" x2="385" y2="195"/></g><path d="M80 48 L355 228" fill="none" stroke="var(--blue)" stroke-width="2.4"/><text x="330" y="223" font-size="12" font-weight="700" fill="var(--blue)">DLF</text><path d="M80 228 L355 48" fill="none" stroke="var(--blue)" stroke-width="2.4"/><text x="326" y="42" font-size="12" font-weight="700" fill="var(--blue)">SLF₀</text><path d="M125 228 L385 58" fill="none" stroke="var(--red)" stroke-width="2.6"/><text x="352" y="76" font-size="12" font-weight="700" fill="var(--red)">SLF₁</text><path d="M120 108 L162 108" stroke="var(--red)" stroke-width="2.1" marker-end="url(#A2)"/><g stroke="var(--grey)" stroke-width="1.1" stroke-dasharray="4 3"><line x1="55" y1="138" x2="218" y2="138"/><line x1="218" y1="138" x2="218" y2="235"/><line x1="55" y1="153" x2="240" y2="153"/><line x1="240" y1="153" x2="240" y2="235"/></g><circle cx="218" cy="138" r="4.6" fill="var(--blue)"/><text x="194" y="132" font-size="12" font-weight="700" fill="var(--blue)">E₀</text><circle cx="240" cy="153" r="5" fill="var(--red)"/><text x="246" y="168" font-size="12" font-weight="700" fill="var(--red)">E₁</text><text x="36" y="142" font-size="11.5" font-weight="700" fill="var(--blue)">r₀</text><text x="36" y="157" font-size="11.5" font-weight="700" fill="var(--red)">r₁</text><text x="211" y="252" font-size="11.5" font-weight="700" fill="var(--blue)">Q₀</text><text x="236" y="252" font-size="11.5" font-weight="700" fill="var(--red)">Q₁</text><line x1="55" y1="25" x2="55" y2="235" stroke="var(--ink)" stroke-width="2"/><line x1="55" y1="235" x2="385" y2="235" stroke="var(--ink)" stroke-width="2"/><text x="20" y="128" font-size="11.5" font-weight="700" fill="var(--ink)" transform="rotate(-90 20 128)" text-anchor="middle">Real interest rate</text><text x="220" y="277" font-size="11.5" font-weight="700" fill="var(--ink)" text-anchor="middle">Loanable funds</text></svg><p>Higher disposable income raises saving, so SLF shifts right. The real interest rate falls r₀→r₁, the quantity of funds rises Q₀→Q₁ and investment increases.</p></div>
+        <p><b>Shift and reason:</b> a lower income tax raises households' <b>disposable income</b>. Disposable income
+        is one of the shifters of the supply of loanable funds, so at every real interest rate households can save
+        more and <b>SLF shifts right</b>.</p>
+        <p style="margin-bottom:0"><b>New equilibrium:</b> the real interest rate <b>falls</b> from r₀ to r₁ and the
+        quantity of loanable funds <b>rises</b> from Q₀ to Q₁. Cheaper borrowing makes more projects profitable,
+        so <b>investment increases</b>.</p></div>
+      <div class="ansblock"><h5>(b) The budget channel</h5>
+        <p>With tax revenue down and spending unchanged, T &lt; G, so the government moves into a
+        <b>budget deficit</b> (or a larger one).</p>
+        <p><b>Diagram:</b> this is Fig. 3. A deficit is government borrowing, which is added to the private demand
+        for loanable funds (PDLF) to give total demand, so <b>DLF shifts right</b> to DLF₁.</p><div class="ansfig"><svg viewBox="0 0 400 285" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,sans-serif"><defs><marker id="A3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="var(--red)"/></marker></defs><g stroke="var(--line)" stroke-width="1"><line x1="55" y1="80" x2="385" y2="80"/><line x1="55" y1="140" x2="385" y2="140"/><line x1="55" y1="195" x2="385" y2="195"/></g><path d="M80 48 L355 228" fill="none" stroke="var(--blue)" stroke-width="2.4"/><text x="312" y="228" font-size="11.5" font-weight="700" fill="var(--blue)">PDLF</text><path d="M125 48 L385 218" fill="none" stroke="var(--red)" stroke-width="2.6"/><text x="348" y="186" font-size="12" font-weight="700" fill="var(--red)">DLF₁</text><path d="M80 228 L355 48" fill="none" stroke="var(--blue)" stroke-width="2.4"/><text x="330" y="42" font-size="12" font-weight="700" fill="var(--blue)">SLF</text><g stroke="var(--red)" stroke-width="1.6"><line x1="126" y1="99" x2="171" y2="99"/><line x1="126" y1="95" x2="126" y2="103"/><line x1="171" y1="95" x2="171" y2="103"/></g><text x="168" y="120" font-size="10.5" font-weight="700" fill="var(--red)" text-anchor="end">budget deficit</text><g stroke="var(--grey)" stroke-width="1.1" stroke-dasharray="4 3"><line x1="55" y1="138" x2="218" y2="138"/><line x1="218" y1="138" x2="218" y2="235"/><line x1="55" y1="123" x2="240" y2="123"/><line x1="240" y1="123" x2="240" y2="235"/></g><circle cx="218" cy="138" r="4.6" fill="var(--blue)"/><text x="192" y="167" font-size="12" font-weight="700" fill="var(--blue)">E₀</text><circle cx="240" cy="123" r="5" fill="var(--red)"/><text x="246" y="118" font-size="12" font-weight="700" fill="var(--red)">E₁</text><text x="36" y="142" font-size="11.5" font-weight="700" fill="var(--blue)">r₀</text><text x="36" y="127" font-size="11.5" font-weight="700" fill="var(--red)">r₁</text><text x="211" y="252" font-size="11.5" font-weight="700" fill="var(--blue)">Q₀</text><text x="236" y="252" font-size="11.5" font-weight="700" fill="var(--red)">Q₁</text><line x1="55" y1="25" x2="55" y2="235" stroke="var(--ink)" stroke-width="2"/><line x1="55" y1="235" x2="385" y2="235" stroke="var(--ink)" stroke-width="2"/><text x="20" y="128" font-size="11.5" font-weight="700" fill="var(--ink)" transform="rotate(-90 20 128)" text-anchor="middle">Real interest rate</text><text x="220" y="277" font-size="11.5" font-weight="700" fill="var(--ink)" text-anchor="middle">Loanable funds</text></svg><p>The deficit is added to private demand PDLF, so total demand DLF₁ sits to its right. The real interest rate rises r₀→r₁ and private investment is crowded out.</p></div>
+        <p><b>New equilibrium:</b> the real interest rate <b>rises</b> from r₀ to r₁ and the quantity of funds rises.
+        Higher borrowing costs make some private projects unprofitable, so private <b>investment falls</b>.
+        This is the <b>crowding-out effect</b>. Investment falls by less than the deficit, because the higher rate
+        also draws out extra private saving.</p>
+        <p style="margin-bottom:0"><b>Net of both channels:</b> supply shifted right in part (a) and demand shifts
+        right here. The quantity of funds definitely rises; the effect on the interest rate depends on which shift
+        is larger. In the standard Parkin treatment the deficit effect dominates, so the rate rises on balance.</p></div>
+      <div class="ansblock"><h5>Ricardo-Barro</h5>
+        <p style="margin-bottom:0">If the Ricardo-Barro effect holds, the outcome changes completely. Rational
+        taxpayers recognise that today's deficit must be paid for by higher taxes in future, so they save the entire
+        tax cut instead of spending it. <b>SLF shifts right by exactly the amount DLF shifted right</b> (Fig. 4).<div class="ansfig"><svg viewBox="0 0 400 285" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,sans-serif"><defs><marker id="A4" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="var(--red)"/></marker></defs><g stroke="var(--line)" stroke-width="1"><line x1="55" y1="80" x2="385" y2="80"/><line x1="55" y1="140" x2="385" y2="140"/><line x1="55" y1="195" x2="385" y2="195"/></g><path d="M80 48 L355 228" fill="none" stroke="var(--blue)" stroke-width="2.2"/><text x="308" y="228" font-size="11.5" font-weight="700" fill="var(--blue)">DLF₀</text><path d="M125 48 L385 218" fill="none" stroke="var(--red)" stroke-width="2.5"/><text x="348" y="186" font-size="11.5" font-weight="700" fill="var(--red)">DLF₁</text><path d="M80 228 L355 48" fill="none" stroke="var(--blue)" stroke-width="2.2"/><text x="320" y="42" font-size="11.5" font-weight="700" fill="var(--blue)">SLF₀</text><path d="M125 228 L385 58" fill="none" stroke="var(--red)" stroke-width="2.5"/><text x="352" y="76" font-size="11.5" font-weight="700" fill="var(--red)">SLF₁</text><line x1="55" y1="138" x2="263" y2="138" stroke="var(--grey)" stroke-width="1.1" stroke-dasharray="4 3"/><g stroke="var(--grey)" stroke-width="1.1" stroke-dasharray="4 3"><line x1="218" y1="138" x2="218" y2="235"/><line x1="263" y1="138" x2="263" y2="235"/></g><circle cx="218" cy="138" r="4.6" fill="var(--blue)"/><text x="196" y="130" font-size="12" font-weight="700" fill="var(--blue)">E₀</text><circle cx="263" cy="138" r="5" fill="var(--red)"/><text x="269" y="130" font-size="12" font-weight="700" fill="var(--red)">E₁</text><text x="16" y="142" font-size="10.5" font-weight="700" fill="var(--ink)">r unchanged</text><text x="211" y="252" font-size="11.5" font-weight="700" fill="var(--blue)">Q₀</text><text x="257" y="252" font-size="11.5" font-weight="700" fill="var(--red)">Q₁</text><line x1="55" y1="25" x2="55" y2="235" stroke="var(--ink)" stroke-width="2"/><line x1="55" y1="235" x2="385" y2="235" stroke="var(--ink)" stroke-width="2"/><text x="20" y="128" font-size="11.5" font-weight="700" fill="var(--ink)" transform="rotate(-90 20 128)" text-anchor="middle">Real interest rate</text><text x="220" y="277" font-size="11.5" font-weight="700" fill="var(--ink)" text-anchor="middle">Loanable funds</text></svg><p>Ricardo-Barro: both curves shift right by the same distance, so the real interest rate is unchanged and investment is unaffected. Only the quantity traded rises, so there is no crowding out.</p></div>
+        The real interest rate is <b>unchanged</b>, investment is <b>unchanged</b>, and there is <b>no crowding out</b>.
+        Only the quantity of loanable funds traded increases. Parkin regards this as an extreme case, though some
+        partial adjustment of this kind probably does occur.</p></div>
+    </div>
+  </div>
+
+  <h3>Also examinable from Unit 05</h3>
+<h4>The real interest rate</h4>
+<div class="formula"><span class="f">Real interest rate ≈ Nominal interest rate − Inflation rate</span>
+It is the <b>price of loanable funds</b>, and it is simultaneously the opportunity cost of holding funds, the real
+cost of borrowing, and the real return to lending.</div>
+
+<h4>The global loanable funds market</h4>
+<p>In an open economy the interest rate is set in the <b>world</b> market, not the domestic one.
+World demand (DLF<sub>W</sub>) is the sum of all countries' demands and world supply (SLF<sub>W</sub>) is the sum
+of all countries' supplies. The <b>world equilibrium real interest rate</b> makes global demand equal global supply.</p>
+<div class="tw"><table><tr><th></th><th>International <b>borrower</b></th><th>International <b>lender</b></th></tr>
+<tr><td>If isolated, domestic rate would be…</td><td><b>Above</b> the world rate (e.g. 6% vs 5%)</td>
+<td><b>Below</b> the world rate (e.g. 4% vs 5%)</td></tr>
+<tr><td>At the world rate…</td><td>Domestic <b>demand exceeds</b> domestic supply</td>
+<td>Domestic <b>supply exceeds</b> domestic demand</td></tr>
+<tr><td>The gap is…</td><td><b>Net foreign borrowing</b> — funds flow in</td>
+<td><b>Net foreign lending</b> — funds flow out</td></tr>
+<tr><td>Why it happens</td><td>Investment needs exceed domestic saving</td><td>Domestic saving exceeds investment</td></tr>
+<tr><td>Who benefits</td><td>Domestic borrowers get cheaper global capital</td><td>Domestic savers earn a higher return abroad</td></tr></table></div>
+<div class="el5"><h4>Small country versus large country</h4>
+A <b>small</b> country is a price-taker: its changes do not move the world rate, only its own net borrowing or
+lending. A <b>large</b> country shifts global demand or supply enough to <b>change the world real interest
+rate</b>, affecting every other country's position.</div>
+<div class="q"><span class="qtag theory">Practice · short answer</span><p>Country A\u2019s domestic loanable funds market alone would clear at 7%. The world equilibrium real interest rate is 5%. Explain Country A\u2019s position, assuming it is a small country.</p><button class="reveal">Show answer</button><div class="ans"><p><b>Country A becomes an international borrower.</b></p>
+<p><b>Why:</b> its isolated domestic rate of 7% is <b>above</b> the world rate of 5%, which tells us domestic
+investment demand is large relative to domestic saving. Once integrated into the global market, Country A faces
+the world rate of <b>5%</b>, not 7%.</p>
+<p><b>At 5%:</b> the lower rate makes more investment projects profitable, so the quantity of loanable funds
+<b>demanded rises</b>, while the lower return discourages saving, so the quantity <b>supplied falls</b>.
+Domestic demand therefore exceeds domestic supply, and that horizontal gap is <b>net foreign borrowing</b>.</p>
+<p style="margin-bottom:0"><b>Consequences:</b> funds flow in from abroad, domestic borrowers (firms and the
+government) get access to <b>cheaper global capital</b> than they could raise at home, and investment is higher
+than it would have been in isolation. Because Country A is <b>small</b>, its borrowing does not move the world
+rate — it simply takes the 5% as given.</p></div></div>
+  <label class="done"><input type="checkbox" data-k="u4"> Mark Unit 4 complete</label>
+  </div>
+</div></section>
+
+<!-- ══════════════════ UNIT 5 ══════════════════ -->
+<section id="u5"><div class="unit u5">
+  <div class="uhead"><div class="ubadge">5</div><div>
+    <div class="ch">Parkin Ch. 25 · Slides Unit 06</div>
+    <h2>Money, the Price Level and Inflation</h2></div></div>
+  <div class="ubody">
+
+  <div class="time"><span class="pill">Fast: 1.5 h</span><span class="pill">Steady: 3 h</span>
+    <span><b>Short unit, but essential.</b> The money market diagram is the backbone of every monetary
+    policy question.</span></div>
+
+  <div class="el5"><h4>The idea in one breath</h4>
+  <p style="margin-bottom:0">Money pays no interest, so holding it costs you the interest you gave up.
+  That forgone interest is the "price" of money. When it is high you hold less; when it is low you hold more.
+  The central bank fixes how much money exists, and the interest rate moves until people are content to hold
+  exactly that amount.</p></div>
+
+  <div class="warn"><h4>The axis is REAL money, not nominal money</h4>
+  <p style="margin-bottom:0">Parkin plots <b>real money = M ÷ P</b> on the horizontal axis. This matters:
+  a rise in the price level does <b>not</b> shift money demand, because people want the same
+  <i>real</i> purchasing power in their wallet. Instead a higher P <b>reduces M/P</b>, which shifts the
+  <b>MS curve left</b>. Getting this backwards is a classic error.</p></div>
+
+  <h3>What moves money demand</h3>
+  <div class="tw"><table>
+    <tr><th>Influence</th><th>Effect</th><th>Movement or shift?</th></tr>
+    <tr><td><b>Nominal interest rate ↑</b></td><td>Quantity of real money demanded falls</td>
+      <td><b>Movement along</b> MD</td></tr>
+    <tr><td><b>Real GDP ↑</b></td><td>More transactions, so more money needed</td><td><b>MD shifts right</b></td></tr>
+    <tr><td><b>Financial innovation</b> (cards, mobile banking)</td><td>Less cash needed</td><td><b>MD shifts left</b></td></tr>
+    <tr><td><b>Price level ↑</b></td><td>Nominal money demand rises proportionally; <i>real</i> money demand unchanged</td>
+      <td>MD does <b>not</b> shift</td></tr>
+  </table></div>
+
+  <h3>How the interest rate actually adjusts (via bonds)</h3>
+  <p>Examiners like this mechanism because it shows you understand <i>why</i> the graph works.</p>
+  <ul>
+    <li><b>If the interest rate is too high:</b> holding money is expensive, so people hold less than the bank has
+      supplied. They use the excess to <b>buy bonds</b>. Bond prices <b>rise</b>, and since a bond's fixed payment
+      is now spread over a higher price, the interest rate <b>falls</b>.</li>
+    <li><b>If the interest rate is too low:</b> people want more money than exists, so they <b>sell bonds</b>
+      to get it. Bond prices <b>fall</b> and the interest rate <b>rises</b>.</li>
+  </ul>
+  <p><b>Remember the inverse rule:</b> bond price up ⟹ interest rate down. Always.</p>
+
+  <figure id="fig5">
+    <svg viewBox="0 0 420 300" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,sans-serif">
+      <g stroke="var(--line)" stroke-width="1"><line x1="60" y1="90" x2="400" y2="90"/>
+        <line x1="60" y1="160" x2="400" y2="160"/><line x1="60" y1="215" x2="400" y2="215"/></g>
+      <path d="M90 55 L390 235" fill="none" stroke="var(--blue)" stroke-width="2.6"/>
+      <text x="362" y="230" font-size="13" font-weight="700" fill="var(--blue)">MD</text>
+      <g class="beforeonly">
+        <line x1="250" y1="30" x2="250" y2="250" stroke="var(--blue)" stroke-width="2.6"/>
+        <text x="255" y="42" font-size="13" font-weight="700" fill="var(--blue)">MS₀</text>
+        <g stroke="var(--grey)" stroke-width="1.2" stroke-dasharray="4 3"><line x1="60" y1="151" x2="250" y2="151"/></g>
+        <circle cx="250" cy="151" r="5" fill="var(--blue)"/>
+        <text x="257" y="168" font-size="13" font-weight="700" fill="var(--blue)">E₀</text>
+        <text x="36" y="155" font-size="12.5" font-weight="700" fill="var(--blue)">i₀</text>
+        <text x="243" y="268" font-size="12.5" font-weight="700" fill="var(--blue)">M₀</text>
+      </g>
+      <g class="after">
+        <line x1="195" y1="30" x2="195" y2="250" stroke="var(--red)" stroke-width="2.8"/>
+        <text x="160" y="42" font-size="13" font-weight="700" fill="var(--red)">MS₁</text>
+        <g stroke="var(--grey)" stroke-width="1.2" stroke-dasharray="4 3"><line x1="60" y1="118" x2="195" y2="118"/></g>
+        <circle cx="195" cy="118" r="5.5" fill="var(--red)"/>
+        <text x="202" y="112" font-size="13" font-weight="700" fill="var(--red)">E₁</text>
+        <text x="36" y="122" font-size="12.5" font-weight="700" fill="var(--red)">i₁</text>
+        <text x="186" y="268" font-size="12.5" font-weight="700" fill="var(--red)">M₁</text>
+        <path d="M246 205 L200 205" stroke="var(--red)" stroke-width="2.2" marker-end="url(#arh3)"/>
+      </g>
+      <line x1="60" y1="25" x2="60" y2="250" stroke="var(--ink)" stroke-width="2"/>
+      <line x1="60" y1="250" x2="400" y2="250" stroke="var(--ink)" stroke-width="2"/>
+      <text x="22" y="140" font-size="12" fill="var(--soft)" transform="rotate(-90 22 140)" text-anchor="middle">Nominal interest rate</text>
+      <text x="230" y="288" font-size="12" fill="var(--soft)" text-anchor="middle">Real money (M/P)</text>
+      <defs><marker id="arh3" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+        <path d="M0,0 L7,3 L0,6 z" fill="var(--red)"/></marker></defs>
+    </svg>
+    <button class="figbtn">▶ Central bank reduces the money supply</button>
+    <figcaption><b>Fig. 5</b> · A fall in the money supply shifts MS left. People hold less money than they want,
+    sell bonds, bond prices fall and the nominal interest rate rises from i₀ to i₁.</figcaption>
+  </figure>
+
+  <div class="q"><span class="qtag theory">Exam-style practice · 6 marks</span>
+    <p>Mobile financial services spread rapidly across a country, so households need far less cash for daily
+    transactions. The central bank holds the money supply constant.</p>
+    <p style="margin-bottom:0">Explain the effect on the nominal interest rate using a labelled money market
+    diagram, and describe the mechanism through the bond market.</p>
+    <button class="reveal">Show model answer</button>
+    <div class="ans">
+      <div class="ansblock"><h5>Diagram</h5>
+        <p style="margin-bottom:0">MS is a vertical line, unchanged. MD₀ shifts <b>left</b> to MD₁.
+        The new equilibrium sits lower down the same vertical MS line. Label i₀ above i₁.</p><div class="ansfig"><svg viewBox="0 0 400 285" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,sans-serif"><defs><marker id="A5" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="var(--red)"/></marker></defs><g stroke="var(--line)" stroke-width="1"><line x1="55" y1="80" x2="385" y2="80"/><line x1="55" y1="140" x2="385" y2="140"/><line x1="55" y1="195" x2="385" y2="195"/></g><line x1="240" y1="30" x2="240" y2="235" stroke="var(--blue)" stroke-width="2.4"/><text x="245" y="42" font-size="12" font-weight="700" fill="var(--blue)">MS</text><path d="M85 50 L370 220" fill="none" stroke="var(--blue)" stroke-width="2.4"/><text x="344" y="215" font-size="12" font-weight="700" fill="var(--blue)">MD₀</text><path d="M55 62 L320 220" fill="none" stroke="var(--red)" stroke-width="2.6"/><text x="288" y="230" font-size="12" font-weight="700" fill="var(--red)">MD₁</text><path d="M148 96 L108 96" stroke="var(--red)" stroke-width="2.1" marker-end="url(#A5)"/><g stroke="var(--grey)" stroke-width="1.1" stroke-dasharray="4 3"><line x1="55" y1="142" x2="240" y2="142"/><line x1="55" y1="172" x2="240" y2="172"/></g><circle cx="240" cy="142" r="4.6" fill="var(--blue)"/><text x="246" y="136" font-size="12" font-weight="700" fill="var(--blue)">E₀</text><circle cx="240" cy="172" r="5" fill="var(--red)"/><text x="246" y="188" font-size="12" font-weight="700" fill="var(--red)">E₁</text><text x="36" y="146" font-size="11.5" font-weight="700" fill="var(--blue)">i₀</text><text x="36" y="176" font-size="11.5" font-weight="700" fill="var(--red)">i₁</text><line x1="55" y1="25" x2="55" y2="235" stroke="var(--ink)" stroke-width="2"/><line x1="55" y1="235" x2="385" y2="235" stroke="var(--ink)" stroke-width="2"/><text x="20" y="128" font-size="11.5" font-weight="700" fill="var(--ink)" transform="rotate(-90 20 128)" text-anchor="middle">Nominal interest rate</text><text x="220" y="277" font-size="11.5" font-weight="700" fill="var(--ink)" text-anchor="middle">Real money (M/P)</text></svg><p>MS is fixed. Financial innovation shifts MD left, so at i₀ people hold more money than they want. They buy bonds, bond prices rise and the interest rate falls i₀→i₁.</p></div></div>
+      <div class="ansblock"><h5>Shift and reason</h5>
+        <p style="margin-bottom:0">Financial innovation is one of the four influences on money holding.
+        Mobile banking lets people carry out the same transactions holding less money, so at every interest rate
+        the quantity of real money demanded falls: <b>MD shifts left</b>. The money supply is fixed by the central
+        bank, so <b>MS does not move</b>.</p></div>
+      <div class="ansblock"><h5>New equilibrium and mechanism</h5>
+        <p style="margin-bottom:0">At the original interest rate i₀ people now hold <b>more money than they want</b>.
+        They get rid of the surplus by <b>buying bonds</b>. Greater demand for bonds <b>raises bond prices</b>, and
+        since a bond pays a fixed sum, a higher price means a <b>lower interest rate</b>. This continues until the
+        rate has fallen to i₁, where people are again content to hold exactly the money that exists.
+        The nominal interest rate therefore <b>falls</b>.</p></div>
+    </div>
+  </div>
+
+  <label class="done"><input type="checkbox" data-k="u5"> Mark Unit 5 complete</label>
+  </div>
+</div></section>
+
+<!-- ══════════════════ UNIT 6 ══════════════════ -->
+<section id="u6"><div class="unit u6">
+  <div class="uhead"><div class="ubadge">6</div><div>
+    <div class="ch">Parkin Ch. 30 &amp; 31 · Slides Unit 07</div>
+    <h2>Fiscal and Monetary Policy</h2></div></div>
+  <div class="ubody">
+
+  <div class="time"><span class="pill">Fast: 2 h</span><span class="pill">Steady: 4 h</span>
+    <span><b>This unit ties the other three together.</b> A policy question is really three diagrams
+    in a chain, so learn the chain, not isolated facts.</span></div>
+
+  <div class="el5"><h4>The idea in one breath</h4>
+  <p style="margin-bottom:0">The government has two levers. <b>Fiscal policy</b> is taxing and spending.
+  <b>Monetary policy</b> is controlling money and interest rates. Both end up moving the same AD curve, just
+  by different routes.</p></div>
+
+  <h3>Fiscal policy</h3>
+  <div class="tw"><table>
+    <tr><th></th><th>Expansionary</th><th>Contractionary</th></tr>
+    <tr><td>Used when</td><td>Recessionary gap, Real GDP &lt; potential</td><td>Inflationary gap, Real GDP &gt; potential</td></tr>
+    <tr><td>Action</td><td>Raise G, cut taxes, raise transfers</td><td>Cut G, raise taxes</td></tr>
+    <tr><td>Mechanism</td><td>Disposable income ↑ → consumption ↑</td><td>Disposable income ↓ → consumption ↓</td></tr>
+    <tr><td>AD</td><td>Shifts <b>right</b></td><td>Shifts <b>left</b></td></tr>
+    <tr><td>Result</td><td>Real GDP ↑, price level ↑, unemployment ↓</td><td>Real GDP ↓, inflation eases</td></tr>
+  </table></div>
+
+  <h4>The supply side of fiscal policy</h4>
+  <p>Taxes do not only move AD; they also damage incentives, which moves <b>LAS</b>.</p>
+  <ul>
+    <li><b>Tax wedge in the labour market.</b> An income tax puts a gap between what firms pay and what workers
+      receive. Workers decide based on the after-tax real wage, so labour supply falls, employment falls and
+      <b>potential GDP falls</b>. A consumption tax widens the wedge further by reducing what a wage will buy.</li>
+    <li><b>Tax on capital income.</b> Taxing interest income cuts the after-tax return to saving, so households
+      save less. In the loanable funds market <b>SLF shifts left</b>, the real interest rate firms face rises,
+      investment falls, capital accumulation slows and long-run growth is lower.</li>
+  </ul>
+
+  <h3>Monetary policy and open market operations</h3>
+  <p>An <b>open market operation</b> is the central bank buying or selling government bonds. This is the main
+  tool, and you must be able to describe the full sequence.</p>
+
+  <div class="formula">
+    <b>Contractionary (fighting inflation)</b>
+    <span class="f">Sell bonds → banks' reserves fall → banks lend less → deposits fall
+      → money supply ↓ → MS shifts left → interest rate ↑</span>
+    <b style="display:block;margin-top:10px">Expansionary (fighting recession)</b>
+    <span class="f">Buy bonds → new money credited to reserves → banks lend more → deposits rise
+      → money supply ↑ → MS shifts right → interest rate ↓</span>
+  </div>
+
+  <div class="el5"><h4>Why selling bonds shrinks money</h4>
+  <p style="margin-bottom:0">When the central bank sells a bond, the buyer pays with money that comes out of the
+  banking system. Reserves fall. Because banks lend a multiple of their reserves, the fall in deposits is
+  <b>larger</b> than the value of bonds sold. That multiplied contraction is why a modest operation moves the
+  whole money supply.</p></div>
+
+  <h3>The full transmission chain</h3>
+  <p>This is the answer structure for any policy question. Three linked markets:</p>
+  <figure id="fig6">
+    <svg viewBox="0 0 720 190" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,sans-serif">
+      <defs><marker id="ch" markerWidth="9" markerHeight="9" refX="7" refY="3.2" orient="auto">
+        <path d="M0,0 L8,3.2 L0,6.4 z" fill="var(--ink)"/></marker></defs>
+      <rect x="2" y="58" width="126" height="60" rx="8" fill="var(--rose)"/>
+      <text x="65" y="80" font-size="12.5" font-weight="700" fill="#fff" text-anchor="middle">Sell bonds</text>
+      <text x="65" y="97" font-size="12.5" font-weight="700" fill="#fff" text-anchor="middle">Money supply ↓</text>
+      <text x="65" y="111" font-size="10.5" fill="#f8d7dd" text-anchor="middle">open market operation</text>
+      <line x1="130" y1="88" x2="158" y2="88" stroke="var(--ink)" stroke-width="2" marker-end="url(#ch)"/>
+      <rect x="161" y="54" width="150" height="68" rx="8" fill="var(--card)" stroke="#7c3aed" stroke-width="2"/>
+      <text x="236" y="73" font-size="10.5" font-weight="700" fill="#7c3aed" text-anchor="middle" letter-spacing="1">MONEY MARKET</text>
+      <text x="236" y="91" font-size="12.5" font-weight="700" fill="var(--ink)" text-anchor="middle">MS shifts left</text>
+      <text x="236" y="108" font-size="12.5" font-weight="700" fill="var(--ink)" text-anchor="middle">interest rate i ↑</text>
+      <line x1="313" y1="88" x2="341" y2="88" stroke="var(--ink)" stroke-width="2" marker-end="url(#ch)"/>
+      <rect x="344" y="54" width="152" height="68" rx="8" fill="var(--card)" stroke="var(--rose)" stroke-width="2"/>
+      <text x="420" y="73" font-size="10.5" font-weight="700" fill="var(--rose)" text-anchor="middle" letter-spacing="1">LOANABLE FUNDS</text>
+      <text x="420" y="91" font-size="12.5" font-weight="700" fill="var(--ink)" text-anchor="middle">credit dearer</text>
+      <text x="420" y="108" font-size="12.5" font-weight="700" fill="var(--ink)" text-anchor="middle">investment ↓</text>
+      <line x1="498" y1="88" x2="526" y2="88" stroke="var(--ink)" stroke-width="2" marker-end="url(#ch)"/>
+      <rect x="529" y="54" width="150" height="68" rx="8" fill="var(--card)" stroke="var(--amber)" stroke-width="2"/>
+      <text x="604" y="73" font-size="10.5" font-weight="700" fill="var(--amber)" text-anchor="middle" letter-spacing="1">AD–AS</text>
+      <text x="604" y="91" font-size="12.5" font-weight="700" fill="var(--ink)" text-anchor="middle">AD shifts left</text>
+      <text x="604" y="108" font-size="12.5" font-weight="700" fill="var(--ink)" text-anchor="middle">Y ↓, inflation eases</text>
+      <text x="360" y="163" font-size="12" font-weight="700" fill="var(--soft)" text-anchor="middle">Expansionary policy runs the identical chain with every arrow reversed</text>
+    </svg>
+    <figcaption><b>Fig. 6</b> · Contractionary monetary policy travels through three markets in sequence.
+    Quote this chain and you have the structure of a full-mark answer.</figcaption>
+  </figure>
+
+  <div class="q"><span class="qtag theory">Exam-style practice · 10 marks</span>
+    <p>An economy is operating above potential GDP with rising inflation. The central bank decides to act.</p>
+    <p style="margin-bottom:0">(a) Explain how the central bank conducts open market operations under
+    contractionary policy, how this changes the money supply, and illustrate the effect on the nominal
+    interest rate. <b>(6)</b><br>
+    (b) Explain the likely short-run effects on investment and overall economic activity. <b>(4)</b></p>
+    <button class="reveal">Show model answer</button>
+    <div class="ans">
+      <div class="ansblock"><h5>(a) Diagram</h5>
+        <p style="margin-bottom:0">Draw Fig. 5: MD downward sloping and unchanged, MS₀ vertical shifting
+        <b>left</b> to MS₁, equilibrium moving up the MD curve from E₀ to E₁, with i₁ above i₀ and M₁ left of M₀.
+        Horizontal axis is <b>real money (M/P)</b>.</p><div class="ansfig"><svg viewBox="0 0 400 285" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,sans-serif"><defs><marker id="A6" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="var(--red)"/></marker></defs><g stroke="var(--line)" stroke-width="1"><line x1="55" y1="80" x2="385" y2="80"/><line x1="55" y1="140" x2="385" y2="140"/><line x1="55" y1="195" x2="385" y2="195"/></g><path d="M85 50 L370 220" fill="none" stroke="var(--blue)" stroke-width="2.4"/><text x="344" y="215" font-size="12" font-weight="700" fill="var(--blue)">MD</text><line x1="240" y1="30" x2="240" y2="235" stroke="var(--blue)" stroke-width="2.4"/><text x="245" y="42" font-size="12" font-weight="700" fill="var(--blue)">MS₀</text><line x1="185" y1="30" x2="185" y2="235" stroke="var(--red)" stroke-width="2.6"/><text x="150" y="42" font-size="12" font-weight="700" fill="var(--red)">MS₁</text><path d="M236 202 L190 202" stroke="var(--red)" stroke-width="2.1" marker-end="url(#A6)"/><g stroke="var(--grey)" stroke-width="1.1" stroke-dasharray="4 3"><line x1="55" y1="142" x2="240" y2="142"/><line x1="55" y1="110" x2="185" y2="110"/></g><circle cx="240" cy="142" r="4.6" fill="var(--blue)"/><text x="246" y="158" font-size="12" font-weight="700" fill="var(--blue)">E₀</text><circle cx="185" cy="110" r="5" fill="var(--red)"/><text x="191" y="104" font-size="12" font-weight="700" fill="var(--red)">E₁</text><text x="36" y="146" font-size="11.5" font-weight="700" fill="var(--blue)">i₀</text><text x="36" y="114" font-size="11.5" font-weight="700" fill="var(--red)">i₁</text><text x="233" y="252" font-size="11.5" font-weight="700" fill="var(--blue)">M₀</text><text x="176" y="252" font-size="11.5" font-weight="700" fill="var(--red)">M₁</text><line x1="55" y1="25" x2="55" y2="235" stroke="var(--ink)" stroke-width="2"/><line x1="55" y1="235" x2="385" y2="235" stroke="var(--ink)" stroke-width="2"/><text x="20" y="128" font-size="11.5" font-weight="700" fill="var(--ink)" transform="rotate(-90 20 128)" text-anchor="middle">Nominal interest rate</text><text x="220" y="277" font-size="11.5" font-weight="700" fill="var(--ink)" text-anchor="middle">Real money (M/P)</text></svg><p>Selling bonds drains reserves and deposits, so MS shifts left. People sell bonds to rebuild balances, bond prices fall and the nominal interest rate rises i₀→i₁.</p></div></div>
+      <div class="ansblock"><h5>(a) The operation and why MS shifts</h5>
+        <p style="margin-bottom:0">To tighten, the central bank <b>sells government bonds</b> in the open market.
+        Commercial banks and private investors pay for those bonds with funds drawn from the banking system, so
+        <b>bank reserves fall</b>. With fewer reserves banks must cut lending, and since lending creates deposits,
+        deposits fall by a <b>multiple</b> of the reserves withdrawn. The quantity of money therefore decreases and
+        <b>MS shifts left</b>.</p></div>
+      <div class="ansblock"><h5>(a) New equilibrium and mechanism</h5>
+        <p style="margin-bottom:0">At the old rate i₀ people now hold <b>less money than they want</b>. To rebuild
+        their holdings they <b>sell bonds</b>. The extra supply of bonds <b>pushes bond prices down</b>, and a lower
+        bond price for a fixed payment means a <b>higher interest rate</b>. Equilibrium settles at E₁, so the
+        nominal interest rate <b>rises from i₀ to i₁</b>.</p></div>
+      <div class="ansblock"><h5>(b) Consequences</h5>
+        <p><b>Investment.</b> The higher interest rate raises the cost of borrowing. In the loanable funds market
+        credit becomes more expensive, so projects that were marginally profitable no longer cover their financing
+        cost and firms cut back. <b>Investment falls.</b> Interest-sensitive consumer spending on housing and
+        durables falls too.</p>
+        <p style="margin-bottom:0"><b>Overall activity.</b> Lower investment and consumption mean
+        <b>aggregate demand shifts left</b>. Real GDP falls back toward potential, closing the inflationary gap,
+        and <b>inflationary pressure eases</b>. Employment falls and unemployment rises toward the natural rate.
+        The intended outcome is lower inflation and stabilised prices, at the cost of slower growth in the short run.</p></div>
+    </div>
+  </div>
+
+  <h3>Also examinable from Unit 07</h3>
+<h4>Fiscal policy and the labour market: the tax wedge</h4>
+<p>Without taxes, the labour market clears where labour supply meets labour demand, employment is maximised and
+the economy produces <b>potential GDP</b>.</p>
+<p>An income tax drives a <b>tax wedge</b> between the wage firms pay and the wage workers receive. Because
+workers decide how much to work based on the <b>after-tax</b> real wage, the incentive to work falls:
+<b>labour supply contracts, employment declines, and potential GDP decreases</b>.</p>
+<div class="warn"><h4>A consumption tax widens the wedge</h4>
+It raises the prices of goods, cutting what a wage will actually buy. The slide example: with a
+<b>25% income tax and a 10% consumption tax, $1 earned buys only $0.65 of goods</b>.</div>
+
+<h4>Fiscal policy, saving and investment</h4>
+<p>A tax on <b>capital income</b> such as interest reduces the after-tax return to savers. Saving becomes less
+attractive, so households save less. In the loanable funds market <b>SLF shifts left</b>, the real interest rate
+firms face <b>rises</b>, and higher borrowing costs <b>discourage investment</b>. As investment declines, capital
+accumulation slows and the growth rate of real GDP falls over time.</p>
+<div class="el5"><h4>Slide example</h4>
+If taxation pushes the interest rate from 3% to 4%, investment may fall from $2 trillion to $1.8 trillion.</div>
+
+<h4>Fiscal policy has two separate effects</h4>
+<div class="tw"><table><tr><th></th><th>Effect on <b>AD</b> (short run)</th><th>Effect on <b>AS</b> (long run)</th></tr>
+<tr><td><b>Expansionary</b><br>G ↑ or taxes ↓</td><td>Disposable income and consumption rise, so
+<b>AD shifts right</b>: real GDP and employment rise</td>
+<td>Lower taxes strengthen incentives to work, save and invest, so <b>LAS shifts right</b> and potential GDP rises</td></tr>
+<tr><td><b>Contractionary</b><br>G ↓ or taxes ↑</td><td>Disposable income and consumption fall, so
+<b>AD shifts left</b>: inflationary pressure eases</td>
+<td>Higher taxes weaken incentives to work, save and invest, so <b>LAS shifts left</b> and potential GDP falls</td></tr></table></div>
+<div class="warn"><h4>This is the distinction examiners hunt for</h4>
+A tax cut moves <b>both</b> curves. It raises AD in the short run <i>and</i> raises potential GDP in the long run,
+through the labour market and the loanable funds market. Mentioning only the AD effect caps your mark.</div>
+
+<h4>What monetary policy is for</h4>
+<p>Monetary policy is the central bank's control of the <b>money supply and interest rates</b>. Its objectives are
+to <b>stabilise output, control inflation, reduce unemployment and support economic growth</b>. Unlike fiscal
+policy it involves <b>no government spending or taxation</b>.</p>
+<div class="q"><span class="qtag theory">Practice · short answer</span><p>A government cuts income tax. Explain the effect on aggregate demand AND on aggregate supply, and state why answering with only one of them loses marks.</p><button class="reveal">Show answer</button><div class="ans"><p><b>Effect on AD (short run).</b> A lower income tax raises households' <b>disposable income</b>, so
+consumption rises. <b>AD shifts right</b>, raising real GDP and employment and putting upward pressure on the
+price level. If the economy was already at potential, this opens an <b>inflationary gap</b>.</p>
+<p><b>Effect on AS (long run).</b> The tax cut <b>narrows the tax wedge</b> between the wage firms pay and the
+wage workers receive. Because workers respond to the after-tax wage, <b>labour supply increases</b>, employment
+at full employment rises, the economy moves up its production function and <b>potential GDP rises</b>, so
+<b>LAS shifts right</b>. If the cut also reduces tax on capital income, saving rises, <b>SLF shifts right</b>,
+the real interest rate falls and investment rises, reinforcing the LAS shift.</p>
+<p style="margin-bottom:0"><b>Why both matter.</b> The AD effect is temporary and inflationary; the AS effect is
+permanent and non-inflationary. If AD and LAS both shift right, output rises with <b>far less</b> price pressure
+than the AD shift alone would cause. Answering with AD only makes the tax cut look purely inflationary and misses
+the entire supply-side argument, which is the point of Chapter 30. The offsetting risk to mention is the
+<b>budget deficit</b>, which raises the real interest rate and crowds out investment.</p></div></div>
+  <label class="done"><input type="checkbox" data-k="u6"> Mark Unit 6 complete</label>
+  </div>
+</div></section>
+
+<!-- ══════════════════ FINAL EXAM ══════════════════ -->
+<!-- ══════ DRILL ══════ -->
+<section id="drill"><div class="unit u7">
+  <div class="uhead"><div class="ubadge">✎</div><div>
+    <span class="ch">Dedicated practice · exam format</span>
+    <h2>Chapter-wise Question Bank</h2></div></div>
+  <div class="ubody">
+  <p>Every question below is set out exactly as it appears on the real paper: same wording, same tables,
+  same part-marks. Maths answers are given as answers only. Theory answers follow the fixed 4-move pattern.</p>
+
+  <div class="el5"><h4>The 4-move pattern — use it on every theory question</h4>
+  <ol class="steps">
+    <li><b>DRAW.</b> Label both axes, draw the curves, mark E₀ and drop dashed guides.</li>
+    <li><b>SHIFT.</b> Name the one curve that moves and why — then say which curves do <b>not</b> move, and why.</li>
+    <li><b>SETTLE.</b> Mark E₁ and state what happened to each variable on the axes.</li>
+    <li><b>SO WHAT.</b> Answer the actual question: the gap, the crowding out, the trade-off.</li>
+  </ol></div>
+
+  <h3>Chapter 21 · GDP maths</h3>
+
+  <div class="q"><span class="qtag mid">Midterm 2026 · Q1</span><span class="marks">8 marks</span>
+<p>The fictional economy of <b>"Novaria"</b> produces wheat flour, bread, tractors and coffee beans.
+  Assuming <b>2024 is the base year</b>, the table below summarises the quantities and market prices for 2024 and 2025:</p>
+  <div class="tw"><table><tr><th>Economic Activity</th><th class="n">2024 Qty</th><th class="n">2024 Price ($)</th><th class="n">2025 Qty</th><th class="n">2025 Price ($)</th></tr>
+  <tr><td>Wheat flours used for baking bread</td><td class="n">1,000</td><td class="n">10</td><td class="n">1,200</td><td class="n">12</td></tr>
+  <tr><td>Households purchased breads for consumption</td><td class="n">500</td><td class="n">40</td><td class="n">600</td><td class="n">50</td></tr>
+  <tr><td>Local businesses invested in buying tractors</td><td class="n">10</td><td class="n">5,000</td><td class="n">12</td><td class="n">5,500</td></tr>
+  <tr><td>Domestically produced coffee Beans were exported</td><td class="n">200</td><td class="n">15</td><td class="n">220</td><td class="n">20</td></tr></table></div>
+  <p>a) Nominal GDP and Real GDP for 2025, using the expenditure approach. <b>[3]</b><br>
+  b) Percentage change in Nominal GDP between 2024 and 2025. <b>[3]</b><br>
+  c) Real GDP Growth Rate between 2024 and 2025. <b>[2]</b></p><button class="reveal">Show answers</button><div class="ans "><div class="ansblock"><h5>Answers</h5>
+  <p><b>Wheat flour is excluded.</b> It is used <i>for baking bread</i>, so it is an intermediate good and counting
+  it would double-count. Bread = C, tractors = I, coffee = X.</p>
+  <div class="step"><b>a)</b> Nominal GDP 2025 = <b>$100,400</b> · Real GDP 2025 = <b>$87,300</b></div>
+  <div class="step"><b>b)</b> Nominal GDP 2024 = $73,000 → % change = <b>37.53%</b></div>
+  <div class="step"><b>c)</b> Real GDP Growth Rate = <b>19.59%</b></div></div></div></div>
+
+  <div class="q"><span class="qtag calc">Practice · harder</span><span class="marks">10 marks</span>
+<p>The economy of <b>"Zenthia"</b> produces steel, cars, machinery and tea, and imports phones.
+  Assuming <b>2023 is the base year</b>:</p>
+  <div class="tw"><table><tr><th>Economic Activity</th><th class="n">2023 Qty</th><th class="n">2023 Price ($)</th><th class="n">2024 Qty</th><th class="n">2024 Price ($)</th></tr>
+  <tr><td>Steel used to manufacture cars</td><td class="n">800</td><td class="n">25</td><td class="n">900</td><td class="n">30</td></tr>
+  <tr><td>Households purchased cars for consumption</td><td class="n">300</td><td class="n">1,200</td><td class="n">340</td><td class="n">1,350</td></tr>
+  <tr><td>Firms invested in buying machinery</td><td class="n">20</td><td class="n">4,000</td><td class="n">22</td><td class="n">4,200</td></tr>
+  <tr><td>Domestically produced tea was exported</td><td class="n">500</td><td class="n">8</td><td class="n">560</td><td class="n">9</td></tr>
+  <tr><td>Households purchased imported phones</td><td class="n">400</td><td class="n">150</td><td class="n">450</td><td class="n">170</td></tr></table></div>
+  <p>a) Nominal GDP for 2023 and 2024, expenditure approach. <b>[4]</b><br>
+  b) Real GDP for 2024 and the GDP Deflator for 2024. <b>[3]</b><br>
+  c) Percentage change in Nominal GDP and the Real GDP Growth Rate. <b>[3]</b></p><button class="reveal">Show answers</button><div class="ans "><div class="ansblock"><h5>Answers</h5>
+  <p><b>Two traps at once.</b> Steel is used <i>to manufacture cars</i> → intermediate, exclude it.
+  Phones are imported → subtract as M.</p>
+  <div class="step"><b>a)</b> Nominal GDP 2023 = <b>$384,000</b> · Nominal GDP 2024 = <b>$479,940</b></div>
+  <div class="step"><b>b)</b> Real GDP 2024 = <b>$432,980</b> · GDP Deflator 2024 = <b>110.85</b></div>
+  <div class="step"><b>c)</b> % change in Nominal GDP = <b>24.98%</b> · Real GDP Growth Rate = <b>12.76%</b></div></div></div></div>
+
+  <h3>Chapter 22 · CPI and labour maths</h3>
+
+  <div class="q"><span class="qtag mid">Midterm 2026 · Q2</span><span class="marks">7 marks</span>
+<p>In the country of <b>Econopolis</b>, households consume only four goods: Rice, Cheese, Laptops and Coffee.
+  <b>Assume 2022 as the base year.</b></p>
+  <div class="tw"><table><tr><th rowspan="2">Goods Consumed</th><th class="n" colspan="2">2022 (Base Year)</th><th class="n" colspan="2">2023</th><th class="n" colspan="2">2024</th></tr>
+  <tr><th class="n">Price ($)</th><th class="n">Qty</th><th class="n">Price ($)</th><th class="n">Qty</th><th class="n">Price ($)</th><th class="n">Qty</th></tr>
+  <tr><td>Rice</td><td class="n">10</td><td class="n">150</td><td class="n">12</td><td class="n">135</td><td class="n">15</td><td class="n">130</td></tr>
+  <tr><td>Cheese</td><td class="n">15</td><td class="n">50</td><td class="n">20</td><td class="n">40</td><td class="n">25</td><td class="n">30</td></tr>
+  <tr><td>Laptops</td><td class="n">100</td><td class="n">10</td><td class="n">90</td><td class="n">15</td><td class="n">80</td><td class="n">20</td></tr>
+  <tr><td>Coffee</td><td class="n">20</td><td class="n">15</td><td class="n">30</td><td class="n">10</td><td class="n">26</td><td class="n">12</td></tr></table></div>
+  <p>a) CPI for 2023 and 2024. <b>[4]</b><br>b) Inflation rate for both 2023 and 2024, and interpret your results. <b>[3]</b></p><button class="reveal">Show answers</button><div class="ans "><div class="ansblock"><h5>Answers</h5>
+  <p><b>Use 2022 quantities throughout</b> — 150 rice, 50 cheese, 10 laptops, 15 coffee. The 2023 and 2024
+  quantity columns are deliberate distractors.</p>
+  <div class="step"><b>a)</b> Basket: 2022 = $3,550 · 2023 = $4,150 · 2024 = $4,690 →
+   <b>CPI 2023 = 116.90</b> · <b>CPI 2024 = 132.11</b></div>
+  <div class="step"><b>b)</b> Inflation 2023 = <b>16.90%</b> · Inflation 2024 = <b>13.01%</b></div>
+  <div class="step"><b>Interpretation:</b> prices rose in both years, but the <i>rate</i> slowed from 16.90% to
+   13.01%. That is <b>disinflation</b>, not deflation — the price level is still climbing, just more slowly.
+   Laptops got cheaper each year, dragging the index down.</div></div></div></div>
+
+  <div class="q"><span class="qtag calc">Practice · harder</span><span class="marks">10 marks</span>
+<p>In <b>Marisol</b>, households consume only four goods. <b>Assume 2022 as the base year.</b></p>
+  <div class="tw"><table><tr><th rowspan="2">Goods Consumed</th><th class="n" colspan="2">2022 (Base Year)</th><th class="n" colspan="2">2023</th><th class="n" colspan="2">2024</th></tr>
+  <tr><th class="n">Price ($)</th><th class="n">Qty</th><th class="n">Price ($)</th><th class="n">Qty</th><th class="n">Price ($)</th><th class="n">Qty</th></tr>
+  <tr><td>Bread</td><td class="n">5</td><td class="n">200</td><td class="n">6</td><td class="n">190</td><td class="n">7</td><td class="n">180</td></tr>
+  <tr><td>Fuel</td><td class="n">60</td><td class="n">80</td><td class="n">78</td><td class="n">70</td><td class="n">72</td><td class="n">75</td></tr>
+  <tr><td>Rent</td><td class="n">900</td><td class="n">12</td><td class="n">990</td><td class="n">12</td><td class="n">1,080</td><td class="n">12</td></tr>
+  <tr><td>Medicine</td><td class="n">25</td><td class="n">40</td><td class="n">30</td><td class="n">45</td><td class="n">38</td><td class="n">50</td></tr></table></div>
+  <p>a) CPI for 2023 and 2024. <b>[4]</b><br>b) Inflation for both years, interpreted. <b>[3]</b><br>
+  c) One reason the CPI may overstate the true rise in the cost of living. <b>[3]</b></p><button class="reveal">Show answers</button><div class="ans "><div class="ansblock"><h5>Answers</h5>
+  <div class="step"><b>a)</b> Basket: 2022 = $17,600 · 2023 = $20,520 · 2024 = $21,640 →
+   <b>CPI 2023 = 116.59</b> · <b>CPI 2024 = 122.95</b></div>
+  <div class="step"><b>b)</b> Inflation 2023 = <b>16.59%</b> · Inflation 2024 = <b>5.46%</b>. Prices rose in both
+   years but the pace slowed sharply, mainly because fuel fell back from $78 to $72. Still inflation, not deflation.</div>
+  <div class="step"><b>c)</b> Any one bias, explained: <b>commodity substitution</b> (fixed basket ignores
+   consumers switching away from goods that got dearer), <b>new goods</b>, <b>quality change</b>, or
+   <b>outlet substitution</b>. All four push the same way, so the CPI overstates inflation.</div></div></div></div>
+
+  <div class="q"><span class="qtag calc">Practice · harder</span><span class="marks">10 marks</span>
+<p>Consider the economy of <b>Velora</b>:</p>
+  <div class="tw"><table><tr><th>Category</th><th class="n">Number (millions)</th></tr>
+  <tr><td>Total working-age population</td><td class="n">185</td></tr>
+  <tr><td>Employed across all sectors</td><td class="n">124</td></tr>
+  <tr><td>Unemployed after textile plants automated</td><td class="n">7</td></tr>
+  <tr><td>School leavers searching for a first job</td><td class="n">9</td></tr>
+  <tr><td>Unemployed due to the construction downturn</td><td class="n">6</td></tr></table></div>
+  <p>a) Labour force participation rate and employment-to-population ratio. <b>[3]</b><br>
+  b) Unemployment rate and the natural rate of unemployment. <b>[3]</b><br>
+  c) Implications for Real GDP, Potential GDP and the Output Gap. <b>[2]</b><br>
+  d) If 4 million of the downturn-hit workers are rehired, what percentage of the remaining unemployed is
+  structurally unemployed? <b>[2]</b></p><button class="reveal">Show answers</button><div class="ans "><div class="ansblock"><h5>Answers</h5>
+  <p>Unemployed = 7 + 9 + 6 = 22 · Labour force = 124 + 22 = <b>146</b></p>
+  <div class="step"><b>a)</b> Participation rate = <b>78.92%</b> · Employment-to-population = <b>67.03%</b></div>
+  <div class="step"><b>b)</b> Unemployment rate = <b>15.07%</b> · Natural rate = (9 + 7) ÷ 146 = <b>10.96%</b></div>
+  <div class="step"><b>c)</b> Actual 15.07% &gt; natural 10.96%, so 4.11pp is cyclical.
+   <b>Real GDP is below Potential GDP</b>, the <b>output gap is negative</b>: a <b>recessionary gap</b>.</div>
+  <div class="step"><b>d)</b> Remaining unemployed = 18 → structural share = 7 ÷ 18 = <b>38.89%</b></div></div></div></div>
+
+  <h3>Chapters 30 &amp; 31 · Labour market and production function</h3>
+  <div class="warn"><h4>Two diagrams this guide did not previously cover</h4>
+  Your Unit 07 slides include the <b>tax wedge in the labour market</b> and the <b>production function</b>.
+  Both were examined on the midterm. A tax drives a wedge between the wage firms pay and the wage workers
+  receive; because workers decide on the <b>after-tax</b> wage, labour supply falls, employment falls and
+  <b>potential GDP falls</b>. A tax cut reverses all of it.</div>
+
+  <div class="q"><span class="qtag theory">Midterm 2026 · Section B Q1</span><span class="marks">7.5 marks</span>
+<p>The government of Maryland wants to boost the economy after the pandemic crisis. They have decided to
+  reduce the income tax on wage earners from 10% to 8%. How does a decrease in income tax affect the labor market
+  and potential GDP? Briefly discuss and depict using appropriate diagrams.</p><button class="reveal">Show answers</button><div class="ans th"><div class="ansblock"><h5>Move 1 · Draw</h5>
+  <figure><svg data-dia="lab-taxcut" viewBox="0 0 400 292"></svg>
+  <figcaption>Labour market: a smaller tax wedge shifts labour supply right</figcaption></figure>
+  <figure><svg data-dia="pf-up" viewBox="0 0 400 292"></svg>
+  <figcaption>Production function: higher employment raises potential GDP</figcaption></figure>
+  <p>The question says "diagrams" in the plural, so <b>two are required</b>: the labour market (real wage rate
+  against quantity of labour) and the production function (real GDP against quantity of labour).</p></div>
+  <div class="ansblock"><h5>Move 2 · Shift and why</h5>
+  <p>An income tax creates a <b>tax wedge</b> between the wage firms pay and the wage workers receive. Workers
+  base their supply decision on the <b>after-tax</b> real wage, so a tax discourages work. Cutting the rate from
+  10% to 8% <b>narrows the wedge</b>, so more people are willing to work at any given wage:
+  <b>labour supply shifts right, LS₀ → LS₁</b>.<br>
+  <b>Labour demand does not shift</b> — productivity and the marginal product of labour are unchanged.
+  The <b>production function does not shift</b> either; we move <i>along</i> it.</p></div>
+  <div class="ansblock"><h5>Move 3 · Settle</h5>
+  <p>Equilibrium moves down the unchanged labour demand curve: <b>employment rises</b> L₀ → L₁ while the real wage
+  <i>paid by firms</i> falls slightly. The wage <i>received</i> by workers is higher than before, because the wedge
+  shrank. On the production function, higher employment means the economy <b>moves up the curve</b>, so
+  <b>real GDP rises</b> Y₀ → Y₁.</p></div>
+  <div class="ansblock"><h5>Move 4 · So what</h5>
+  <p>Because the extra output is produced at <b>full employment</b>, this is a rise in <b>potential GDP</b>, not a
+  temporary boom. In AD–AS terms, <b>LAS shifts right</b>.<br>
+  <b>The trade-off:</b> lost tax revenue risks a <b>budget deficit</b>, which via Chapter 24 raises the real
+  interest rate and crowds out investment, partly offsetting the gain. Making that link between Unit 07 and
+  Unit 05 is what separates a strong answer from an average one.</p></div></div></div>
+
+  <div class="q"><span class="qtag theory">Midterm 2026 · Section B Q3</span><span class="marks">7.5 marks</span>
+<p>In Country X, which is heavily dependent on oil as a production input, the ongoing geopolitical conflict has
+  caused an oil shortage. Since oil is essential for machinery, transport, and energy-intensive production
+  processes, workers cannot work as efficiently as before without adequate fuel and power. How does this impact
+  the labor market model and the production function? Briefly discuss and illustrate using appropriate diagrams.</p><button class="reveal">Show answers</button><div class="ans th"><div class="ansblock"><h5>Move 1 · Draw</h5>
+  <figure><svg data-dia="pf-down" viewBox="0 0 400 292"></svg>
+  <figcaption>Production function shifts down: less output from the same labour</figcaption></figure>
+  <figure><svg data-dia="lab-oil" viewBox="0 0 400 292"></svg>
+  <figcaption>Labour market: lower productivity shifts labour demand left</figcaption></figure></div>
+  <div class="ansblock"><h5>Move 2 · Shift and why</h5>
+  <p><b>Start with the production function.</b> Without fuel, workers cannot operate machinery or transport
+  efficiently, so the <b>same quantity of labour now produces less output</b>: the production function
+  <b>shifts down</b>, PF₀ → PF₁.<br>
+  <b>The labour market follows.</b> Labour demand is derived from the <b>marginal product of labour</b>. Since each
+  worker now adds less output, firms will pay less and hire fewer: <b>labour demand shifts left, LD₀ → LD₁</b>.<br>
+  <b>Labour supply does not shift</b> — households' willingness to work at a given real wage is unchanged.</p></div>
+  <div class="ansblock"><h5>Move 3 · Settle</h5>
+  <p>Equilibrium moves down the unchanged labour supply curve: the <b>real wage falls</b> W₀ → W₁ and
+  <b>employment falls</b> L₀ → L₁. On the production function the economy is hit twice: it sits on a
+  <b>lower curve</b> <i>and</i> at <b>lower employment</b>, so <b>potential GDP falls sharply</b>.</p></div>
+  <div class="ansblock"><h5>Move 4 · So what</h5>
+  <p><b>Potential GDP falls, so LAS shifts left.</b> This is what makes a shortage more serious than an oil
+  <i>price</i> rise: a price rise shifts only SAS and is temporary, whereas a shortage that stops workers
+  producing damages <b>capacity itself</b>.<br>
+  <b>Consequences:</b> lower real wages cut incomes and consumption; employment and output both fall; and because
+  LAS has moved, the economy cannot simply wait for wages to adjust — output does not return to the old potential
+  until fuel supply is restored. Combined with the leftward SAS shift from higher costs, the result is
+  <b>stagflation with permanently lower capacity</b> until the shortage ends.</p></div></div></div>
+
+  <div class="q"><span class="qtag theory">Midterm 2026 · Section B Q2</span><span class="marks">7.5 marks</span>
+<p>According to the Bureau of Statistics of Country X, the working-age population (15–64 years) has increased by
+  4.88% over the past ten years, reaching 65.5% (10.82 crore) of the total population. Recently, the country has
+  experienced a strong economic recovery, leading to increased job creation and a significant fall in the
+  unemployment rate. Discuss how this situation might affect the real GDP and potential GDP of Country X.</p><button class="reveal">Show answers</button><div class="ans th"><div class="ansblock"><h5>Move 1 · Draw</h5>
+  <figure><svg data-dia="pf-up" viewBox="0 0 400 292"></svg>
+  <figcaption>More labour moves the economy up the production function</figcaption></figure></div>
+  <div class="ansblock"><h5>Move 2 · Shift and why — separate the two effects</h5>
+  <p><b>The population growth is a POTENTIAL GDP effect.</b> A working-age population 4.88% larger means a bigger
+  labour force and a higher <b>full-employment quantity of labour</b>. That is one of Parkin's three causes of
+  higher potential GDP, so labour supply shifts right, the economy moves <b>up the production function</b>, and
+  <b>LAS shifts right</b>.<br>
+  <b>The fall in unemployment is a REAL GDP effect.</b> Recovery and job creation cut <b>cyclical</b> unemployment,
+  closing a recessionary gap. That moves output <i>toward</i> potential, it does not raise potential.</p></div>
+  <div class="ansblock"><h5>Move 3 · Settle</h5>
+  <p><b>Real GDP rises on both counts</b> — the recovery closes the gap and capacity itself has grown.
+  <b>Potential GDP rises only because of the larger labour force.</b></p></div>
+  <div class="ansblock"><h5>Move 4 · So what</h5>
+  <p>The output gap narrows toward zero and unemployment approaches the <b>natural rate</b>.
+  <b>Two cautions worth a mark each:</b> if aggregate demand grows <i>faster</i> than potential GDP the economy can
+  overshoot into an <b>inflationary gap</b>, with unemployment below the natural rate and rising prices; and the
+  demographic gain is only realised if the new entrants are actually absorbed into employment, otherwise the
+  participation rate falls and the potential is wasted.</p></div></div></div>
+
+  <label class="done"><input type="checkbox" data-k="drill"> Mark question bank complete</label>
+  </div>
+</div></section>
+
+<section id="exam"><div class="unit u7">
+  <div class="uhead"><div class="ubadge">★</div><div>
+    <div class="ch">Spring 2026 · 2 hours · 40 marks</div>
+    <h2>The Final Exam, fully solved</h2></div></div>
+  <div class="ubody">
+
+  <div class="time"><span class="pill">Fast: 2 h</span><span class="pill">Steady: 3 h</span>
+    <span><b>Attempt every question closed-book first.</b> Then mark yourself against these solutions.
+    Section B says <b>answer any two of three</b>, so budget roughly 45 minutes per section.</span></div>
+
+  <h3>Section A · Question 1 — GDP, deflator and CPI <span style="color:var(--soft);font-weight:400">(10 marks)</span></h3>
+  <div class="tw"><table>
+    <tr><th>Good</th><th class="n">Production</th><th class="n">Import</th><th class="n">Export</th><th class="n">Consumption</th><th class="n">P 2024</th><th class="n">P 2025</th></tr>
+    <tr><td>Rice</td><td class="n">150</td><td class="n">0</td><td class="n">0</td><td class="n">150</td><td class="n">$10</td><td class="n">$12</td></tr>
+    <tr><td>Milk</td><td class="n">100</td><td class="n">0</td><td class="n">0</td><td class="n">100</td><td class="n">$20</td><td class="n">$25</td></tr>
+    <tr><td>Gasoline</td><td class="n">0</td><td class="n">60</td><td class="n">0</td><td class="n">60</td><td class="n">$15</td><td class="n">$18</td></tr>
+    <tr><td>Cotton</td><td class="n">40</td><td class="n">0</td><td class="n">40</td><td class="n">0</td><td class="n">$30</td><td class="n">$32</td></tr>
+  </table></div>
+  <p style="font-size:14.5px;color:var(--soft)">2024 is the base year and all quantities are constant across both years.</p>
+
+  <div class="q"><span class="qtag calc">(a) Nominal GDP for 2024 · 2 marks</span>
+    <button class="reveal">Show solution</button>
+    <div class="ans">
+      <div class="step"><b>C</b> = (150×10) + (100×20) + (60×15) + (0×30) = 1,500 + 2,000 + 900 + 0 = <b>4,400</b></div>
+      <div class="step"><b>X</b> = 40 cotton × 10 = &nbsp;40 × 30 = <b>1,200</b> &nbsp;·&nbsp;
+        <b>M</b> = 60 gasoline × 15 = <b>900</b></div>
+      <div class="step"><b>GDP = C + X − M</b> = 4,400 + 1,200 − 900 = <b>$4,700</b></div>
+      <p style="margin:9px 0 0"><b>Check with the production approach:</b> (150×10) + (100×20) + (0×15) + (40×30)
+      = 1,500 + 2,000 + 0 + 1,200 = 4,700 ✓ &nbsp;Both approaches agree, which confirms the answer.
+      Note gasoline contributes nothing: it is imported, so it enters C and M and cancels out.</p>
+    </div>
+  </div>
+
+  <div class="q"><span class="qtag calc">(b) GDP deflator for 2025 · 2 marks</span>
+    <button class="reveal">Show solution</button>
+    <div class="ans">
+      <div class="step"><b>Nominal GDP 2025</b> = production at 2025 prices
+        = (150×12) + (100×25) + (0×18) + (40×32) = 1,800 + 2,500 + 0 + 1,280 = <b>$5,580</b></div>
+      <div class="step"><b>Real GDP 2025</b> = same quantities at 2024 base prices = <b>$4,700</b>
+        <br><i>(quantities are constant, so real GDP is unchanged from 2024)</i></div>
+      <div class="step"><b>GDP deflator</b> = (5,580 ÷ 4,700) × 100 = <b>118.72</b></div>
+      <p style="margin:9px 0 0">So prices of domestically produced output rose <b>18.72%</b>.</p>
+    </div>
+  </div>
+
+  <div class="q"><span class="qtag calc">(c) Cost of the consumer basket for 2024 and 2025, and CPI for 2024 · 4 marks</span>
+    <button class="reveal">Show solution</button>
+    <div class="ans">
+      <p>The consumer basket is the <b>consumption</b> column: 150 rice, 100 milk, 60 gasoline.
+      Cotton is excluded because households consume none of it.</p>
+      <div class="tw"><table>
+        <tr><th>Good</th><th class="n">Basket qty</th><th class="n">Cost at 2024 prices</th><th class="n">Cost at 2025 prices</th></tr>
+        <tr><td>Rice</td><td class="n">150</td><td class="n">150 × 10 = 1,500</td><td class="n">150 × 12 = 1,800</td></tr>
+        <tr><td>Milk</td><td class="n">100</td><td class="n">100 × 20 = 2,000</td><td class="n">100 × 25 = 2,500</td></tr>
+        <tr><td>Gasoline</td><td class="n">60</td><td class="n">60 × 15 = 900</td><td class="n">60 × 18 = 1,080</td></tr>
+        <tr><td><b>Total</b></td><td class="n"></td><td class="n"><b>$4,400</b></td><td class="n"><b>$5,380</b></td></tr>
+      </table></div>
+      <div class="step"><b>CPI 2024</b> = (4,400 ÷ 4,400) × 100 = <b>100</b></div>
+      <p style="margin:9px 0 0">The CPI in the base year is always exactly 100. If you get anything else,
+      you have used the wrong basket or the wrong prices.</p>
+    </div>
+  </div>
+
+  <div class="q"><span class="qtag calc">(d) CPI inflation 2024→2025, and one reason it differs from deflator inflation · 2 marks</span>
+    <button class="reveal">Show solution</button>
+    <div class="ans">
+      <div class="step"><b>CPI 2025</b> = (5,380 ÷ 4,400) × 100 = <b>122.27</b></div>
+      <div class="step"><b>Inflation rate</b> = ((122.27 − 100) ÷ 100) × 100 = <b>22.27%</b></div>
+      <div class="step">Compare: GDP deflator inflation from part (b) was only <b>18.72%</b></div>
+      <p style="margin:9px 0 0"><b>The reason:</b> the two measures cover different goods.
+      <b>Gasoline is imported</b>, so it is in the CPI basket (households buy it) but is <b>excluded</b> from GDP.
+      Its price rose 20%. <b>Cotton is exported</b>, so it is in GDP but <b>not</b> in the consumer basket, and its
+      price rose only 6.7%. Because the CPI carries the fast-rising imported good and the deflator carries the
+      slow-rising exported good instead, <b>CPI inflation exceeds deflator inflation</b>.</p>
+      <p style="margin:8px 0 0"><i>Alternative accepted answer:</i> the CPI uses a fixed base-year basket while
+      the deflator uses current quantities, so the CPI suffers substitution bias and tends to overstate inflation.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:34px">Section A · Question 2 — The Digitarians <span style="color:var(--soft);font-weight:400">(10 marks)</span></h3>
+  <div class="tw"><table>
+    <tr><th>Category</th><th class="n">Millions</th><th>Classification</th></tr>
+    <tr><td>Total working-age population</td><td class="n">160</td><td>—</td></tr>
+    <tr><td>Employed in AI robotics, smart agriculture, virtual design</td><td class="n">108</td><td>Employed</td></tr>
+    <tr><td>Unemployed due to automation in retail</td><td class="n">5</td><td><b>Structural</b></td></tr>
+    <tr><td>Recent graduates searching for first job</td><td class="n">5</td><td><b>Frictional</b></td></tr>
+    <tr><td>Unemployed due to recession in manufacturing</td><td class="n">4</td><td><b>Cyclical</b></td></tr>
+  </table></div>
+  <div class="step" style="margin-bottom:14px"><b>Set up first:</b>
+    Unemployed = 5 + 5 + 4 = <b>14 m</b> &nbsp;·&nbsp; Labour force = 108 + 14 = <b>122 m</b>
+    &nbsp;·&nbsp; Working-age population = <b>160 m</b></div>
+
+  <div class="q"><span class="qtag calc">(a) Labour force participation rate · 2 marks</span>
+    <button class="reveal">Show solution</button>
+    <div class="ans">
+      <div class="step">LFPR = (Labour force ÷ Working-age population) × 100 = (122 ÷ 160) × 100 = <b>76.25%</b></div>
+    </div>
+  </div>
+
+  <div class="q"><span class="qtag calc">(b) Unemployment rate · 2 marks</span>
+    <button class="reveal">Show solution</button>
+    <div class="ans">
+      <div class="step">Unemployment rate = (Unemployed ÷ Labour force) × 100 = (14 ÷ 122) × 100 = <b>11.48%</b></div>
+      <p style="margin:9px 0 0">Note the denominator is 122, <b>not</b> 160. Dividing by the working-age
+      population here is the single most common error on this question.</p>
+    </div>
+  </div>
+
+  <div class="q"><span class="qtag calc">(c) Natural rate, and implications for Real GDP, Potential GDP and the output gap · 4 marks</span>
+    <button class="reveal">Show solution</button>
+    <div class="ans">
+      <div class="step"><b>Natural unemployment</b> = frictional + structural = 5 + 5 = <b>10 m</b>
+        <br>(cyclical is excluded by definition)</div>
+      <div class="step"><b>Natural rate</b> = (10 ÷ 122) × 100 = <b>8.20%</b></div>
+      <div class="step"><b>Comparison with (b):</b> actual 11.48% &gt; natural 8.20%.
+        The difference of <b>3.28 percentage points</b> is exactly the 4 m cyclical unemployed.</div>
+      <p><b>Implications, which is where the marks are:</b></p>
+      <ul style="margin-bottom:0">
+        <li>Because actual unemployment exceeds the natural rate, the economy is <b>not</b> at full employment.</li>
+        <li><b>Real GDP is below Potential GDP.</b> Labour and capital are lying idle, so the economy is producing
+          less than it is capable of.</li>
+        <li>The <b>output gap = Real GDP − Potential GDP is negative</b>. This is a <b>recessionary gap</b>.</li>
+        <li>In AD–AS terms the short-run equilibrium sits to the <b>left</b> of the LAS curve. Over time the
+          money wage rate would fall, shifting SAS right and returning the economy to potential GDP.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="q"><span class="qtag calc">(d) 3 m hired from the frictionally unemployed — what % of the remaining unemployed are structural? · 2 marks</span>
+    <button class="reveal">Show solution</button>
+    <div class="ans">
+      <div class="step"><b>Frictional</b>: 5 − 3 = <b>2 m</b> &nbsp;·&nbsp; Structural: <b>5 m</b>
+        &nbsp;·&nbsp; Cyclical: <b>4 m</b></div>
+      <div class="step"><b>Remaining unemployed</b> = 2 + 5 + 4 = <b>11 m</b>
+        &nbsp;<i>(or simply 14 − 3 = 11)</i></div>
+      <div class="step"><b>Structural share</b> = (5 ÷ 11) × 100 = <b>45.45%</b></div>
+      <p style="margin:9px 0 0">Only the frictional group changed. Structural and cyclical numbers are untouched,
+      so do not recalculate them.</p>
+    </div>
+  </div>
+
+  <h3 style="margin-top:34px">Section B · Analytical Problems <span style="color:var(--soft);font-weight:400">(20 marks — answer any two)</span></h3>
+  <div class="el5" style="margin-top:0"><h4>Which two should you choose?</h4>
+  <p style="margin-bottom:0">All three are answerable from this guide. If you are short on time, <b>Q2 and Q3</b>
+  are the safest: they are single-diagram questions with clean, well-rehearsed chains. <b>Q1</b> is the hardest
+  because part (b) has two opposing shifts plus the Ricardo-Barro extension.</p></div>
+
+  <div class="q"><span class="qtag theory">Q1 — Tax-free threshold raised · 10 marks</span>
+    <p style="font-size:14.5px;color:var(--soft)">The Finance Minister raises the tax-free income threshold for
+    male taxpayers from Tk 2.5 lakh to Tk 3 lakh, and for female taxpayers and those over 65 from Tk 3 lakh to
+    Tk 3.5 lakh.</p>
+    <p style="margin-bottom:0"><b>(a)</b> A reduction in tax raises after-tax income and savings. How will it change
+    the loanable funds market? Illustrate with a labelled diagram. <b>(4)</b><br>
+    <b>(b)</b> Deficit or surplus? How does the budget condition affect the loanable funds market? Would the outcome
+    change under Ricardo-Barro? <b>(6)</b></p>
+    <button class="reveal">Show full model answer</button>
+    <div class="ans">
+      <div class="ansblock"><h5>(a) Diagram</h5>
+        <p style="margin-bottom:0">Real interest rate on the vertical axis, loanable funds on the horizontal.
+        DLF downward sloping and <b>unchanged</b>. SLF₀ shifts <b>right</b> to SLF₁. New equilibrium E₁ lies
+        <b>below and to the right</b> of E₀. Mark r₀ above r₁, and Q₀ left of Q₁.</p><div class="ansfig"><svg viewBox="0 0 400 285" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,sans-serif"><defs><marker id="A7" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="var(--red)"/></marker></defs><g stroke="var(--line)" stroke-width="1"><line x1="55" y1="80" x2="385" y2="80"/><line x1="55" y1="140" x2="385" y2="140"/><line x1="55" y1="195" x2="385" y2="195"/></g><path d="M80 48 L355 228" fill="none" stroke="var(--blue)" stroke-width="2.4"/><text x="330" y="223" font-size="12" font-weight="700" fill="var(--blue)">DLF</text><path d="M80 228 L355 48" fill="none" stroke="var(--blue)" stroke-width="2.4"/><text x="326" y="42" font-size="12" font-weight="700" fill="var(--blue)">SLF₀</text><path d="M125 228 L385 58" fill="none" stroke="var(--red)" stroke-width="2.6"/><text x="352" y="76" font-size="12" font-weight="700" fill="var(--red)">SLF₁</text><path d="M120 108 L162 108" stroke="var(--red)" stroke-width="2.1" marker-end="url(#A7)"/><g stroke="var(--grey)" stroke-width="1.1" stroke-dasharray="4 3"><line x1="55" y1="138" x2="218" y2="138"/><line x1="218" y1="138" x2="218" y2="235"/><line x1="55" y1="153" x2="240" y2="153"/><line x1="240" y1="153" x2="240" y2="235"/></g><circle cx="218" cy="138" r="4.6" fill="var(--blue)"/><text x="194" y="132" font-size="12" font-weight="700" fill="var(--blue)">E₀</text><circle cx="240" cy="153" r="5" fill="var(--red)"/><text x="246" y="168" font-size="12" font-weight="700" fill="var(--red)">E₁</text><text x="36" y="142" font-size="11.5" font-weight="700" fill="var(--blue)">r₀</text><text x="36" y="157" font-size="11.5" font-weight="700" fill="var(--red)">r₁</text><text x="211" y="252" font-size="11.5" font-weight="700" fill="var(--blue)">Q₀</text><text x="236" y="252" font-size="11.5" font-weight="700" fill="var(--red)">Q₁</text><line x1="55" y1="25" x2="55" y2="235" stroke="var(--ink)" stroke-width="2"/><line x1="55" y1="235" x2="385" y2="235" stroke="var(--ink)" stroke-width="2"/><text x="20" y="128" font-size="11.5" font-weight="700" fill="var(--ink)" transform="rotate(-90 20 128)" text-anchor="middle">Real interest rate</text><text x="220" y="277" font-size="11.5" font-weight="700" fill="var(--ink)" text-anchor="middle">Loanable funds</text></svg><p>Higher disposable income raises saving, so SLF shifts right. The real interest rate falls r₀→r₁, the quantity of funds rises Q₀→Q₁ and investment increases.</p></div></div>
+      <div class="ansblock"><h5>(a) Which curve shifts and why</h5>
+        <p style="margin-bottom:0">Raising the tax-free threshold lowers income tax paid, which raises households'
+        <b>disposable income</b>. Disposable income is one of the listed shifters of the supply of loanable funds:
+        with more income available, households save more at <b>every</b> real interest rate. Therefore the
+        <b>supply of loanable funds increases and SLF shifts right</b>. The demand curve does not move, because
+        neither expected profit nor the government's borrowing has changed <i>through this channel</i>.</p></div>
+      <div class="ansblock"><h5>(a) New equilibrium and consequences</h5>
+        <p style="margin-bottom:0">At the old rate r₀ there is now a <b>surplus of loanable funds</b>. Lenders compete
+        and the real interest rate <b>falls to r₁</b>. As it falls, more investment projects become profitable, so the
+        quantity of funds demanded rises along DLF until the market clears at Q₁. The results are a
+        <b>lower real interest rate</b>, a <b>greater quantity of loanable funds</b> and
+        <b>higher investment</b>, which supports capital accumulation and long-run growth.</p></div>
+      <div class="ansblock"><h5>(b) Deficit or surplus?</h5>
+        <p style="margin-bottom:0">Tax revenue T falls while government spending G is unchanged, so <b>T &lt; G</b>.
+        The government moves into a <b>budget deficit</b> (or an existing deficit widens). This is the expected
+        outcome the question is pointing at with "serious economic implications".</p></div>
+      <div class="ansblock"><h5>(b) Effect on the loanable funds market</h5>
+        <p><b>Diagram:</b> DLF₀ shifts <b>right</b> to DLF₁. Show the private demand curve PDLF underneath, with the
+        horizontal distance between PDLF and DLF₁ labelled as the <b>budget deficit</b>. New equilibrium E₁ is
+        <b>above and to the right</b> of E₀.</p><div class="ansfig"><svg viewBox="0 0 400 285" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,sans-serif"><defs><marker id="A8" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="var(--red)"/></marker></defs><g stroke="var(--line)" stroke-width="1"><line x1="55" y1="80" x2="385" y2="80"/><line x1="55" y1="140" x2="385" y2="140"/><line x1="55" y1="195" x2="385" y2="195"/></g><path d="M80 48 L355 228" fill="none" stroke="var(--blue)" stroke-width="2.4"/><text x="312" y="228" font-size="11.5" font-weight="700" fill="var(--blue)">PDLF</text><path d="M125 48 L385 218" fill="none" stroke="var(--red)" stroke-width="2.6"/><text x="348" y="186" font-size="12" font-weight="700" fill="var(--red)">DLF₁</text><path d="M80 228 L355 48" fill="none" stroke="var(--blue)" stroke-width="2.4"/><text x="330" y="42" font-size="12" font-weight="700" fill="var(--blue)">SLF</text><g stroke="var(--red)" stroke-width="1.6"><line x1="126" y1="99" x2="171" y2="99"/><line x1="126" y1="95" x2="126" y2="103"/><line x1="171" y1="95" x2="171" y2="103"/></g><text x="168" y="120" font-size="10.5" font-weight="700" fill="var(--red)" text-anchor="end">budget deficit</text><g stroke="var(--grey)" stroke-width="1.1" stroke-dasharray="4 3"><line x1="55" y1="138" x2="218" y2="138"/><line x1="218" y1="138" x2="218" y2="235"/><line x1="55" y1="123" x2="240" y2="123"/><line x1="240" y1="123" x2="240" y2="235"/></g><circle cx="218" cy="138" r="4.6" fill="var(--blue)"/><text x="192" y="167" font-size="12" font-weight="700" fill="var(--blue)">E₀</text><circle cx="240" cy="123" r="5" fill="var(--red)"/><text x="246" y="118" font-size="12" font-weight="700" fill="var(--red)">E₁</text><text x="36" y="142" font-size="11.5" font-weight="700" fill="var(--blue)">r₀</text><text x="36" y="127" font-size="11.5" font-weight="700" fill="var(--red)">r₁</text><text x="211" y="252" font-size="11.5" font-weight="700" fill="var(--blue)">Q₀</text><text x="236" y="252" font-size="11.5" font-weight="700" fill="var(--red)">Q₁</text><line x1="55" y1="25" x2="55" y2="235" stroke="var(--ink)" stroke-width="2"/><line x1="55" y1="235" x2="385" y2="235" stroke="var(--ink)" stroke-width="2"/><text x="20" y="128" font-size="11.5" font-weight="700" fill="var(--ink)" transform="rotate(-90 20 128)" text-anchor="middle">Real interest rate</text><text x="220" y="277" font-size="11.5" font-weight="700" fill="var(--ink)" text-anchor="middle">Loanable funds</text></svg><p>The deficit is added to private demand PDLF, so total demand DLF₁ sits to its right. The real interest rate rises r₀→r₁ and private investment is crowded out.</p></div>
+        <p><b>Why:</b> the government must borrow to cover the deficit. In Parkin's framework the government's
+        borrowing is <b>added to the private demand</b> for loanable funds, so total demand
+        DLF = PDLF + deficit shifts right.</p>
+        <p style="margin-bottom:0"><b>Consequences:</b> the real interest rate <b>rises</b>. Higher borrowing costs make
+        some private projects unprofitable, so <b>private investment falls</b>. This is the <b>crowding-out effect</b>:
+        government borrowing displaces private investment. Investment falls by <b>less</b> than the full deficit,
+        because the higher real interest rate also induces households to save more, partly offsetting it.
+        Lower investment means slower capital accumulation and weaker long-run growth.</p></div>
+      <div class="ansblock"><h5>(b) Combining both channels</h5>
+        <p style="margin-bottom:0">Note that (a) and (b) push the interest rate in <b>opposite</b> directions:
+        higher saving shifts SLF right (rate down) while the deficit shifts DLF right (rate up). The
+        <b>quantity</b> of loanable funds unambiguously rises. The net effect on the rate depends on which shift is
+        larger; in the standard treatment the deficit effect dominates, so the rate rises overall.</p></div>
+      <div class="ansblock"><h5>(b) Under the Ricardo-Barro effect</h5>
+        <p style="margin-bottom:0">The outcome changes completely. Ricardo-Barro assumes taxpayers are
+        <b>rational and forward-looking</b>: they understand that a deficit today must be repaid by higher taxes
+        tomorrow, so they save the whole tax cut to meet that future liability. Private saving therefore rises by
+        <b>exactly</b> the amount of the deficit, and <b>SLF shifts right by the same distance</b> that DLF shifted right.
+        On the diagram both curves move right together.<div class="ansfig"><svg viewBox="0 0 400 285" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,sans-serif"><defs><marker id="A9" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="var(--red)"/></marker></defs><g stroke="var(--line)" stroke-width="1"><line x1="55" y1="80" x2="385" y2="80"/><line x1="55" y1="140" x2="385" y2="140"/><line x1="55" y1="195" x2="385" y2="195"/></g><path d="M80 48 L355 228" fill="none" stroke="var(--blue)" stroke-width="2.2"/><text x="308" y="228" font-size="11.5" font-weight="700" fill="var(--blue)">DLF₀</text><path d="M125 48 L385 218" fill="none" stroke="var(--red)" stroke-width="2.5"/><text x="348" y="186" font-size="11.5" font-weight="700" fill="var(--red)">DLF₁</text><path d="M80 228 L355 48" fill="none" stroke="var(--blue)" stroke-width="2.2"/><text x="320" y="42" font-size="11.5" font-weight="700" fill="var(--blue)">SLF₀</text><path d="M125 228 L385 58" fill="none" stroke="var(--red)" stroke-width="2.5"/><text x="352" y="76" font-size="11.5" font-weight="700" fill="var(--red)">SLF₁</text><line x1="55" y1="138" x2="263" y2="138" stroke="var(--grey)" stroke-width="1.1" stroke-dasharray="4 3"/><g stroke="var(--grey)" stroke-width="1.1" stroke-dasharray="4 3"><line x1="218" y1="138" x2="218" y2="235"/><line x1="263" y1="138" x2="263" y2="235"/></g><circle cx="218" cy="138" r="4.6" fill="var(--blue)"/><text x="196" y="130" font-size="12" font-weight="700" fill="var(--blue)">E₀</text><circle cx="263" cy="138" r="5" fill="var(--red)"/><text x="269" y="130" font-size="12" font-weight="700" fill="var(--red)">E₁</text><text x="16" y="142" font-size="10.5" font-weight="700" fill="var(--ink)">r unchanged</text><text x="211" y="252" font-size="11.5" font-weight="700" fill="var(--blue)">Q₀</text><text x="257" y="252" font-size="11.5" font-weight="700" fill="var(--red)">Q₁</text><line x1="55" y1="25" x2="55" y2="235" stroke="var(--ink)" stroke-width="2"/><line x1="55" y1="235" x2="385" y2="235" stroke="var(--ink)" stroke-width="2"/><text x="20" y="128" font-size="11.5" font-weight="700" fill="var(--ink)" transform="rotate(-90 20 128)" text-anchor="middle">Real interest rate</text><text x="220" y="277" font-size="11.5" font-weight="700" fill="var(--ink)" text-anchor="middle">Loanable funds</text></svg><p>Ricardo-Barro: both curves shift right by the same distance, so the real interest rate is unchanged and investment is unaffected. Only the quantity traded rises, so there is no crowding out.</p></div> The <b>real interest rate is unchanged</b>,
+        <b>investment is unchanged</b>, and there is <b>no crowding out</b>; only the quantity of loanable funds
+        traded increases. Parkin describes this as an extreme case, and most economists expect only partial
+        adjustment in practice.</p></div>
+    </div>
+  </div>
+
+  <div class="q"><span class="qtag theory">Q2 — Middle East conflict and oil prices · 10 marks</span>
+    <p style="font-size:14.5px;color:var(--soft)">Conflict disrupts global oil supply. Crude prices rise
+    drastically, raising production costs for almost all businesses.</p>
+    <p style="margin-bottom:0"><b>(a)</b> Using the appropriate model, explain how the rise in oil prices affects
+    real GDP, the price level and unemployment in the short run. Illustrate. <b>(6)</b><br>
+    <b>(b)</b> Identify the type of output gap, explain why it is a problem, and discuss how the economy could
+    return to potential GDP. <b>(4)</b></p>
+    <button class="reveal">Show full model answer</button>
+    <div class="ans">
+      <div class="ansblock"><h5>(a) Diagram</h5>
+        <p style="margin-bottom:0">Use the <b>AD–AS model</b>. Price level on the vertical axis, real GDP on the
+        horizontal. Draw LAS vertical at potential GDP, SAS₀ upward sloping and AD downward sloping, all
+        intersecting at E₀ on LAS (start at full employment). Then shift <b>SAS₀ left to SAS₁</b>. The new
+        equilibrium E₁ lies <b>up and to the left</b> along the unchanged AD curve. Label P₀ &lt; P₁ and Y₁ &lt; Y₀,
+        and mark the gap between Y₁ and potential GDP. This is exactly Fig. 2 in Unit 3 above.</p><div class="ansfig"><svg viewBox="0 0 400 285" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,sans-serif"><defs><marker id="A10" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="var(--red)"/></marker></defs><g stroke="var(--line)" stroke-width="1"><line x1="55" y1="80" x2="385" y2="80"/><line x1="55" y1="140" x2="385" y2="140"/><line x1="55" y1="195" x2="385" y2="195"/></g><line x1="227" y1="30" x2="227" y2="235" stroke="var(--grey)" stroke-width="1.8" stroke-dasharray="6 4"/><text x="232" y="42" font-size="12" font-weight="700" fill="var(--grey)">LAS</text><path d="M75 220 Q170 200 315 60" fill="none" stroke="var(--blue)" stroke-width="2.4"/><text x="318" y="56" font-size="12" font-weight="700" fill="var(--blue)">SAS₀</text><path d="M75 188 Q170 168 315 28" fill="none" stroke="var(--red)" stroke-width="2.6"/><text x="272" y="34" font-size="12" font-weight="700" fill="var(--red)">SAS₁</text><path d="M85 45 L360 225" fill="none" stroke="var(--blue)" stroke-width="2.4"/><text x="334" y="219" font-size="12" font-weight="700" fill="var(--blue)">AD</text><path d="M168 196 L124 196" stroke="var(--red)" stroke-width="2.1" marker-end="url(#A10)"/><g stroke="var(--grey)" stroke-width="1.1" stroke-dasharray="4 3"><line x1="55" y1="138" x2="227" y2="138"/><line x1="227" y1="138" x2="227" y2="235"/><line x1="55" y1="123" x2="204" y2="123"/><line x1="204" y1="123" x2="204" y2="235"/></g><circle cx="227" cy="138" r="4.6" fill="var(--blue)"/><text x="233" y="154" font-size="12" font-weight="700" fill="var(--blue)">E₀</text><circle cx="204" cy="123" r="5" fill="var(--red)"/><text x="164" y="118" font-size="12" font-weight="700" fill="var(--red)">E₁</text><text x="34" y="142" font-size="11.5" font-weight="700" fill="var(--blue)">P₀</text><text x="34" y="127" font-size="11.5" font-weight="700" fill="var(--red)">P₁</text><text x="221" y="252" font-size="11.5" font-weight="700" fill="var(--blue)">Y₀</text><text x="188" y="252" font-size="11.5" font-weight="700" fill="var(--red)">Y₁</text><line x1="204" y1="241" x2="227" y2="241" stroke="var(--red)" stroke-width="2.4"/><text x="215" y="266" font-size="10.5" font-weight="700" fill="var(--red)" text-anchor="middle">recessionary gap</text><line x1="55" y1="25" x2="55" y2="235" stroke="var(--ink)" stroke-width="2"/><line x1="55" y1="235" x2="385" y2="235" stroke="var(--ink)" stroke-width="2"/><text x="20" y="128" font-size="11.5" font-weight="700" fill="var(--ink)" transform="rotate(-90 20 128)" text-anchor="middle">Price level</text><text x="220" y="277" font-size="11.5" font-weight="700" fill="var(--ink)" text-anchor="middle">Real GDP</text></svg><p>SAS shifts left. E₀→E₁ climbs the unchanged AD curve, so the price level rises P₀→P₁ while real GDP falls Y₀→Y₁, opening a recessionary gap to the left of LAS.</p></div></div>
+      <div class="ansblock"><h5>(a) Which curve shifts and why</h5>
+        <p style="margin-bottom:0">Oil is an input into production and transport for almost every firm in the economy.
+        A sharp rise in the crude price raises firms' <b>costs of production at every price level</b>, so firms are
+        willing to supply less real GDP at each price. <b>Short-run aggregate supply decreases: SAS₀ → SAS₁.</b><br>
+        <b>AD does not shift</b>, because nothing has changed in wealth, expectations, fiscal policy, monetary policy
+        or the world economy through this channel.<br>
+        <b>LAS does not shift</b>, because potential GDP is determined by the quantity of labour and capital and by
+        technology. The oil shock is a temporary change in an input price, not a change in productive capacity.</p></div>
+      <div class="ansblock"><h5>(a) New equilibrium and consequences</h5>
+        <p style="margin-bottom:0">Equilibrium moves from E₀ to E₁:
+        <b>the price level rises from P₀ to P₁</b> and <b>real GDP falls from Y₀ to Y₁</b>.
+        Because firms are producing less output they need fewer workers, so employment falls and
+        <b>unemployment rises above the natural rate</b>. Rising prices combined with falling output is
+        <b>stagflation</b>, which is the distinctive signature of a negative supply shock, and it is exactly what
+        the United States experienced in the oil crises of the 1970s and early 1980s.</p></div>
+      <div class="ansblock"><h5>(b) Type of gap and why it matters</h5>
+        <p style="margin-bottom:0">Real GDP Y₁ is now <b>below potential GDP</b>, so the output gap is
+        <b>negative</b>: this is a <b>recessionary gap</b>.<br>
+        It is a problem because: output and income that could have been produced are <b>permanently lost</b>;
+        unemployment above the natural rate means <b>lost incomes</b> for households and reduced consumption and
+        investment; and prolonged unemployment causes <b>lost human capital</b> as workers' skills decay, so the
+        damage outlives the shock itself. Meanwhile households face a higher cost of living, so real wages fall.</p></div>
+      <div class="ansblock"><h5>(b) How the economy returns to potential</h5>
+        <p style="margin-bottom:0"><b>Route 1 — automatic adjustment through the money wage rate.</b>
+        With unemployment above the natural rate there is an excess supply of labour, which puts <b>downward
+        pressure on the money wage rate</b>. As wages fall, firms' costs fall, so <b>SAS shifts back to the right</b>
+        toward SAS₀. Real GDP rises back to potential GDP and the price level falls back. The same happens
+        naturally if oil prices themselves subside. This route works but is <b>slow</b>, because money wages are
+        sticky downward.<br><br>
+        <b>Route 2 — expansionary policy.</b> The government can raise spending or cut taxes, or the central bank can
+        increase the money supply and lower the interest rate. Either shifts <b>AD to the right</b>, restoring real
+        GDP to potential more quickly. The trade-off is that this closes the gap by <b>raising the price level
+        further</b> rather than reversing the inflation, so policymakers face a genuine dilemma: fight the
+        recession or fight the inflation, but not both at once.</p></div>
+    </div>
+  </div>
+
+  <div class="q"><span class="qtag theory">Q3 — Contractionary monetary policy · 10 marks</span>
+    <p style="font-size:14.5px;color:var(--soft)">Facing persistent inflationary pressure, the central bank of a
+    rapidly growing economy adopts contractionary monetary policy, conducting open-market operations to
+    reduce excess liquidity.</p>
+    <p style="margin-bottom:0"><b>(a)</b> Explain how the central bank carries out open-market operations under
+    contractionary policy, how these actions affect the supply of money, and illustrate the impact on the
+    nominal interest rate. <b>(6)</b><br>
+    <b>(b)</b> Explain the likely short-run effects on investment and overall economic activity. <b>(4)</b></p>
+    <button class="reveal">Show full model answer</button>
+    <div class="ans">
+      <div class="ansblock"><h5>(a) Diagram</h5>
+        <p style="margin-bottom:0">Draw the <b>money market</b>: nominal interest rate on the vertical axis,
+        <b>real money (M/P)</b> on the horizontal. MD slopes downward. MS is <b>vertical</b> because the central bank
+        fixes the quantity. Shift <b>MS₀ left to MS₁</b>. Equilibrium moves <b>up along MD</b> from E₀ to E₁, with
+        i₁ above i₀ and M₁ to the left of M₀. This is Fig. 5 in Unit 5 above.</p><div class="ansfig"><svg viewBox="0 0 400 285" xmlns="http://www.w3.org/2000/svg" font-family="Segoe UI,sans-serif"><defs><marker id="A11" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="var(--red)"/></marker></defs><g stroke="var(--line)" stroke-width="1"><line x1="55" y1="80" x2="385" y2="80"/><line x1="55" y1="140" x2="385" y2="140"/><line x1="55" y1="195" x2="385" y2="195"/></g><path d="M85 50 L370 220" fill="none" stroke="var(--blue)" stroke-width="2.4"/><text x="344" y="215" font-size="12" font-weight="700" fill="var(--blue)">MD</text><line x1="240" y1="30" x2="240" y2="235" stroke="var(--blue)" stroke-width="2.4"/><text x="245" y="42" font-size="12" font-weight="700" fill="var(--blue)">MS₀</text><line x1="185" y1="30" x2="185" y2="235" stroke="var(--red)" stroke-width="2.6"/><text x="150" y="42" font-size="12" font-weight="700" fill="var(--red)">MS₁</text><path d="M236 202 L190 202" stroke="var(--red)" stroke-width="2.1" marker-end="url(#A11)"/><g stroke="var(--grey)" stroke-width="1.1" stroke-dasharray="4 3"><line x1="55" y1="142" x2="240" y2="142"/><line x1="55" y1="110" x2="185" y2="110"/></g><circle cx="240" cy="142" r="4.6" fill="var(--blue)"/><text x="246" y="158" font-size="12" font-weight="700" fill="var(--blue)">E₀</text><circle cx="185" cy="110" r="5" fill="var(--red)"/><text x="191" y="104" font-size="12" font-weight="700" fill="var(--red)">E₁</text><text x="36" y="146" font-size="11.5" font-weight="700" fill="var(--blue)">i₀</text><text x="36" y="114" font-size="11.5" font-weight="700" fill="var(--red)">i₁</text><text x="233" y="252" font-size="11.5" font-weight="700" fill="var(--blue)">M₀</text><text x="176" y="252" font-size="11.5" font-weight="700" fill="var(--red)">M₁</text><line x1="55" y1="25" x2="55" y2="235" stroke="var(--ink)" stroke-width="2"/><line x1="55" y1="235" x2="385" y2="235" stroke="var(--ink)" stroke-width="2"/><text x="20" y="128" font-size="11.5" font-weight="700" fill="var(--ink)" transform="rotate(-90 20 128)" text-anchor="middle">Nominal interest rate</text><text x="220" y="277" font-size="11.5" font-weight="700" fill="var(--ink)" text-anchor="middle">Real money (M/P)</text></svg><p>Selling bonds drains reserves and deposits, so MS shifts left. People sell bonds to rebuild balances, bond prices fall and the nominal interest rate rises i₀→i₁.</p></div></div>
+      <div class="ansblock"><h5>(a) The open market operation</h5>
+        <p style="margin-bottom:0">An open market operation is the central bank's buying or selling of government
+        securities. Under <b>contractionary</b> policy the central bank <b>sells government bonds</b> in the open
+        market to commercial banks and private investors.<br>
+        Buyers pay for those bonds with funds drawn out of the banking system, so <b>banks' reserves fall</b>.
+        Because banks lend a multiple of their reserves, the fall in reserves forces them to <b>reduce lending</b>,
+        and since bank lending creates deposits, <b>deposits fall by a multiple of the reserves withdrawn</b>.
+        Deposits are the largest component of the money supply, so <b>the quantity of money decreases</b> and the
+        <b>MS curve shifts left</b>.</p></div>
+      <div class="ansblock"><h5>(a) Why the interest rate rises</h5>
+        <p style="margin-bottom:0">At the original rate i₀ people now hold <b>less money than they wish to hold</b>.
+        To rebuild their money balances they <b>sell bonds</b>. This increased supply of bonds
+        <b>drives bond prices down</b>, and because a bond pays a fixed sum, a lower bond price means a
+        <b>higher interest rate</b>. The process continues until the rate has risen to i₁, where the quantity of
+        real money demanded once again equals the reduced quantity supplied. The <b>nominal interest rate rises
+        from i₀ to i₁</b>.</p></div>
+      <div class="ansblock"><h5>(b) Effect on investment</h5>
+        <p style="margin-bottom:0">The higher nominal interest rate raises the <b>real cost of borrowing</b>.
+        In the loanable funds market credit becomes more expensive, so projects that were only marginally
+        profitable no longer cover their financing costs and firms abandon them. <b>Investment falls.</b>
+        Interest-sensitive household spending falls too, particularly on housing, cars and other durables bought
+        on credit, and banks also tighten lending standards so fewer borrowers qualify.</p></div>
+      <div class="ansblock"><h5>(b) Effect on overall economic activity</h5>
+        <p style="margin-bottom:0">Lower investment and lower consumption together mean <b>aggregate demand
+        shifts left</b>. In the AD–AS diagram real GDP <b>falls back toward potential GDP</b>, closing the
+        inflationary gap the economy started with, and the <b>price level rises more slowly</b>, so
+        inflationary pressure eases. Employment falls and <b>unemployment rises toward the natural rate</b>.<br><br>
+        <b>Overall outcome:</b> lower inflation and more stable prices, achieved at the cost of slower growth and
+        higher unemployment in the short run. This is the standard trade-off of contractionary monetary policy,
+        and stating it explicitly is usually worth a mark.</p></div>
+    </div>
+  </div>
+
+  <label class="done"><input type="checkbox" data-k="ex"> Mark the exam practice complete</label>
+  </div>
+</div></section>
+
+<section>
+<div class="tot">
+  <h3 style="margin-top:0">Your total study time</h3>
+  <div class="tw"><table>
+    <tr><th>Unit</th><th class="n">Fast learner</th><th class="n">Steady / from zero</th></tr>
+    <tr><td>1 · Measuring GDP (Ch 21)</td><td class="n">1.5 h</td><td class="n">3 h</td></tr>
+    <tr><td>2 · Jobs and Inflation (Ch 22)</td><td class="n">1.5 h</td><td class="n">3 h</td></tr>
+    <tr><td>◈ · Graph Bootcamp (foundation)</td><td class="n">1 h</td><td class="n">2 h</td></tr>
+    <tr><td>3 · AD–AS (Ch 27)</td><td class="n">2.5 h</td><td class="n">5 h</td></tr>
+    <tr><td>4 · Loanable Funds (Ch 24)</td><td class="n">2 h</td><td class="n">4 h</td></tr>
+    <tr><td>5 · Money Market (Ch 25)</td><td class="n">1.5 h</td><td class="n">3 h</td></tr>
+    <tr><td>6 · Fiscal &amp; Monetary Policy (Ch 30, 31)</td><td class="n">2 h</td><td class="n">4 h</td></tr>
+    <tr><td>★ Full exam under timed conditions</td><td class="n">2 h</td><td class="n">3 h</td></tr>
+    <tr><td><b>Total</b></td><td class="n"><b>14 hours</b></td><td class="n"><b>27 hours</b></td></tr>
+  </table></div>
+  <p style="margin:12px 0 0;font-size:14.5px;color:var(--soft)">Add roughly <b>3 hours</b> of spaced revision in
+  the final two days: redraw all six diagrams from a blank page, and redo Section A without looking.</p>
+</div>
+</section>
+
+</div>
+
+<footer>
+  Built from your Unit 01–07 slides and Parkin, <i>Economics</i>, chapters 21, 22, 24, 25, 27, 30 and 31.<br>
+  Diagram convention throughout: <b style="color:var(--blue)">blue = before</b> ·
+  <b style="color:var(--red)">red = after</b>.
+</footer>
+
+<script>
+(function(){
+  // theme
+  var btn=document.getElementById('themeBtn');
+  try{var t=localStorage.getItem('eco-theme'); if(t)document.documentElement.setAttribute('data-theme',t);}catch(e){}
+  btn.addEventListener('click',function(){
+    var cur=document.documentElement.getAttribute('data-theme');
+    var nxt = cur==='dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme',nxt);
+    try{localStorage.setItem('eco-theme',nxt);}catch(e){}
+  });
+
+  // reveal answers
+  document.querySelectorAll('.reveal').forEach(function(b){
+    b.addEventListener('click',function(){
+      var a=b.nextElementSibling;
+      var open=a.classList.toggle('show');
+      b.textContent = open ? '▲ Hide answer' : (b.dataset.label||'Show answer');
+    });
+    b.dataset.label=b.textContent;
+  });
+
+  // animated figures
+  document.querySelectorAll('.figbtn').forEach(function(b){
+    var lab=b.textContent;
+    b.addEventListener('click',function(){
+      var f=b.closest('figure');
+      var on=f.classList.toggle('on');
+      b.textContent = on ? '↺ Reset diagram' : lab;
+    });
+  });
+
+  // progress
+  var boxes=document.querySelectorAll('.done input');
+  function save(){
+    var d={};boxes.forEach(function(c){d[c.dataset.k]=c.checked;});
+    try{localStorage.setItem('eco-prog',JSON.stringify(d));}catch(e){}
+    paint();
+  }
+  function paint(){
+    var n=0;boxes.forEach(function(c){if(c.checked)n++;});
+    document.getElementById('pcount').textContent=n+' of '+boxes.length+' lessons';
+    document.getElementById('pfill').style.width=(n/boxes.length*100)+'%';
+  }
+  try{
+    var saved=JSON.parse(localStorage.getItem('eco-prog')||'{}');
+    boxes.forEach(function(c){if(saved[c.dataset.k])c.checked=true;});
+  }catch(e){}
+  boxes.forEach(function(c){c.addEventListener('change',save);});
+  paint();
+})();
+</script>
+<script>
+(function(){
+ var t=document.querySelector('section:not([id])'); if(t)t.id='summary';
+ var w=document.createElement('section'); w.id='home';
+ var h=document.querySelector('header'), p=document.querySelector('.progwrap'), i=p.nextElementSibling;
+ h.parentNode.insertBefore(w,h); w.appendChild(h); w.appendChild(p); w.appendChild(i);
+ var secs=[].slice.call(document.querySelectorAll('section'));
+ var nav=document.querySelector('.navin'), tb=document.getElementById('themeBtn');
+ var a=document.createElement('a'); a.href='#summary'; a.textContent='Hours'; nav.insertBefore(a,tb);
+ var links=[].slice.call(nav.querySelectorAll('a'));
+ links.forEach(function(l){ if(l.getAttribute('href')==='#plan') l.setAttribute('href','#home'); });
+ function show(id){
+   if(!document.getElementById(id)) id='home';
+   secs.forEach(function(s){ s.classList.toggle('tabhide', s.id!==id); });
+   links.forEach(function(l){ l.classList.toggle('on', l.getAttribute('href')==='#'+id); });
+   window.scrollTo(0,0); try{localStorage.setItem('eco-tab',id);}catch(e){}
+ }
+ links.forEach(function(l){ l.addEventListener('click',function(e){ e.preventDefault(); show(l.getAttribute('href').slice(1)); }); });
+ var st='home'; try{var v=localStorage.getItem('eco-tab'); if(v)st=v;}catch(e){}
+ show(st);
+})();
+</script>
+<script>
+(function(){
+var X0=58,X1=376,Y0=28,Y1=246;
+function px(x){return X0+x/100*(X1-X0);}function py(y){return Y1-y/100*(Y1-Y0);}
+function C(n){return getComputedStyle(document.documentElement).getPropertyValue(n).trim()||'#333';}
+function ln(f,a,b,c,w){var p=[];for(var i=0;i<=60;i++){var x=a+(b-a)*i/60,y=f(x);
+ if(y>=-3&&y<=103)p.push(px(x).toFixed(1)+','+py(y).toFixed(1));}
+ return p.length<2?'':'<polyline points="'+p.join(' ')+'" fill="none" stroke="'+c+'" stroke-width="'+w+'" stroke-linecap="round"/>';}
+function tx(x,y,s,c,an){return '<text x="'+x+'" y="'+y+'" font-size="12" font-weight="600" fill="'+c+
+ '" font-family="JetBrains Mono,monospace"'+(an?' text-anchor="'+an+'"':'')+'>'+s+'</text>';}
+function dt(x,y,c,r){return '<circle cx="'+px(x)+'" cy="'+py(y)+'" r="'+(r||4.5)+'" fill="'+c+'"/>';}
+function gd(x,y,c){return '<g stroke="'+c+'" stroke-width="1" stroke-dasharray="4 3" opacity=".8">'+
+ '<line x1="'+X0+'" y1="'+py(y)+'" x2="'+px(x)+'" y2="'+py(y)+'"/>'+
+ '<line x1="'+px(x)+'" y1="'+py(y)+'" x2="'+px(x)+'" y2="'+Y1+'"/></g>';}
+function ax(yl,xl){var c=C('--ink'),g=C('--line-soft'),o='';
+ [25,50,75].forEach(function(v){o+='<line x1="'+X0+'" y1="'+py(v)+'" x2="'+X1+'" y2="'+py(v)+'" stroke="'+g+'" stroke-width="1"/>';});
+ return o+'<line x1="'+X0+'" y1="'+Y0+'" x2="'+X0+'" y2="'+Y1+'" stroke="'+c+'" stroke-width="1.8"/>'+
+ '<line x1="'+X0+'" y1="'+Y1+'" x2="'+(X1+6)+'" y2="'+Y1+'" stroke="'+c+'" stroke-width="1.8"/>'+
+ '<text x="16" y="138" font-size="11" font-weight="600" fill="'+c+'" font-family="JetBrains Mono,monospace" transform="rotate(-90 16 138)" text-anchor="middle">'+yl+'</text>'+
+ '<text x="217" y="280" font-size="11" font-weight="600" fill="'+c+'" font-family="JetBrains Mono,monospace" text-anchor="middle">'+xl+'</text>';}
+function arw(x1,y1,x2,y2,c,id){return '<defs><marker id="'+id+'" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L7,3 L0,6 z" fill="'+c+'"/></marker></defs>'+
+ '<line x1="'+px(x1)+'" y1="'+py(y1)+'" x2="'+px(x2)+'" y2="'+py(y2)+'" stroke="'+c+'" stroke-width="1.9" marker-end="url(#'+id+')"/>';}
+function lab(ld,ls,id){var B=C('--pen'),R=C('--red'),G=C('--muted'),o='';
+ var L0=76/1.24,W0=88-.62*L0,L1=(76+.62*ld+.62*ls)/1.24,W1=88-.62*(L1-ld);
+ o+=ln(function(x){return 88-.62*x;},0,100,B,2.2)+tx(px(95),py(88-.62*95)+15,'LD₀',B,'end');
+ o+=ln(function(x){return 12+.62*x;},0,100,B,2.2)+tx(px(95),py(12+.62*95)-8,'LS₀',B,'end');
+ if(ld)o+=ln(function(x){return 88-.62*(x-ld);},0,100,R,2.4)+tx(px(90),py(88-.62*(90-ld))+15,'LD₁',R,'end');
+ if(ls)o+=ln(function(x){return 12+.62*(x-ls);},0,100,R,2.4)+tx(px(99),py(12+.62*(99-ls))-8,'LS₁',R,'end');
+ o+=arw(ld?42:44,ld?76:24,ld?26:60,ld?76:24,R,id);
+ o+=gd(L0,W0,G)+gd(L1,W1,G)+dt(L0,W0,B)+dt(L1,W1,R,5)+
+  tx(px(L0)+(L1<L0?8:-24),py(W0)-6,'E₀',B)+tx(px(L1)+(L1<L0?-24:8),py(W1)+15,'E₁',R)+
+  tx(24,py(W0)+4,'W₀',B)+tx(24,py(W1)+4,'W₁',R)+
+  tx(px(L0),264,'L₀',B,'middle')+tx(px(L1),264,'L₁',R,'middle');
+ return o+ax('Real wage rate','Quantity of labour');}
+function pf(down,a,b,id){var B=C('--pen'),R=C('--red'),G=C('--muted'),o='';
+ var f=function(x){return 9.5*Math.sqrt(x);},f2=function(x){return 7.4*Math.sqrt(x);};
+ o+=ln(f,0,100,B,2.4)+tx(px(96),py(f(96))-9,'PF₀',B,'end');
+ if(down){o+=ln(f2,0,100,R,2.4)+tx(px(96),py(f2(96))+16,'PF₁',R,'end')+arw(60,f(60),60,f2(60)+2,R,id);}
+ var y0=f(a),y1=down?f2(b):f(b);
+ o+=gd(a,y0,G)+gd(b,y1,G)+dt(a,y0,B)+dt(b,y1,R,5)+
+  tx(24,py(y0)+4,'Y₀',B)+tx(24,py(y1)+4,'Y₁',R)+
+  tx(px(a),264,'L₀',B,'middle')+tx(px(b),264,'L₁',R,'middle');
+ return o+ax('Real GDP','Quantity of labour');}
+var D={'lab-taxcut':function(){return lab(0,18,'z1');},'lab-oil':function(){return lab(-18,0,'z2');},
+ 'pf-up':function(){return pf(0,46,64,'z3');},'pf-down':function(){return pf(1,62,44,'z4');}};
+function draw(){[].forEach.call(document.querySelectorAll('svg[data-dia]'),function(s){
+ var f=D[s.dataset.dia];if(f)s.innerHTML=f();});}
+draw();
+document.addEventListener('click',function(){setTimeout(draw,60);});
+var mq=matchMedia('(prefers-color-scheme:dark)');if(mq.addEventListener)mq.addEventListener('change',draw);
+})();
+</script>
+</body>
+</html>
