@@ -139,6 +139,23 @@ figure,.ansfig,.chain{background:var(--surface);border:1px solid var(--line);pad
 figure svg,.ansfig svg,.chain svg{display:block;width:100%;height:auto;max-width:420px;margin:0 auto}
 .ansfig p,figcaption{text-align:center;margin-top:8px}
 
+/* Interactive figure states: hide the post-shock state until Play is clicked. */
+figure .after{
+ opacity:0;
+ pointer-events:none;
+ transition:opacity .45s ease;
+}
+figure .beforeonly{
+ opacity:1;
+ transition:opacity .35s ease;
+}
+figure.on .after{
+ opacity:1;
+}
+figure.on .beforeonly{
+ opacity:.42;
+}
+
 .q{background:var(--surface);border:1px solid var(--line);padding:16px 18px;margin:14px 0}
 .qtag{display:inline-block;font-family:var(--mono);font-size:10.5px;text-transform:uppercase;
  letter-spacing:.08em;padding:2px 9px;border-radius:99px;margin-bottom:9px;font-weight:600;
@@ -2072,9 +2089,12 @@ the entire supply-side argument, which is the point of Chapter 30. The offsettin
   // animated figures
   document.querySelectorAll('.figbtn').forEach(function(b){
     var lab=b.textContent;
+    b.setAttribute('aria-pressed','false');
     b.addEventListener('click',function(){
       var f=b.closest('figure');
+      if(!f)return;
       var on=f.classList.toggle('on');
+      b.setAttribute('aria-pressed', on ? 'true' : 'false');
       b.textContent = on ? '↺ Reset diagram' : lab;
     });
   });
