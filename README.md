@@ -48,6 +48,4 @@ Building and using this system became an important part of my study process and 
 
 This project was developed with AI assistance, particularly for implementation support and accelerating parts of the development process.
 
-However, the **learning strategy, project planning, creative direction, content organization, resource collection, and overall design decisions were done by me** based on my Macroeconomics course materials and study requirements.
-
-The project was not just a coding experiment—it was a study tool I actively built and used throughout the course. It ultimately became part of the learning process that helped me earn an **A and achieve the highest marks in my section**.
+However, the **learning strategy, project planning, creative direction, content organization, resource collection, and overall design decisions were done by me** based on my Macroeconomics course materials and study requirements. The project was not just a coding experiment, it was a study tool I actively built and used throughout the course. It ultimately became part of the learning process that helped me earn an **A and achieve the highest marks in my section**.
